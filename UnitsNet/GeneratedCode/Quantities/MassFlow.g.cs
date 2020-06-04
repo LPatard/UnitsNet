@@ -60,6 +60,7 @@ namespace UnitsNet
                     new UnitInfo<MassFlowUnit>(MassFlowUnit.DecigramPerSecond, BaseUnits.Undefined),
                     new UnitInfo<MassFlowUnit>(MassFlowUnit.GramPerDay, BaseUnits.Undefined),
                     new UnitInfo<MassFlowUnit>(MassFlowUnit.GramPerHour, BaseUnits.Undefined),
+                    new UnitInfo<MassFlowUnit>(MassFlowUnit.GramPerMinute, BaseUnits.Undefined),
                     new UnitInfo<MassFlowUnit>(MassFlowUnit.GramPerSecond, BaseUnits.Undefined),
                     new UnitInfo<MassFlowUnit>(MassFlowUnit.HectogramPerDay, BaseUnits.Undefined),
                     new UnitInfo<MassFlowUnit>(MassFlowUnit.HectogramPerSecond, BaseUnits.Undefined),
@@ -236,6 +237,11 @@ namespace UnitsNet
         ///     Get MassFlow in GramsPerHour.
         /// </summary>
         public double GramsPerHour => As(MassFlowUnit.GramPerHour);
+
+        /// <summary>
+        ///     Get MassFlow in GramPerMinutes.
+        /// </summary>
+        public double GramPerMinutes => As(MassFlowUnit.GramPerMinute);
 
         /// <summary>
         ///     Get MassFlow in GramsPerSecond.
@@ -462,6 +468,15 @@ namespace UnitsNet
         {
             double value = (double) gramsperhour;
             return new MassFlow(value, MassFlowUnit.GramPerHour);
+        }
+        /// <summary>
+        ///     Get MassFlow from GramPerMinutes.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static MassFlow FromGramPerMinutes(QuantityValue gramperminutes)
+        {
+            double value = (double) gramperminutes;
+            return new MassFlow(value, MassFlowUnit.GramPerMinute);
         }
         /// <summary>
         ///     Get MassFlow from GramsPerSecond.
@@ -1125,6 +1140,7 @@ namespace UnitsNet
                 case MassFlowUnit.DecigramPerSecond: return (_value) * 1e-1d;
                 case MassFlowUnit.GramPerDay: return _value/86400;
                 case MassFlowUnit.GramPerHour: return _value/3600;
+                case MassFlowUnit.GramPerMinute: return _value*0.0166666666667;
                 case MassFlowUnit.GramPerSecond: return _value;
                 case MassFlowUnit.HectogramPerDay: return (_value/86400) * 1e2d;
                 case MassFlowUnit.HectogramPerSecond: return (_value) * 1e2d;
@@ -1183,6 +1199,7 @@ namespace UnitsNet
                 case MassFlowUnit.DecigramPerSecond: return (baseUnitValue) / 1e-1d;
                 case MassFlowUnit.GramPerDay: return baseUnitValue*86400;
                 case MassFlowUnit.GramPerHour: return baseUnitValue*3600;
+                case MassFlowUnit.GramPerMinute: return baseUnitValue/0.0166666666667;
                 case MassFlowUnit.GramPerSecond: return baseUnitValue;
                 case MassFlowUnit.HectogramPerDay: return (baseUnitValue*86400) / 1e2d;
                 case MassFlowUnit.HectogramPerSecond: return (baseUnitValue) / 1e2d;

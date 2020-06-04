@@ -9,6 +9,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "ElectricCharge",
+      "SingularName": "KiloCoulomb",
+      "PluralName": "KiloCoulombs",
+      "FromBaseToUnitFunc": "x/1000",
+      "FromUnitToBaseFunc": "x*1000",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "KC"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "Coulomb",
       "PluralName": "Coulombs",
       "FromUnitToBaseFunc": "x",

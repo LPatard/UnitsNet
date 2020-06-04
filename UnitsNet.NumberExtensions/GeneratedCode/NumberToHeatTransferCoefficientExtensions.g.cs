@@ -28,6 +28,10 @@ namespace UnitsNet.NumberExtensions.NumberToHeatTransferCoefficient
     /// </summary>
     public static class NumberToHeatTransferCoefficientExtensions
     {
+        /// <inheritdoc cref="HeatTransferCoefficient.FromBtuPerHourSquarefeetFahrenheits(UnitsNet.QuantityValue)" />
+        public static HeatTransferCoefficient BtuPerHourSquarefeetFahrenheits<T>(this T value) =>
+            HeatTransferCoefficient.FromBtuPerHourSquarefeetFahrenheits(Convert.ToDouble(value));
+
         /// <inheritdoc cref="HeatTransferCoefficient.FromBtusPerSquareFootDegreeFahrenheit(UnitsNet.QuantityValue)" />
         public static HeatTransferCoefficient BtusPerSquareFootDegreeFahrenheit<T>(this T value) =>
             HeatTransferCoefficient.FromBtusPerSquareFootDegreeFahrenheit(Convert.ToDouble(value));
@@ -39,6 +43,10 @@ namespace UnitsNet.NumberExtensions.NumberToHeatTransferCoefficient
         /// <inheritdoc cref="HeatTransferCoefficient.FromWattsPerSquareMeterKelvin(UnitsNet.QuantityValue)" />
         public static HeatTransferCoefficient WattsPerSquareMeterKelvin<T>(this T value) =>
             HeatTransferCoefficient.FromWattsPerSquareMeterKelvin(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="HeatTransferCoefficient.FromWattPerSquareMetterPerKelvins(UnitsNet.QuantityValue)" />
+        public static HeatTransferCoefficient WattPerSquareMetterPerKelvins<T>(this T value) =>
+            HeatTransferCoefficient.FromWattPerSquareMetterPerKelvins(Convert.ToDouble(value));
 
     }
 }

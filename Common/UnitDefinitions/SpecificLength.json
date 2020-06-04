@@ -1,0 +1,21 @@
+{
+    "Name": "SpecificLength",
+    "BaseUnit": "MeterPerGram",
+    "Units": [
+        {
+            "UnitsNet_Domain": "SpecificLength",
+            "SingularName": "MeterPerGram",
+            "PluralName": "MeterPerGrams",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "m/g"
+                    ]
+                }
+            ]
+        }
+    ]
+}

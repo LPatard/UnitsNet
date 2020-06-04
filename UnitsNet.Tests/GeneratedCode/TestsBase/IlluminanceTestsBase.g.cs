@@ -36,12 +36,14 @@ namespace UnitsNet.Tests
 // ReSharper disable once PartialTypeWithSinglePart
     public abstract partial class IlluminanceTestsBase
     {
+        protected abstract double FootCandlesInOneLux { get; }
         protected abstract double KiloluxInOneLux { get; }
         protected abstract double LuxInOneLux { get; }
         protected abstract double MegaluxInOneLux { get; }
         protected abstract double MilliluxInOneLux { get; }
 
 // ReSharper disable VirtualMemberNeverOverriden.Global
+        protected virtual double FootCandlesTolerance { get { return 1e-5; } }
         protected virtual double KiloluxTolerance { get { return 1e-5; } }
         protected virtual double LuxTolerance { get { return 1e-5; } }
         protected virtual double MegaluxTolerance { get { return 1e-5; } }
@@ -107,6 +109,7 @@ namespace UnitsNet.Tests
         public void LuxToIlluminanceUnits()
         {
             Illuminance lux = Illuminance.FromLux(1);
+            AssertEx.EqualTolerance(FootCandlesInOneLux, lux.FootCandles, FootCandlesTolerance);
             AssertEx.EqualTolerance(KiloluxInOneLux, lux.Kilolux, KiloluxTolerance);
             AssertEx.EqualTolerance(LuxInOneLux, lux.Lux, LuxTolerance);
             AssertEx.EqualTolerance(MegaluxInOneLux, lux.Megalux, MegaluxTolerance);
@@ -116,21 +119,25 @@ namespace UnitsNet.Tests
         [Fact]
         public void From_ValueAndUnit_ReturnsQuantityWithSameValueAndUnit()
         {
-            var quantity00 = Illuminance.From(1, IlluminanceUnit.Kilolux);
-            AssertEx.EqualTolerance(1, quantity00.Kilolux, KiloluxTolerance);
-            Assert.Equal(IlluminanceUnit.Kilolux, quantity00.Unit);
+            var quantity00 = Illuminance.From(1, IlluminanceUnit.FootCandle);
+            AssertEx.EqualTolerance(1, quantity00.FootCandles, FootCandlesTolerance);
+            Assert.Equal(IlluminanceUnit.FootCandle, quantity00.Unit);
 
-            var quantity01 = Illuminance.From(1, IlluminanceUnit.Lux);
-            AssertEx.EqualTolerance(1, quantity01.Lux, LuxTolerance);
-            Assert.Equal(IlluminanceUnit.Lux, quantity01.Unit);
+            var quantity01 = Illuminance.From(1, IlluminanceUnit.Kilolux);
+            AssertEx.EqualTolerance(1, quantity01.Kilolux, KiloluxTolerance);
+            Assert.Equal(IlluminanceUnit.Kilolux, quantity01.Unit);
 
-            var quantity02 = Illuminance.From(1, IlluminanceUnit.Megalux);
-            AssertEx.EqualTolerance(1, quantity02.Megalux, MegaluxTolerance);
-            Assert.Equal(IlluminanceUnit.Megalux, quantity02.Unit);
+            var quantity02 = Illuminance.From(1, IlluminanceUnit.Lux);
+            AssertEx.EqualTolerance(1, quantity02.Lux, LuxTolerance);
+            Assert.Equal(IlluminanceUnit.Lux, quantity02.Unit);
 
-            var quantity03 = Illuminance.From(1, IlluminanceUnit.Millilux);
-            AssertEx.EqualTolerance(1, quantity03.Millilux, MilliluxTolerance);
-            Assert.Equal(IlluminanceUnit.Millilux, quantity03.Unit);
+            var quantity03 = Illuminance.From(1, IlluminanceUnit.Megalux);
+            AssertEx.EqualTolerance(1, quantity03.Megalux, MegaluxTolerance);
+            Assert.Equal(IlluminanceUnit.Megalux, quantity03.Unit);
+
+            var quantity04 = Illuminance.From(1, IlluminanceUnit.Millilux);
+            AssertEx.EqualTolerance(1, quantity04.Millilux, MilliluxTolerance);
+            Assert.Equal(IlluminanceUnit.Millilux, quantity04.Unit);
 
         }
 
@@ -151,6 +158,7 @@ namespace UnitsNet.Tests
         public void As()
         {
             var lux = Illuminance.FromLux(1);
+            AssertEx.EqualTolerance(FootCandlesInOneLux, lux.As(IlluminanceUnit.FootCandle), FootCandlesTolerance);
             AssertEx.EqualTolerance(KiloluxInOneLux, lux.As(IlluminanceUnit.Kilolux), KiloluxTolerance);
             AssertEx.EqualTolerance(LuxInOneLux, lux.As(IlluminanceUnit.Lux), LuxTolerance);
             AssertEx.EqualTolerance(MegaluxInOneLux, lux.As(IlluminanceUnit.Megalux), MegaluxTolerance);
@@ -161,6 +169,10 @@ namespace UnitsNet.Tests
         public void ToUnit()
         {
             var lux = Illuminance.FromLux(1);
+
+            var footcandleQuantity = lux.ToUnit(IlluminanceUnit.FootCandle);
+            AssertEx.EqualTolerance(FootCandlesInOneLux, (double)footcandleQuantity.Value, FootCandlesTolerance);
+            Assert.Equal(IlluminanceUnit.FootCandle, footcandleQuantity.Unit);
 
             var kiloluxQuantity = lux.ToUnit(IlluminanceUnit.Kilolux);
             AssertEx.EqualTolerance(KiloluxInOneLux, (double)kiloluxQuantity.Value, KiloluxTolerance);
@@ -183,6 +195,7 @@ namespace UnitsNet.Tests
         public void ConversionRoundTrip()
         {
             Illuminance lux = Illuminance.FromLux(1);
+            AssertEx.EqualTolerance(1, Illuminance.FromFootCandles(lux.FootCandles).Lux, FootCandlesTolerance);
             AssertEx.EqualTolerance(1, Illuminance.FromKilolux(lux.Kilolux).Lux, KiloluxTolerance);
             AssertEx.EqualTolerance(1, Illuminance.FromLux(lux.Lux).Lux, LuxTolerance);
             AssertEx.EqualTolerance(1, Illuminance.FromMegalux(lux.Megalux).Lux, MegaluxTolerance);
@@ -343,6 +356,7 @@ namespace UnitsNet.Tests
             var prevCulture = Thread.CurrentThread.CurrentUICulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
             try {
+                Assert.Equal("1 ftc", new Illuminance(1, IlluminanceUnit.FootCandle).ToString());
                 Assert.Equal("1 klx", new Illuminance(1, IlluminanceUnit.Kilolux).ToString());
                 Assert.Equal("1 lx", new Illuminance(1, IlluminanceUnit.Lux).ToString());
                 Assert.Equal("1 Mlx", new Illuminance(1, IlluminanceUnit.Megalux).ToString());
@@ -360,6 +374,7 @@ namespace UnitsNet.Tests
             // Chose this culture, because we don't currently have any abbreviations mapped for that culture and we expect the en-US to be used as fallback.
             var swedishCulture = CultureInfo.GetCultureInfo("sv-SE");
 
+            Assert.Equal("1 ftc", new Illuminance(1, IlluminanceUnit.FootCandle).ToString(swedishCulture));
             Assert.Equal("1 klx", new Illuminance(1, IlluminanceUnit.Kilolux).ToString(swedishCulture));
             Assert.Equal("1 lx", new Illuminance(1, IlluminanceUnit.Lux).ToString(swedishCulture));
             Assert.Equal("1 Mlx", new Illuminance(1, IlluminanceUnit.Megalux).ToString(swedishCulture));

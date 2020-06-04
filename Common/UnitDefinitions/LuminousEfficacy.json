@@ -1,0 +1,21 @@
+{
+    "Name": "LuminousEfficacy",
+    "BaseUnit": "LumenPerWatt",
+    "Units": [
+        {
+            "UnitsNet_Domain": "LuminousEfficacy",
+            "SingularName": "LumenPerWatt",
+            "PluralName": "LumenPerWatts",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "lm/W"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -8,6 +8,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "MassFlow",
+      "SingularName": "GramPerMinute",
+      "PluralName": "GramPerMinutes",
+      "FromBaseToUnitFunc": "x/0.0166666666667",
+      "FromUnitToBaseFunc": "x*0.0166666666667",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "g/min"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "GramPerSecond",
       "PluralName": "GramsPerSecond",
       "FromUnitToBaseFunc": "x",

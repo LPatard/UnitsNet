@@ -9,6 +9,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Irradiation",
+      "SingularName": "MegajoulePerSquareMeter",
+      "PluralName": "MegajoulePerSquareMeters",
+      "FromBaseToUnitFunc": "x/1000000",
+      "FromUnitToBaseFunc": "x*1000000",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "MJ/m²"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "JoulePerSquareMeter",
       "PluralName": "JoulesPerSquareMeter",
       "FromUnitToBaseFunc": "x",

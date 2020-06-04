@@ -34,5 +34,7 @@ namespace UnitsNet.Tests.CustomCode
         protected override double KiloluxInOneLux => 1E-3;
 
         protected override double MegaluxInOneLux => 1E-6;
+
+        protected override double FootCandlesInOneLux => throw new NotImplementedException();
     }
 }

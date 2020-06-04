@@ -36,6 +36,14 @@ namespace UnitsNet.NumberExtensions.NumberToPower
         public static Power BritishThermalUnitsPerHour<T>(this T value) =>
             Power.FromBritishThermalUnitsPerHour(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Power.FromBTUPerSeconds(UnitsNet.QuantityValue)" />
+        public static Power BTUPerSeconds<T>(this T value) =>
+            Power.FromBTUPerSeconds(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Power.FromCaloriePerSeconds(UnitsNet.QuantityValue)" />
+        public static Power CaloriePerSeconds<T>(this T value) =>
+            Power.FromCaloriePerSeconds(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Power.FromDecawatts(UnitsNet.QuantityValue)" />
         public static Power Decawatts<T>(this T value) =>
             Power.FromDecawatts(Convert.ToDouble(value));
@@ -56,6 +64,10 @@ namespace UnitsNet.NumberExtensions.NumberToPower
         public static Power GigajoulesPerHour<T>(this T value) =>
             Power.FromGigajoulesPerHour(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Power.FromGigajoulePerYears(UnitsNet.QuantityValue)" />
+        public static Power GigajoulePerYears<T>(this T value) =>
+            Power.FromGigajoulePerYears(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Power.FromGigawatts(UnitsNet.QuantityValue)" />
         public static Power Gigawatts<T>(this T value) =>
             Power.FromGigawatts(Convert.ToDouble(value));
@@ -71,6 +83,10 @@ namespace UnitsNet.NumberExtensions.NumberToPower
         /// <inheritdoc cref="Power.FromKilobritishThermalUnitsPerHour(UnitsNet.QuantityValue)" />
         public static Power KilobritishThermalUnitsPerHour<T>(this T value) =>
             Power.FromKilobritishThermalUnitsPerHour(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Power.FromKilocaloriePerSeconds(UnitsNet.QuantityValue)" />
+        public static Power KilocaloriePerSeconds<T>(this T value) =>
+            Power.FromKilocaloriePerSeconds(Convert.ToDouble(value));
 
         /// <inheritdoc cref="Power.FromKilojoulesPerHour(UnitsNet.QuantityValue)" />
         public static Power KilojoulesPerHour<T>(this T value) =>
@@ -123,6 +139,10 @@ namespace UnitsNet.NumberExtensions.NumberToPower
         /// <inheritdoc cref="Power.FromTerawatts(UnitsNet.QuantityValue)" />
         public static Power Terawatts<T>(this T value) =>
             Power.FromTerawatts(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Power.FromTonOfRefrigerations(UnitsNet.QuantityValue)" />
+        public static Power TonOfRefrigerations<T>(this T value) =>
+            Power.FromTonOfRefrigerations(Convert.ToDouble(value));
 
         /// <inheritdoc cref="Power.FromWatts(UnitsNet.QuantityValue)" />
         public static Power Watts<T>(this T value) =>

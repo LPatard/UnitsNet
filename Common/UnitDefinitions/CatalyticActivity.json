@@ -1,0 +1,21 @@
+{
+    "Name": "CatalyticActivity",
+    "BaseUnit": "Katal",
+    "Units": [
+        {
+            "UnitsNet_Domain": "CatalyticActivity",
+            "SingularName": "Katal",
+            "PluralName": "Katals",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "Kat"
+                    ]
+                }
+            ]
+        }
+    ]
+}

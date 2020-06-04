@@ -36,6 +36,10 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double RevolutionsInOneDegree => 2.777777777777777e-3;
 
+        protected override double MeterPerMillimetersInOneDegree => throw new NotImplementedException();
+
+        protected override double MillimeterPerMetersInOneDegree => throw new NotImplementedException();
+
         [Fact]
         public void AngleDividedByDurationEqualsRotationalSpeed()
         {

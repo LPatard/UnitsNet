@@ -1,0 +1,21 @@
+{
+    "Name": "PressureGradient",
+    "BaseUnit": "PascalPerMeter",
+    "Units": [
+        {
+            "UnitsNet_Domain": "PressureGradient",
+            "SingularName": "PascalPerMeter",
+            "PluralName": "PascalPerMeters",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "Pa/m"
+                    ]
+                }
+            ]
+        }
+    ]
+}

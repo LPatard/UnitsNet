@@ -8,6 +8,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Acceleration",
+      "SingularName": "MilesPerSquareSecond",
+      "PluralName": "MilesPerSquareSeconds",
+      "FromBaseToUnitFunc": "x/1609.344",
+      "FromUnitToBaseFunc": "x*1609.344",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "mi/s²"
+              ]
+          }
+      ]
+    },
+    {
       "SingularName": "MeterPerSecondSquared",
       "PluralName": "MetersPerSecondSquared",
       "BaseUnits": {

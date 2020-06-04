@@ -11,6 +11,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Permittivity",
+      "SingularName": "MicroFaradPerKilometer",
+      "PluralName": "MicroFaradPerKilometers",
+      "FromBaseToUnitFunc": "x/0.000000001",
+      "FromUnitToBaseFunc": "x*0.000000001",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "μF/km"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "FaradPerMeter",
       "PluralName": "FaradsPerMeter",
       "FromUnitToBaseFunc": "x",

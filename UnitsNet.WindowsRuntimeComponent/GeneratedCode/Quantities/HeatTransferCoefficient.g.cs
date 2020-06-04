@@ -156,6 +156,11 @@ namespace UnitsNet
         #region Conversion Properties
 
         /// <summary>
+        ///     Get HeatTransferCoefficient in BtuPerHourSquarefeetFahrenheits.
+        /// </summary>
+        public double BtuPerHourSquarefeetFahrenheits => As(HeatTransferCoefficientUnit.BtuPerHourSquarefeetFahrenheit);
+
+        /// <summary>
         ///     Get HeatTransferCoefficient in BtusPerSquareFootDegreeFahrenheit.
         /// </summary>
         public double BtusPerSquareFootDegreeFahrenheit => As(HeatTransferCoefficientUnit.BtuPerSquareFootDegreeFahrenheit);
@@ -169,6 +174,11 @@ namespace UnitsNet
         ///     Get HeatTransferCoefficient in WattsPerSquareMeterKelvin.
         /// </summary>
         public double WattsPerSquareMeterKelvin => As(HeatTransferCoefficientUnit.WattPerSquareMeterKelvin);
+
+        /// <summary>
+        ///     Get HeatTransferCoefficient in WattPerSquareMetterPerKelvins.
+        /// </summary>
+        public double WattPerSquareMetterPerKelvins => As(HeatTransferCoefficientUnit.WattPerSquareMetterPerKelvin);
 
         #endregion
 
@@ -201,6 +211,16 @@ namespace UnitsNet
         #region Static Factory Methods
 
         /// <summary>
+        ///     Get HeatTransferCoefficient from BtuPerHourSquarefeetFahrenheits.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static HeatTransferCoefficient FromBtuPerHourSquarefeetFahrenheits(double btuperhoursquarefeetfahrenheits)
+        {
+            double value = (double) btuperhoursquarefeetfahrenheits;
+            return new HeatTransferCoefficient(value, HeatTransferCoefficientUnit.BtuPerHourSquarefeetFahrenheit);
+        }
+        /// <summary>
         ///     Get HeatTransferCoefficient from BtusPerSquareFootDegreeFahrenheit.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -229,6 +249,16 @@ namespace UnitsNet
         {
             double value = (double) wattspersquaremeterkelvin;
             return new HeatTransferCoefficient(value, HeatTransferCoefficientUnit.WattPerSquareMeterKelvin);
+        }
+        /// <summary>
+        ///     Get HeatTransferCoefficient from WattPerSquareMetterPerKelvins.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static HeatTransferCoefficient FromWattPerSquareMetterPerKelvins(double wattpersquaremetterperkelvins)
+        {
+            double value = (double) wattpersquaremetterperkelvins;
+            return new HeatTransferCoefficient(value, HeatTransferCoefficientUnit.WattPerSquareMetterPerKelvin);
         }
 
         /// <summary>
@@ -521,9 +551,11 @@ namespace UnitsNet
         {
             switch(Unit)
             {
+                case HeatTransferCoefficientUnit.BtuPerHourSquarefeetFahrenheit: return _value*5.67826334111;
                 case HeatTransferCoefficientUnit.BtuPerSquareFootDegreeFahrenheit: return _value * 5.6782633411134878;
                 case HeatTransferCoefficientUnit.WattPerSquareMeterCelsius: return _value;
                 case HeatTransferCoefficientUnit.WattPerSquareMeterKelvin: return _value;
+                case HeatTransferCoefficientUnit.WattPerSquareMetterPerKelvin: return _value;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to base units.");
             }
@@ -538,9 +570,11 @@ namespace UnitsNet
 
             switch(unit)
             {
+                case HeatTransferCoefficientUnit.BtuPerHourSquarefeetFahrenheit: return baseUnitValue/5.67826334111;
                 case HeatTransferCoefficientUnit.BtuPerSquareFootDegreeFahrenheit: return baseUnitValue / 5.6782633411134878;
                 case HeatTransferCoefficientUnit.WattPerSquareMeterCelsius: return baseUnitValue;
                 case HeatTransferCoefficientUnit.WattPerSquareMeterKelvin: return baseUnitValue;
+                case HeatTransferCoefficientUnit.WattPerSquareMetterPerKelvin: return baseUnitValue;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to {unit}.");
             }

@@ -48,6 +48,10 @@ namespace UnitsNet.NumberExtensions.NumberToIrradiation
         public static Irradiation KilowattHoursPerSquareMeter<T>(this T value) =>
             Irradiation.FromKilowattHoursPerSquareMeter(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Irradiation.FromMegajoulePerSquareMeters(UnitsNet.QuantityValue)" />
+        public static Irradiation MegajoulePerSquareMeters<T>(this T value) =>
+            Irradiation.FromMegajoulePerSquareMeters(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Irradiation.FromMillijoulesPerSquareCentimeter(UnitsNet.QuantityValue)" />
         public static Irradiation MillijoulesPerSquareCentimeter<T>(this T value) =>
             Irradiation.FromMillijoulesPerSquareCentimeter(Convert.ToDouble(value));

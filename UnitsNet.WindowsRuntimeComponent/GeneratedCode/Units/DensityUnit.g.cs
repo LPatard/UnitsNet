@@ -39,6 +39,7 @@ namespace UnitsNet.Units
         GramPerLiter,
         GramPerMilliliter,
         KilogramPerCubicCentimeter,
+        KilogramPerCubicDecimeter,
         KilogramPerCubicMeter,
         KilogramPerCubicMillimeter,
         KilogramPerLiter,

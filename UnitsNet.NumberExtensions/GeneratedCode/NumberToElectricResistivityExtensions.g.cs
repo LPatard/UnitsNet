@@ -60,6 +60,10 @@ namespace UnitsNet.NumberExtensions.NumberToElectricResistivity
         public static ElectricResistivity MilliohmMeters<T>(this T value) =>
             ElectricResistivity.FromMilliohmMeters(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="ElectricResistivity.FromMilliohmPerMeters(UnitsNet.QuantityValue)" />
+        public static ElectricResistivity MilliohmPerMeters<T>(this T value) =>
+            ElectricResistivity.FromMilliohmPerMeters(Convert.ToDouble(value));
+
         /// <inheritdoc cref="ElectricResistivity.FromNanoohmsCentimeter(UnitsNet.QuantityValue)" />
         public static ElectricResistivity NanoohmsCentimeter<T>(this T value) =>
             ElectricResistivity.FromNanoohmsCentimeter(Convert.ToDouble(value));

@@ -29,6 +29,7 @@ namespace UnitsNet.Units
         AmpereHour,
         Coulomb,
         KiloampereHour,
+        KiloCoulomb,
         MegaampereHour,
         MilliampereHour,
     }

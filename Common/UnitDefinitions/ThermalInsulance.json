@@ -1,0 +1,21 @@
+{
+    "Name": "ThermalInsulance",
+    "BaseUnit": "SquareMeterCelciusDegreePerKilowatt",
+    "Units": [
+        {
+            "UnitsNet_Domain": "ThermalInsulance",
+            "SingularName": "SquareMeterCelciusDegreePerKilowatt",
+            "PluralName": "SquareMeterCelciusDegreePerKilowatts",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "m².°C/kW"
+                    ]
+                }
+            ]
+        }
+    ]
+}

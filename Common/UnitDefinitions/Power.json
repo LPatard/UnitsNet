@@ -10,6 +10,81 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Power",
+      "SingularName": "BTUPerSecond",
+      "PluralName": "BTUPerSeconds",
+      "FromBaseToUnitFunc": "x/1055.05585262m",
+      "FromUnitToBaseFunc": "x*1055.05585262m",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "Btu/s"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Power",
+      "SingularName": "CaloriePerSecond",
+      "PluralName": "CaloriePerSeconds",
+      "FromBaseToUnitFunc": "x/4.1868m",
+      "FromUnitToBaseFunc": "x*4.1868m",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "cal/s"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Power",
+      "SingularName": "KilocaloriePerSecond",
+      "PluralName": "KilocaloriePerSeconds",
+      "FromBaseToUnitFunc": "x/4186.8m",
+      "FromUnitToBaseFunc": "x*4186.8m",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "kcal/s"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Power",
+      "SingularName": "TonOfRefrigeration",
+      "PluralName": "TonOfRefrigerations",
+      "FromBaseToUnitFunc": "x/3516.8528m",
+      "FromUnitToBaseFunc": "x*3516.8528m",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "Ton of refrigeration"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Power",
+      "SingularName": "GigajoulePerYear",
+      "PluralName": "GigajoulePerYears",
+      "FromBaseToUnitFunc": "x/317.09791983800005m",
+      "FromUnitToBaseFunc": "x*317.09791983800005m",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "GJ/year"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "Watt",
       "PluralName": "Watts",
       "FromUnitToBaseFunc": "x",

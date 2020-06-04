@@ -1,0 +1,36 @@
+{
+    "Name": "AbsorbedDose",
+    "BaseUnit": "Gray",
+    "Units": [
+        {
+            "UnitsNet_Domain": "AbsorbedDose",
+            "SingularName": "Gray",
+            "PluralName": "Grays",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "Gy"
+                    ]
+                }
+            ]
+        },
+        {
+            "UnitsNet_Domain": "AbsorbedDose",
+            "SingularName": "Sievert",
+            "PluralName": "Sieverts",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "Sv"
+                    ]
+                }
+            ]
+        },
+    ]
+}

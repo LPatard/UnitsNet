@@ -37,6 +37,10 @@ namespace UnitsNet.Tests
             Assert.Equal(Frequency.FromCyclesPerMinute(2), 2.CyclesPerMinute());
 
         [Fact]
+        public void NumberToCyclePerSecondsTest() =>
+            Assert.Equal(Frequency.FromCyclePerSeconds(2), 2.CyclePerSeconds());
+
+        [Fact]
         public void NumberToGigahertzTest() =>
             Assert.Equal(Frequency.FromGigahertz(2), 2.Gigahertz());
 

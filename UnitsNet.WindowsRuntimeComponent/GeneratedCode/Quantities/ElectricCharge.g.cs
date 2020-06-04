@@ -174,6 +174,11 @@ namespace UnitsNet
         public double KiloampereHours => As(ElectricChargeUnit.KiloampereHour);
 
         /// <summary>
+        ///     Get ElectricCharge in KiloCoulombs.
+        /// </summary>
+        public double KiloCoulombs => As(ElectricChargeUnit.KiloCoulomb);
+
+        /// <summary>
         ///     Get ElectricCharge in MegaampereHours.
         /// </summary>
         public double MegaampereHours => As(ElectricChargeUnit.MegaampereHour);
@@ -242,6 +247,16 @@ namespace UnitsNet
         {
             double value = (double) kiloamperehours;
             return new ElectricCharge(value, ElectricChargeUnit.KiloampereHour);
+        }
+        /// <summary>
+        ///     Get ElectricCharge from KiloCoulombs.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static ElectricCharge FromKiloCoulombs(double kilocoulombs)
+        {
+            double value = (double) kilocoulombs;
+            return new ElectricCharge(value, ElectricChargeUnit.KiloCoulomb);
         }
         /// <summary>
         ///     Get ElectricCharge from MegaampereHours.
@@ -557,6 +572,7 @@ namespace UnitsNet
                 case ElectricChargeUnit.AmpereHour: return _value/2.77777777777e-4;
                 case ElectricChargeUnit.Coulomb: return _value;
                 case ElectricChargeUnit.KiloampereHour: return (_value/2.77777777777e-4) * 1e3d;
+                case ElectricChargeUnit.KiloCoulomb: return _value*1000;
                 case ElectricChargeUnit.MegaampereHour: return (_value/2.77777777777e-4) * 1e6d;
                 case ElectricChargeUnit.MilliampereHour: return (_value/2.77777777777e-4) * 1e-3d;
                 default:
@@ -576,6 +592,7 @@ namespace UnitsNet
                 case ElectricChargeUnit.AmpereHour: return baseUnitValue*2.77777777777e-4;
                 case ElectricChargeUnit.Coulomb: return baseUnitValue;
                 case ElectricChargeUnit.KiloampereHour: return (baseUnitValue*2.77777777777e-4) / 1e3d;
+                case ElectricChargeUnit.KiloCoulomb: return baseUnitValue/1000;
                 case ElectricChargeUnit.MegaampereHour: return (baseUnitValue*2.77777777777e-4) / 1e6d;
                 case ElectricChargeUnit.MilliampereHour: return (baseUnitValue*2.77777777777e-4) / 1e-3d;
                 default:

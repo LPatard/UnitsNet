@@ -45,5 +45,7 @@ namespace UnitsNet.Tests.CustomCode
         protected override double TonneForceCentimetersPerMeterInOneNewtonMeterPerMeter => 1.01971621298e-2;
         protected override double TonneForceMetersPerMeterInOneNewtonMeterPerMeter => 1.01971621298e-4;
         protected override double TonneForceMillimetersPerMeterInOneNewtonMeterPerMeter => 1.01971621298e-1;
+
+        protected override double DecanewtonMeterPerMetersInOneNewtonMeterPerMeter => throw new NotImplementedException();
     }
 }

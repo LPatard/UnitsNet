@@ -1,0 +1,21 @@
+{
+    "Name": "RadiantIntensity",
+    "BaseUnit": "WattPerSteradian",
+    "Units": [
+        {
+            "UnitsNet_Domain": "RadiantIntensity",
+            "SingularName": "WattPerSteradian",
+            "PluralName": "WattPerSteradians",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "W/sr"
+                    ]
+                }
+            ]
+        }
+    ]
+}

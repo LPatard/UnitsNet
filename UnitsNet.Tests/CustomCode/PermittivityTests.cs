@@ -28,5 +28,7 @@ namespace UnitsNet.Tests.CustomCode
     public class PermittivityTests : PermittivityTestsBase
     {
         protected override double FaradsPerMeterInOneFaradPerMeter => 1;
+
+        protected override double MicroFaradPerKilometersInOneFaradPerMeter => throw new NotImplementedException();
     }
 }

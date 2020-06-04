@@ -1,0 +1,21 @@
+{
+    "Name": "SpecificArea",
+    "BaseUnit": "SquareFootPerTon",
+    "Units": [
+        {
+            "UnitsNet_Domain": "SpecificArea",
+            "SingularName": "SquareFootPerTon",
+            "PluralName": "SquareFootPerTons",
+            "FromBaseToUnitFunc": "x/1000",
+            "FromUnitToBaseFunc": "x*1000",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "ft²/ton"
+                    ]
+                }
+            ]
+        }
+    ]
+}

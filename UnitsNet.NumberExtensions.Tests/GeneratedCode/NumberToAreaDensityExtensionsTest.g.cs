@@ -25,8 +25,24 @@ namespace UnitsNet.Tests
     public class NumberToAreaDensityExtensionsTests
     {
         [Fact]
+        public void NumberToGramPerSquareMetersTest() =>
+            Assert.Equal(AreaDensity.FromGramPerSquareMeters(2), 2.GramPerSquareMeters());
+
+        [Fact]
+        public void NumberToKilogramPerSquareCentimetersTest() =>
+            Assert.Equal(AreaDensity.FromKilogramPerSquareCentimeters(2), 2.KilogramPerSquareCentimeters());
+
+        [Fact]
         public void NumberToKilogramsPerSquareMeterTest() =>
             Assert.Equal(AreaDensity.FromKilogramsPerSquareMeter(2), 2.KilogramsPerSquareMeter());
+
+        [Fact]
+        public void NumberToKipsPerSquareFootsTest() =>
+            Assert.Equal(AreaDensity.FromKipsPerSquareFoots(2), 2.KipsPerSquareFoots());
+
+        [Fact]
+        public void NumberToKipsPerSquareInchsTest() =>
+            Assert.Equal(AreaDensity.FromKipsPerSquareInchs(2), 2.KipsPerSquareInchs());
 
     }
 }

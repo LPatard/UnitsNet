@@ -1,0 +1,21 @@
+{
+    "Name": "DoseRate",
+    "BaseUnit": "GrayPerSecond",
+    "Units": [
+        {
+            "UnitsNet_Domain": "DoseRate",
+            "SingularName": "GrayPerSecond",
+            "PluralName": "GrayPerSeconds",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "Gy/s"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "Name": "Diffusivity",
+    "BaseUnit": "SquareMeterPerHour",
+    "Units": [
+        {
+            "UnitsNet_Domain": "Diffusivity",
+            "SingularName": "SquareMeterPerHour",
+            "PluralName": "SquareMeterPerHours",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "m²/h"
+                    ]
+                }
+            ]
+        }
+    ]
+}

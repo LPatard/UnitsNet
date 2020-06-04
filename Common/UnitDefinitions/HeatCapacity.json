@@ -1,0 +1,21 @@
+{
+    "Name": "HeatCapacity",
+    "BaseUnit": "BTUPerFahrenheitDegree",
+    "Units": [
+        {
+            "UnitsNet_Domain": "HeatCapacity",
+            "SingularName": "BTUPerFahrenheitDegree",
+            "PluralName": "BTUPerFahrenheitDegrees",
+            "FromBaseToUnitFunc": "x/1899.10053471",
+            "FromUnitToBaseFunc": "x*1899.10053471",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "BTU/°F"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -9,6 +9,51 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Torque",
+      "SingularName": "TonForcePerMeter",
+      "PluralName": "TonForcePerMeters",
+      "FromBaseToUnitFunc": "x/9806650",
+      "FromUnitToBaseFunc": "x*9806650",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "tf/m"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Torque",
+      "SingularName": "KipsPerInch",
+      "PluralName": "KipsPerInchs",
+      "FromBaseToUnitFunc": "x/112.98482902800001",
+      "FromUnitToBaseFunc": "x*112.98482902800001",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "kip/in"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Torque",
+      "SingularName": "DecanewtonMeter",
+      "PluralName": "DecanewtonMeters",
+      "FromBaseToUnitFunc": "x/10",
+      "FromUnitToBaseFunc": "x*10",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "daN-m"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "NewtonMillimeter",
       "PluralName": "NewtonMillimeters",
       "FromUnitToBaseFunc": "x*0.001",

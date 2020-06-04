@@ -8,6 +8,21 @@
     "M": 1
   },
   "Units": [
+  {
+      "UnitsNet_Domain": "Density",
+      "SingularName": "KilogramPerCubicDecimeter",
+      "PluralName": "KilogramPerCubicDecimeters",
+      "FromBaseToUnitFunc": "x/1000",
+      "FromUnitToBaseFunc": "x*1000",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "kg/dm³"
+              ]
+          }
+      ]
+  },
     {
       "SingularName": "GramPerCubicMillimeter",
       "PluralName": "GramsPerCubicMillimeter",

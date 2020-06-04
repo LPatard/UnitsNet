@@ -37,9 +37,11 @@ namespace UnitsNet.Tests
     public abstract partial class PermittivityTestsBase
     {
         protected abstract double FaradsPerMeterInOneFaradPerMeter { get; }
+        protected abstract double MicroFaradPerKilometersInOneFaradPerMeter { get; }
 
 // ReSharper disable VirtualMemberNeverOverriden.Global
         protected virtual double FaradsPerMeterTolerance { get { return 1e-5; } }
+        protected virtual double MicroFaradPerKilometersTolerance { get { return 1e-5; } }
 // ReSharper restore VirtualMemberNeverOverriden.Global
 
         [Fact]
@@ -102,6 +104,7 @@ namespace UnitsNet.Tests
         {
             Permittivity faradpermeter = Permittivity.FromFaradsPerMeter(1);
             AssertEx.EqualTolerance(FaradsPerMeterInOneFaradPerMeter, faradpermeter.FaradsPerMeter, FaradsPerMeterTolerance);
+            AssertEx.EqualTolerance(MicroFaradPerKilometersInOneFaradPerMeter, faradpermeter.MicroFaradPerKilometers, MicroFaradPerKilometersTolerance);
         }
 
         [Fact]
@@ -110,6 +113,10 @@ namespace UnitsNet.Tests
             var quantity00 = Permittivity.From(1, PermittivityUnit.FaradPerMeter);
             AssertEx.EqualTolerance(1, quantity00.FaradsPerMeter, FaradsPerMeterTolerance);
             Assert.Equal(PermittivityUnit.FaradPerMeter, quantity00.Unit);
+
+            var quantity01 = Permittivity.From(1, PermittivityUnit.MicroFaradPerKilometer);
+            AssertEx.EqualTolerance(1, quantity01.MicroFaradPerKilometers, MicroFaradPerKilometersTolerance);
+            Assert.Equal(PermittivityUnit.MicroFaradPerKilometer, quantity01.Unit);
 
         }
 
@@ -131,6 +138,7 @@ namespace UnitsNet.Tests
         {
             var faradpermeter = Permittivity.FromFaradsPerMeter(1);
             AssertEx.EqualTolerance(FaradsPerMeterInOneFaradPerMeter, faradpermeter.As(PermittivityUnit.FaradPerMeter), FaradsPerMeterTolerance);
+            AssertEx.EqualTolerance(MicroFaradPerKilometersInOneFaradPerMeter, faradpermeter.As(PermittivityUnit.MicroFaradPerKilometer), MicroFaradPerKilometersTolerance);
         }
 
         [Fact]
@@ -141,6 +149,10 @@ namespace UnitsNet.Tests
             var faradpermeterQuantity = faradpermeter.ToUnit(PermittivityUnit.FaradPerMeter);
             AssertEx.EqualTolerance(FaradsPerMeterInOneFaradPerMeter, (double)faradpermeterQuantity.Value, FaradsPerMeterTolerance);
             Assert.Equal(PermittivityUnit.FaradPerMeter, faradpermeterQuantity.Unit);
+
+            var microfaradperkilometerQuantity = faradpermeter.ToUnit(PermittivityUnit.MicroFaradPerKilometer);
+            AssertEx.EqualTolerance(MicroFaradPerKilometersInOneFaradPerMeter, (double)microfaradperkilometerQuantity.Value, MicroFaradPerKilometersTolerance);
+            Assert.Equal(PermittivityUnit.MicroFaradPerKilometer, microfaradperkilometerQuantity.Unit);
         }
 
         [Fact]
@@ -148,6 +160,7 @@ namespace UnitsNet.Tests
         {
             Permittivity faradpermeter = Permittivity.FromFaradsPerMeter(1);
             AssertEx.EqualTolerance(1, Permittivity.FromFaradsPerMeter(faradpermeter.FaradsPerMeter).FaradsPerMeter, FaradsPerMeterTolerance);
+            AssertEx.EqualTolerance(1, Permittivity.FromMicroFaradPerKilometers(faradpermeter.MicroFaradPerKilometers).FaradsPerMeter, MicroFaradPerKilometersTolerance);
         }
 
         [Fact]
@@ -305,6 +318,7 @@ namespace UnitsNet.Tests
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
             try {
                 Assert.Equal("1 F/m", new Permittivity(1, PermittivityUnit.FaradPerMeter).ToString());
+                Assert.Equal("1 μF/km", new Permittivity(1, PermittivityUnit.MicroFaradPerKilometer).ToString());
             }
             finally
             {
@@ -319,6 +333,7 @@ namespace UnitsNet.Tests
             var swedishCulture = CultureInfo.GetCultureInfo("sv-SE");
 
             Assert.Equal("1 F/m", new Permittivity(1, PermittivityUnit.FaradPerMeter).ToString(swedishCulture));
+            Assert.Equal("1 μF/km", new Permittivity(1, PermittivityUnit.MicroFaradPerKilometer).ToString(swedishCulture));
         }
 
         [Fact]

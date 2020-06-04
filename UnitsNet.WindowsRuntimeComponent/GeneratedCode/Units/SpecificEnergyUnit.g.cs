@@ -32,6 +32,7 @@ namespace UnitsNet.Units
         GigawattDayPerShortTon,
         GigawattDayPerTonne,
         GigawattHourPerKilogram,
+        JoulePerGram,
         JoulePerKilogram,
         KilocaloriePerGram,
         KilojoulePerKilogram,

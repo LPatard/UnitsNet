@@ -9,6 +9,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Illuminance",
+      "SingularName": "FootCandle",
+      "PluralName": "FootCandles",
+      "FromBaseToUnitFunc": "x/10.7639104167",
+      "FromUnitToBaseFunc": "x*10.7639104167",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "ftc"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "Lux",
       "PluralName": "Lux",
       "FromUnitToBaseFunc": "x",

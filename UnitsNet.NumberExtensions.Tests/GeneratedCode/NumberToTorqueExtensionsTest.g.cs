@@ -25,6 +25,10 @@ namespace UnitsNet.Tests
     public class NumberToTorqueExtensionsTests
     {
         [Fact]
+        public void NumberToDecanewtonMetersTest() =>
+            Assert.Equal(Torque.FromDecanewtonMeters(2), 2.DecanewtonMeters());
+
+        [Fact]
         public void NumberToKilogramForceCentimetersTest() =>
             Assert.Equal(Torque.FromKilogramForceCentimeters(2), 2.KilogramForceCentimeters());
 
@@ -55,6 +59,10 @@ namespace UnitsNet.Tests
         [Fact]
         public void NumberToKilopoundForceInchesTest() =>
             Assert.Equal(Torque.FromKilopoundForceInches(2), 2.KilopoundForceInches());
+
+        [Fact]
+        public void NumberToKipsPerInchsTest() =>
+            Assert.Equal(Torque.FromKipsPerInchs(2), 2.KipsPerInchs());
 
         [Fact]
         public void NumberToMeganewtonCentimetersTest() =>
@@ -95,6 +103,10 @@ namespace UnitsNet.Tests
         [Fact]
         public void NumberToPoundForceInchesTest() =>
             Assert.Equal(Torque.FromPoundForceInches(2), 2.PoundForceInches());
+
+        [Fact]
+        public void NumberToTonForcePerMetersTest() =>
+            Assert.Equal(Torque.FromTonForcePerMeters(2), 2.TonForcePerMeters());
 
         [Fact]
         public void NumberToTonneForceCentimetersTest() =>

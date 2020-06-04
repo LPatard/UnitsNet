@@ -29,6 +29,7 @@ namespace UnitsNet.Units
         BeatPerMinute,
         CyclePerHour,
         CyclePerMinute,
+        CyclePerSecond,
         Gigahertz,
         Hertz,
         Kilohertz,

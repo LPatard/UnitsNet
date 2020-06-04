@@ -10,6 +10,36 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "DynamicViscosity",
+      "SingularName": "PoundPerFootHour",
+      "PluralName": "PoundPerFootHours",
+      "FromBaseToUnitFunc": "x/0.00041",
+      "FromUnitToBaseFunc": "x*0.00041",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "lb/ft-h"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "DynamicViscosity",
+      "SingularName": "PoundPerFootSecond",
+      "PluralName": "PoundPerFootSeconds",
+      "FromBaseToUnitFunc": "x/1.48816",
+      "FromUnitToBaseFunc": "x*1.48816",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "lb/ft-s"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "NewtonSecondPerMeterSquared",
       "PluralName": "NewtonSecondsPerMeterSquared",
       "FromUnitToBaseFunc": "x",

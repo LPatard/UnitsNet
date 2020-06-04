@@ -75,6 +75,14 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double ChainsInOneMeter => 0.0497096953789867;
 
+        protected override double FurlongsInOneMeter => throw new NotImplementedException();
+
+        protected override double LeaguesInOneMeter => throw new NotImplementedException();
+
+        protected override double LinksInOneMeter => throw new NotImplementedException();
+
+        protected override double RodsInOneMeter => throw new NotImplementedException();
+
         [ Fact]
         public void AreaTimesLengthEqualsVolume()
         {

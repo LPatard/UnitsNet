@@ -57,6 +57,10 @@ namespace UnitsNet.Tests
             Assert.Equal(MassFlow.FromGramsPerHour(2), 2.GramsPerHour());
 
         [Fact]
+        public void NumberToGramPerMinutesTest() =>
+            Assert.Equal(MassFlow.FromGramPerMinutes(2), 2.GramPerMinutes());
+
+        [Fact]
         public void NumberToGramsPerSecondTest() =>
             Assert.Equal(MassFlow.FromGramsPerSecond(2), 2.GramsPerSecond());
 

@@ -52,6 +52,7 @@ namespace UnitsNet
 
             Info = new QuantityInfo<TorqueUnit>(QuantityType.Torque,
                 new UnitInfo<TorqueUnit>[] {
+                    new UnitInfo<TorqueUnit>(TorqueUnit.DecanewtonMeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.KilogramForceCentimeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.KilogramForceMeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.KilogramForceMillimeter, BaseUnits.Undefined),
@@ -60,6 +61,7 @@ namespace UnitsNet
                     new UnitInfo<TorqueUnit>(TorqueUnit.KilonewtonMillimeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.KilopoundForceFoot, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.KilopoundForceInch, BaseUnits.Undefined),
+                    new UnitInfo<TorqueUnit>(TorqueUnit.KipsPerInch, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.MeganewtonCentimeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.MeganewtonMeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.MeganewtonMillimeter, BaseUnits.Undefined),
@@ -70,6 +72,7 @@ namespace UnitsNet
                     new UnitInfo<TorqueUnit>(TorqueUnit.NewtonMillimeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.PoundForceFoot, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.PoundForceInch, BaseUnits.Undefined),
+                    new UnitInfo<TorqueUnit>(TorqueUnit.TonForcePerMeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.TonneForceCentimeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.TonneForceMeter, BaseUnits.Undefined),
                     new UnitInfo<TorqueUnit>(TorqueUnit.TonneForceMillimeter, BaseUnits.Undefined),
@@ -186,6 +189,11 @@ namespace UnitsNet
         #region Conversion Properties
 
         /// <summary>
+        ///     Get Torque in DecanewtonMeters.
+        /// </summary>
+        public double DecanewtonMeters => As(TorqueUnit.DecanewtonMeter);
+
+        /// <summary>
         ///     Get Torque in KilogramForceCentimeters.
         /// </summary>
         public double KilogramForceCentimeters => As(TorqueUnit.KilogramForceCentimeter);
@@ -224,6 +232,11 @@ namespace UnitsNet
         ///     Get Torque in KilopoundForceInches.
         /// </summary>
         public double KilopoundForceInches => As(TorqueUnit.KilopoundForceInch);
+
+        /// <summary>
+        ///     Get Torque in KipsPerInchs.
+        /// </summary>
+        public double KipsPerInchs => As(TorqueUnit.KipsPerInch);
 
         /// <summary>
         ///     Get Torque in MeganewtonCentimeters.
@@ -276,6 +289,11 @@ namespace UnitsNet
         public double PoundForceInches => As(TorqueUnit.PoundForceInch);
 
         /// <summary>
+        ///     Get Torque in TonForcePerMeters.
+        /// </summary>
+        public double TonForcePerMeters => As(TorqueUnit.TonForcePerMeter);
+
+        /// <summary>
         ///     Get Torque in TonneForceCentimeters.
         /// </summary>
         public double TonneForceCentimeters => As(TorqueUnit.TonneForceCentimeter);
@@ -319,6 +337,15 @@ namespace UnitsNet
 
         #region Static Factory Methods
 
+        /// <summary>
+        ///     Get Torque from DecanewtonMeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Torque FromDecanewtonMeters(QuantityValue decanewtonmeters)
+        {
+            double value = (double) decanewtonmeters;
+            return new Torque(value, TorqueUnit.DecanewtonMeter);
+        }
         /// <summary>
         ///     Get Torque from KilogramForceCentimeters.
         /// </summary>
@@ -390,6 +417,15 @@ namespace UnitsNet
         {
             double value = (double) kilopoundforceinches;
             return new Torque(value, TorqueUnit.KilopoundForceInch);
+        }
+        /// <summary>
+        ///     Get Torque from KipsPerInchs.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Torque FromKipsPerInchs(QuantityValue kipsperinchs)
+        {
+            double value = (double) kipsperinchs;
+            return new Torque(value, TorqueUnit.KipsPerInch);
         }
         /// <summary>
         ///     Get Torque from MeganewtonCentimeters.
@@ -480,6 +516,15 @@ namespace UnitsNet
         {
             double value = (double) poundforceinches;
             return new Torque(value, TorqueUnit.PoundForceInch);
+        }
+        /// <summary>
+        ///     Get Torque from TonForcePerMeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Torque FromTonForcePerMeters(QuantityValue tonforcepermeters)
+        {
+            double value = (double) tonforcepermeters;
+            return new Torque(value, TorqueUnit.TonForcePerMeter);
         }
         /// <summary>
         ///     Get Torque from TonneForceCentimeters.
@@ -937,6 +982,7 @@ namespace UnitsNet
         {
             switch(Unit)
             {
+                case TorqueUnit.DecanewtonMeter: return _value*10;
                 case TorqueUnit.KilogramForceCentimeter: return _value*0.0980665019960652;
                 case TorqueUnit.KilogramForceMeter: return _value*9.80665019960652;
                 case TorqueUnit.KilogramForceMillimeter: return _value*0.00980665019960652;
@@ -945,6 +991,7 @@ namespace UnitsNet
                 case TorqueUnit.KilonewtonMillimeter: return (_value*0.001) * 1e3d;
                 case TorqueUnit.KilopoundForceFoot: return (_value*1.3558179483314) * 1e3d;
                 case TorqueUnit.KilopoundForceInch: return (_value*1.129848290276167e-1) * 1e3d;
+                case TorqueUnit.KipsPerInch: return _value*112.98482902800001;
                 case TorqueUnit.MeganewtonCentimeter: return (_value*0.01) * 1e6d;
                 case TorqueUnit.MeganewtonMeter: return (_value) * 1e6d;
                 case TorqueUnit.MeganewtonMillimeter: return (_value*0.001) * 1e6d;
@@ -955,6 +1002,7 @@ namespace UnitsNet
                 case TorqueUnit.NewtonMillimeter: return _value*0.001;
                 case TorqueUnit.PoundForceFoot: return _value*1.3558179483314;
                 case TorqueUnit.PoundForceInch: return _value*1.129848290276167e-1;
+                case TorqueUnit.TonForcePerMeter: return _value*9806650;
                 case TorqueUnit.TonneForceCentimeter: return _value*98.0665019960652;
                 case TorqueUnit.TonneForceMeter: return _value*9806.65019960653;
                 case TorqueUnit.TonneForceMillimeter: return _value*9.80665019960652;
@@ -983,6 +1031,7 @@ namespace UnitsNet
 
             switch(unit)
             {
+                case TorqueUnit.DecanewtonMeter: return baseUnitValue/10;
                 case TorqueUnit.KilogramForceCentimeter: return baseUnitValue*10.1971619222242;
                 case TorqueUnit.KilogramForceMeter: return baseUnitValue*0.101971619222242;
                 case TorqueUnit.KilogramForceMillimeter: return baseUnitValue*101.971619222242;
@@ -991,6 +1040,7 @@ namespace UnitsNet
                 case TorqueUnit.KilonewtonMillimeter: return (baseUnitValue*1000) / 1e3d;
                 case TorqueUnit.KilopoundForceFoot: return (baseUnitValue/1.3558179483314) / 1e3d;
                 case TorqueUnit.KilopoundForceInch: return (baseUnitValue/1.129848290276167e-1) / 1e3d;
+                case TorqueUnit.KipsPerInch: return baseUnitValue/112.98482902800001;
                 case TorqueUnit.MeganewtonCentimeter: return (baseUnitValue*100) / 1e6d;
                 case TorqueUnit.MeganewtonMeter: return (baseUnitValue) / 1e6d;
                 case TorqueUnit.MeganewtonMillimeter: return (baseUnitValue*1000) / 1e6d;
@@ -1001,6 +1051,7 @@ namespace UnitsNet
                 case TorqueUnit.NewtonMillimeter: return baseUnitValue*1000;
                 case TorqueUnit.PoundForceFoot: return baseUnitValue/1.3558179483314;
                 case TorqueUnit.PoundForceInch: return baseUnitValue/1.129848290276167e-1;
+                case TorqueUnit.TonForcePerMeter: return baseUnitValue/9806650;
                 case TorqueUnit.TonneForceCentimeter: return baseUnitValue*0.0101971619222242;
                 case TorqueUnit.TonneForceMeter: return baseUnitValue*0.000101971619222242;
                 case TorqueUnit.TonneForceMillimeter: return baseUnitValue*0.101971619222242;

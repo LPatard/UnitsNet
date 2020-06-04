@@ -57,6 +57,10 @@ namespace UnitsNet.Tests
             Assert.Equal(ElectricResistivity.FromMilliohmMeters(2), 2.MilliohmMeters());
 
         [Fact]
+        public void NumberToMilliohmPerMetersTest() =>
+            Assert.Equal(ElectricResistivity.FromMilliohmPerMeters(2), 2.MilliohmPerMeters());
+
+        [Fact]
         public void NumberToNanoohmsCentimeterTest() =>
             Assert.Equal(ElectricResistivity.FromNanoohmsCentimeter(2), 2.NanoohmsCentimeter());
 

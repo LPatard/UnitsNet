@@ -60,6 +60,10 @@ namespace UnitsNet.NumberExtensions.NumberToMassFlow
         public static MassFlow GramsPerHour<T>(this T value) =>
             MassFlow.FromGramsPerHour(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="MassFlow.FromGramPerMinutes(UnitsNet.QuantityValue)" />
+        public static MassFlow GramPerMinutes<T>(this T value) =>
+            MassFlow.FromGramPerMinutes(Convert.ToDouble(value));
+
         /// <inheritdoc cref="MassFlow.FromGramsPerSecond(UnitsNet.QuantityValue)" />
         public static MassFlow GramsPerSecond<T>(this T value) =>
             MassFlow.FromGramsPerSecond(Convert.ToDouble(value));

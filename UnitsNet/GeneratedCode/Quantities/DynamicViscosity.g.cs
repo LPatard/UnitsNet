@@ -63,6 +63,8 @@ namespace UnitsNet
                     new UnitInfo<DynamicViscosityUnit>(DynamicViscosityUnit.Poise, BaseUnits.Undefined),
                     new UnitInfo<DynamicViscosityUnit>(DynamicViscosityUnit.PoundForceSecondPerSquareFoot, BaseUnits.Undefined),
                     new UnitInfo<DynamicViscosityUnit>(DynamicViscosityUnit.PoundForceSecondPerSquareInch, BaseUnits.Undefined),
+                    new UnitInfo<DynamicViscosityUnit>(DynamicViscosityUnit.PoundPerFootHour, BaseUnits.Undefined),
+                    new UnitInfo<DynamicViscosityUnit>(DynamicViscosityUnit.PoundPerFootSecond, BaseUnits.Undefined),
                     new UnitInfo<DynamicViscosityUnit>(DynamicViscosityUnit.Reyn, BaseUnits.Undefined),
                 },
                 BaseUnit, Zero, BaseDimensions);
@@ -217,6 +219,16 @@ namespace UnitsNet
         public double PoundsForceSecondPerSquareInch => As(DynamicViscosityUnit.PoundForceSecondPerSquareInch);
 
         /// <summary>
+        ///     Get DynamicViscosity in PoundPerFootHours.
+        /// </summary>
+        public double PoundPerFootHours => As(DynamicViscosityUnit.PoundPerFootHour);
+
+        /// <summary>
+        ///     Get DynamicViscosity in PoundPerFootSeconds.
+        /// </summary>
+        public double PoundPerFootSeconds => As(DynamicViscosityUnit.PoundPerFootSecond);
+
+        /// <summary>
         ///     Get DynamicViscosity in Reyns.
         /// </summary>
         public double Reyns => As(DynamicViscosityUnit.Reyn);
@@ -321,6 +333,24 @@ namespace UnitsNet
         {
             double value = (double) poundsforcesecondpersquareinch;
             return new DynamicViscosity(value, DynamicViscosityUnit.PoundForceSecondPerSquareInch);
+        }
+        /// <summary>
+        ///     Get DynamicViscosity from PoundPerFootHours.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static DynamicViscosity FromPoundPerFootHours(QuantityValue poundperfoothours)
+        {
+            double value = (double) poundperfoothours;
+            return new DynamicViscosity(value, DynamicViscosityUnit.PoundPerFootHour);
+        }
+        /// <summary>
+        ///     Get DynamicViscosity from PoundPerFootSeconds.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static DynamicViscosity FromPoundPerFootSeconds(QuantityValue poundperfootseconds)
+        {
+            double value = (double) poundperfootseconds;
+            return new DynamicViscosity(value, DynamicViscosityUnit.PoundPerFootSecond);
         }
         /// <summary>
         ///     Get DynamicViscosity from Reyns.
@@ -768,6 +798,8 @@ namespace UnitsNet
                 case DynamicViscosityUnit.Poise: return _value/10;
                 case DynamicViscosityUnit.PoundForceSecondPerSquareFoot: return _value * 4.7880258980335843e1;
                 case DynamicViscosityUnit.PoundForceSecondPerSquareInch: return _value * 6.8947572931683613e3;
+                case DynamicViscosityUnit.PoundPerFootHour: return _value*0.00041;
+                case DynamicViscosityUnit.PoundPerFootSecond: return _value*1.48816;
                 case DynamicViscosityUnit.Reyn: return _value * 6.8947572931683613e3;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to base units.");
@@ -802,6 +834,8 @@ namespace UnitsNet
                 case DynamicViscosityUnit.Poise: return baseUnitValue*10;
                 case DynamicViscosityUnit.PoundForceSecondPerSquareFoot: return baseUnitValue / 4.7880258980335843e1;
                 case DynamicViscosityUnit.PoundForceSecondPerSquareInch: return baseUnitValue / 6.8947572931683613e3;
+                case DynamicViscosityUnit.PoundPerFootHour: return baseUnitValue/0.00041;
+                case DynamicViscosityUnit.PoundPerFootSecond: return baseUnitValue/1.48816;
                 case DynamicViscosityUnit.Reyn: return baseUnitValue / 6.8947572931683613e3;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to {unit}.");

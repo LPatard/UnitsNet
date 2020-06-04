@@ -11,6 +11,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "ElectricResistivity",
+      "SingularName": "MilliohmPerMeter",
+      "PluralName": "MilliohmPerMeters",
+      "FromBaseToUnitFunc": "x/0.001",
+      "FromUnitToBaseFunc": "x*0.001",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "mΩ.m"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "OhmMeter",
       "PluralName": "OhmMeters",
       "FromUnitToBaseFunc": "x",

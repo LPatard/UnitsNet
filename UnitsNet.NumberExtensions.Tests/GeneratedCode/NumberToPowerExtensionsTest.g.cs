@@ -33,6 +33,14 @@ namespace UnitsNet.Tests
             Assert.Equal(Power.FromBritishThermalUnitsPerHour(2), 2.BritishThermalUnitsPerHour());
 
         [Fact]
+        public void NumberToBTUPerSecondsTest() =>
+            Assert.Equal(Power.FromBTUPerSeconds(2), 2.BTUPerSeconds());
+
+        [Fact]
+        public void NumberToCaloriePerSecondsTest() =>
+            Assert.Equal(Power.FromCaloriePerSeconds(2), 2.CaloriePerSeconds());
+
+        [Fact]
         public void NumberToDecawattsTest() =>
             Assert.Equal(Power.FromDecawatts(2), 2.Decawatts());
 
@@ -53,6 +61,10 @@ namespace UnitsNet.Tests
             Assert.Equal(Power.FromGigajoulesPerHour(2), 2.GigajoulesPerHour());
 
         [Fact]
+        public void NumberToGigajoulePerYearsTest() =>
+            Assert.Equal(Power.FromGigajoulePerYears(2), 2.GigajoulePerYears());
+
+        [Fact]
         public void NumberToGigawattsTest() =>
             Assert.Equal(Power.FromGigawatts(2), 2.Gigawatts());
 
@@ -67,6 +79,10 @@ namespace UnitsNet.Tests
         [Fact]
         public void NumberToKilobritishThermalUnitsPerHourTest() =>
             Assert.Equal(Power.FromKilobritishThermalUnitsPerHour(2), 2.KilobritishThermalUnitsPerHour());
+
+        [Fact]
+        public void NumberToKilocaloriePerSecondsTest() =>
+            Assert.Equal(Power.FromKilocaloriePerSeconds(2), 2.KilocaloriePerSeconds());
 
         [Fact]
         public void NumberToKilojoulesPerHourTest() =>
@@ -119,6 +135,10 @@ namespace UnitsNet.Tests
         [Fact]
         public void NumberToTerawattsTest() =>
             Assert.Equal(Power.FromTerawatts(2), 2.Terawatts());
+
+        [Fact]
+        public void NumberToTonOfRefrigerationsTest() =>
+            Assert.Equal(Power.FromTonOfRefrigerations(2), 2.TonOfRefrigerations());
 
         [Fact]
         public void NumberToWattsTest() =>

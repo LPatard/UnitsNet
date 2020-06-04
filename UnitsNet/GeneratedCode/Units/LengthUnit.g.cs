@@ -39,18 +39,21 @@ namespace UnitsNet.Units
         DtpPoint,
         Fathom,
         Foot,
+        Furlong,
         Hand,
         Hectometer,
         Inch,
         KilolightYear,
         Kilometer,
         Kiloparsec,
+        League,
 
         /// <summary>
         ///     A Light Year (ly) is the distance that light travel during an Earth year, ie 365 days.
         /// </summary>
         /// <remarks>https://en.wikipedia.org/wiki/Light-year</remarks>
         LightYear,
+        Link,
         MegalightYear,
         Megaparsec,
         Meter,
@@ -69,6 +72,7 @@ namespace UnitsNet.Units
         Parsec,
         PrinterPica,
         PrinterPoint,
+        Rod,
         Shackle,
 
         /// <summary>

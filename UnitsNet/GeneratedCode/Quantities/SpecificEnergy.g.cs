@@ -61,6 +61,7 @@ namespace UnitsNet
                     new UnitInfo<SpecificEnergyUnit>(SpecificEnergyUnit.GigawattDayPerShortTon, BaseUnits.Undefined),
                     new UnitInfo<SpecificEnergyUnit>(SpecificEnergyUnit.GigawattDayPerTonne, BaseUnits.Undefined),
                     new UnitInfo<SpecificEnergyUnit>(SpecificEnergyUnit.GigawattHourPerKilogram, BaseUnits.Undefined),
+                    new UnitInfo<SpecificEnergyUnit>(SpecificEnergyUnit.JoulePerGram, BaseUnits.Undefined),
                     new UnitInfo<SpecificEnergyUnit>(SpecificEnergyUnit.JoulePerKilogram, BaseUnits.Undefined),
                     new UnitInfo<SpecificEnergyUnit>(SpecificEnergyUnit.KilocaloriePerGram, BaseUnits.Undefined),
                     new UnitInfo<SpecificEnergyUnit>(SpecificEnergyUnit.KilojoulePerKilogram, BaseUnits.Undefined),
@@ -221,6 +222,11 @@ namespace UnitsNet
         ///     Get SpecificEnergy in GigawattHoursPerKilogram.
         /// </summary>
         public double GigawattHoursPerKilogram => As(SpecificEnergyUnit.GigawattHourPerKilogram);
+
+        /// <summary>
+        ///     Get SpecificEnergy in JoulePerGrams.
+        /// </summary>
+        public double JoulePerGrams => As(SpecificEnergyUnit.JoulePerGram);
 
         /// <summary>
         ///     Get SpecificEnergy in JoulesPerKilogram.
@@ -399,6 +405,15 @@ namespace UnitsNet
         {
             double value = (double) gigawatthoursperkilogram;
             return new SpecificEnergy(value, SpecificEnergyUnit.GigawattHourPerKilogram);
+        }
+        /// <summary>
+        ///     Get SpecificEnergy from JoulePerGrams.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static SpecificEnergy FromJoulePerGrams(QuantityValue joulepergrams)
+        {
+            double value = (double) joulepergrams;
+            return new SpecificEnergy(value, SpecificEnergyUnit.JoulePerGram);
         }
         /// <summary>
         ///     Get SpecificEnergy from JoulesPerKilogram.
@@ -1006,6 +1021,7 @@ namespace UnitsNet
                 case SpecificEnergyUnit.GigawattDayPerShortTon: return (_value*((24*3.6e3)/9.0718474e2)) * 1e9d;
                 case SpecificEnergyUnit.GigawattDayPerTonne: return (_value*((24*3.6e3)/1e3)) * 1e9d;
                 case SpecificEnergyUnit.GigawattHourPerKilogram: return (_value*3.6e3) * 1e9d;
+                case SpecificEnergyUnit.JoulePerGram: return _value*1000;
                 case SpecificEnergyUnit.JoulePerKilogram: return _value;
                 case SpecificEnergyUnit.KilocaloriePerGram: return (_value*4.184e3) * 1e3d;
                 case SpecificEnergyUnit.KilojoulePerKilogram: return (_value) * 1e3d;
@@ -1056,6 +1072,7 @@ namespace UnitsNet
                 case SpecificEnergyUnit.GigawattDayPerShortTon: return (baseUnitValue/((24*3.6e3)/9.0718474e2)) / 1e9d;
                 case SpecificEnergyUnit.GigawattDayPerTonne: return (baseUnitValue/((24*3.6e3)/1e3)) / 1e9d;
                 case SpecificEnergyUnit.GigawattHourPerKilogram: return (baseUnitValue/3.6e3) / 1e9d;
+                case SpecificEnergyUnit.JoulePerGram: return baseUnitValue/1000;
                 case SpecificEnergyUnit.JoulePerKilogram: return baseUnitValue;
                 case SpecificEnergyUnit.KilocaloriePerGram: return (baseUnitValue/4.184e3) / 1e3d;
                 case SpecificEnergyUnit.KilojoulePerKilogram: return (baseUnitValue) / 1e3d;

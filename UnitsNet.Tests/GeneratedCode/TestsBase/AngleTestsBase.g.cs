@@ -42,9 +42,11 @@ namespace UnitsNet.Tests
         protected abstract double DeciradiansInOneDegree { get; }
         protected abstract double DegreesInOneDegree { get; }
         protected abstract double GradiansInOneDegree { get; }
+        protected abstract double MeterPerMillimetersInOneDegree { get; }
         protected abstract double MicrodegreesInOneDegree { get; }
         protected abstract double MicroradiansInOneDegree { get; }
         protected abstract double MillidegreesInOneDegree { get; }
+        protected abstract double MillimeterPerMetersInOneDegree { get; }
         protected abstract double MilliradiansInOneDegree { get; }
         protected abstract double NanodegreesInOneDegree { get; }
         protected abstract double NanoradiansInOneDegree { get; }
@@ -58,9 +60,11 @@ namespace UnitsNet.Tests
         protected virtual double DeciradiansTolerance { get { return 1e-5; } }
         protected virtual double DegreesTolerance { get { return 1e-5; } }
         protected virtual double GradiansTolerance { get { return 1e-5; } }
+        protected virtual double MeterPerMillimetersTolerance { get { return 1e-5; } }
         protected virtual double MicrodegreesTolerance { get { return 1e-5; } }
         protected virtual double MicroradiansTolerance { get { return 1e-5; } }
         protected virtual double MillidegreesTolerance { get { return 1e-5; } }
+        protected virtual double MillimeterPerMetersTolerance { get { return 1e-5; } }
         protected virtual double MilliradiansTolerance { get { return 1e-5; } }
         protected virtual double NanodegreesTolerance { get { return 1e-5; } }
         protected virtual double NanoradiansTolerance { get { return 1e-5; } }
@@ -133,9 +137,11 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(DeciradiansInOneDegree, degree.Deciradians, DeciradiansTolerance);
             AssertEx.EqualTolerance(DegreesInOneDegree, degree.Degrees, DegreesTolerance);
             AssertEx.EqualTolerance(GradiansInOneDegree, degree.Gradians, GradiansTolerance);
+            AssertEx.EqualTolerance(MeterPerMillimetersInOneDegree, degree.MeterPerMillimeters, MeterPerMillimetersTolerance);
             AssertEx.EqualTolerance(MicrodegreesInOneDegree, degree.Microdegrees, MicrodegreesTolerance);
             AssertEx.EqualTolerance(MicroradiansInOneDegree, degree.Microradians, MicroradiansTolerance);
             AssertEx.EqualTolerance(MillidegreesInOneDegree, degree.Millidegrees, MillidegreesTolerance);
+            AssertEx.EqualTolerance(MillimeterPerMetersInOneDegree, degree.MillimeterPerMeters, MillimeterPerMetersTolerance);
             AssertEx.EqualTolerance(MilliradiansInOneDegree, degree.Milliradians, MilliradiansTolerance);
             AssertEx.EqualTolerance(NanodegreesInOneDegree, degree.Nanodegrees, NanodegreesTolerance);
             AssertEx.EqualTolerance(NanoradiansInOneDegree, degree.Nanoradians, NanoradiansTolerance);
@@ -170,37 +176,45 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(1, quantity05.Gradians, GradiansTolerance);
             Assert.Equal(AngleUnit.Gradian, quantity05.Unit);
 
-            var quantity06 = Angle.From(1, AngleUnit.Microdegree);
-            AssertEx.EqualTolerance(1, quantity06.Microdegrees, MicrodegreesTolerance);
-            Assert.Equal(AngleUnit.Microdegree, quantity06.Unit);
+            var quantity06 = Angle.From(1, AngleUnit.MeterPerMillimeter);
+            AssertEx.EqualTolerance(1, quantity06.MeterPerMillimeters, MeterPerMillimetersTolerance);
+            Assert.Equal(AngleUnit.MeterPerMillimeter, quantity06.Unit);
 
-            var quantity07 = Angle.From(1, AngleUnit.Microradian);
-            AssertEx.EqualTolerance(1, quantity07.Microradians, MicroradiansTolerance);
-            Assert.Equal(AngleUnit.Microradian, quantity07.Unit);
+            var quantity07 = Angle.From(1, AngleUnit.Microdegree);
+            AssertEx.EqualTolerance(1, quantity07.Microdegrees, MicrodegreesTolerance);
+            Assert.Equal(AngleUnit.Microdegree, quantity07.Unit);
 
-            var quantity08 = Angle.From(1, AngleUnit.Millidegree);
-            AssertEx.EqualTolerance(1, quantity08.Millidegrees, MillidegreesTolerance);
-            Assert.Equal(AngleUnit.Millidegree, quantity08.Unit);
+            var quantity08 = Angle.From(1, AngleUnit.Microradian);
+            AssertEx.EqualTolerance(1, quantity08.Microradians, MicroradiansTolerance);
+            Assert.Equal(AngleUnit.Microradian, quantity08.Unit);
 
-            var quantity09 = Angle.From(1, AngleUnit.Milliradian);
-            AssertEx.EqualTolerance(1, quantity09.Milliradians, MilliradiansTolerance);
-            Assert.Equal(AngleUnit.Milliradian, quantity09.Unit);
+            var quantity09 = Angle.From(1, AngleUnit.Millidegree);
+            AssertEx.EqualTolerance(1, quantity09.Millidegrees, MillidegreesTolerance);
+            Assert.Equal(AngleUnit.Millidegree, quantity09.Unit);
 
-            var quantity10 = Angle.From(1, AngleUnit.Nanodegree);
-            AssertEx.EqualTolerance(1, quantity10.Nanodegrees, NanodegreesTolerance);
-            Assert.Equal(AngleUnit.Nanodegree, quantity10.Unit);
+            var quantity10 = Angle.From(1, AngleUnit.MillimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity10.MillimeterPerMeters, MillimeterPerMetersTolerance);
+            Assert.Equal(AngleUnit.MillimeterPerMeter, quantity10.Unit);
 
-            var quantity11 = Angle.From(1, AngleUnit.Nanoradian);
-            AssertEx.EqualTolerance(1, quantity11.Nanoradians, NanoradiansTolerance);
-            Assert.Equal(AngleUnit.Nanoradian, quantity11.Unit);
+            var quantity11 = Angle.From(1, AngleUnit.Milliradian);
+            AssertEx.EqualTolerance(1, quantity11.Milliradians, MilliradiansTolerance);
+            Assert.Equal(AngleUnit.Milliradian, quantity11.Unit);
 
-            var quantity12 = Angle.From(1, AngleUnit.Radian);
-            AssertEx.EqualTolerance(1, quantity12.Radians, RadiansTolerance);
-            Assert.Equal(AngleUnit.Radian, quantity12.Unit);
+            var quantity12 = Angle.From(1, AngleUnit.Nanodegree);
+            AssertEx.EqualTolerance(1, quantity12.Nanodegrees, NanodegreesTolerance);
+            Assert.Equal(AngleUnit.Nanodegree, quantity12.Unit);
 
-            var quantity13 = Angle.From(1, AngleUnit.Revolution);
-            AssertEx.EqualTolerance(1, quantity13.Revolutions, RevolutionsTolerance);
-            Assert.Equal(AngleUnit.Revolution, quantity13.Unit);
+            var quantity13 = Angle.From(1, AngleUnit.Nanoradian);
+            AssertEx.EqualTolerance(1, quantity13.Nanoradians, NanoradiansTolerance);
+            Assert.Equal(AngleUnit.Nanoradian, quantity13.Unit);
+
+            var quantity14 = Angle.From(1, AngleUnit.Radian);
+            AssertEx.EqualTolerance(1, quantity14.Radians, RadiansTolerance);
+            Assert.Equal(AngleUnit.Radian, quantity14.Unit);
+
+            var quantity15 = Angle.From(1, AngleUnit.Revolution);
+            AssertEx.EqualTolerance(1, quantity15.Revolutions, RevolutionsTolerance);
+            Assert.Equal(AngleUnit.Revolution, quantity15.Unit);
 
         }
 
@@ -227,9 +241,11 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(DeciradiansInOneDegree, degree.As(AngleUnit.Deciradian), DeciradiansTolerance);
             AssertEx.EqualTolerance(DegreesInOneDegree, degree.As(AngleUnit.Degree), DegreesTolerance);
             AssertEx.EqualTolerance(GradiansInOneDegree, degree.As(AngleUnit.Gradian), GradiansTolerance);
+            AssertEx.EqualTolerance(MeterPerMillimetersInOneDegree, degree.As(AngleUnit.MeterPerMillimeter), MeterPerMillimetersTolerance);
             AssertEx.EqualTolerance(MicrodegreesInOneDegree, degree.As(AngleUnit.Microdegree), MicrodegreesTolerance);
             AssertEx.EqualTolerance(MicroradiansInOneDegree, degree.As(AngleUnit.Microradian), MicroradiansTolerance);
             AssertEx.EqualTolerance(MillidegreesInOneDegree, degree.As(AngleUnit.Millidegree), MillidegreesTolerance);
+            AssertEx.EqualTolerance(MillimeterPerMetersInOneDegree, degree.As(AngleUnit.MillimeterPerMeter), MillimeterPerMetersTolerance);
             AssertEx.EqualTolerance(MilliradiansInOneDegree, degree.As(AngleUnit.Milliradian), MilliradiansTolerance);
             AssertEx.EqualTolerance(NanodegreesInOneDegree, degree.As(AngleUnit.Nanodegree), NanodegreesTolerance);
             AssertEx.EqualTolerance(NanoradiansInOneDegree, degree.As(AngleUnit.Nanoradian), NanoradiansTolerance);
@@ -266,6 +282,10 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(GradiansInOneDegree, (double)gradianQuantity.Value, GradiansTolerance);
             Assert.Equal(AngleUnit.Gradian, gradianQuantity.Unit);
 
+            var meterpermillimeterQuantity = degree.ToUnit(AngleUnit.MeterPerMillimeter);
+            AssertEx.EqualTolerance(MeterPerMillimetersInOneDegree, (double)meterpermillimeterQuantity.Value, MeterPerMillimetersTolerance);
+            Assert.Equal(AngleUnit.MeterPerMillimeter, meterpermillimeterQuantity.Unit);
+
             var microdegreeQuantity = degree.ToUnit(AngleUnit.Microdegree);
             AssertEx.EqualTolerance(MicrodegreesInOneDegree, (double)microdegreeQuantity.Value, MicrodegreesTolerance);
             Assert.Equal(AngleUnit.Microdegree, microdegreeQuantity.Unit);
@@ -277,6 +297,10 @@ namespace UnitsNet.Tests
             var millidegreeQuantity = degree.ToUnit(AngleUnit.Millidegree);
             AssertEx.EqualTolerance(MillidegreesInOneDegree, (double)millidegreeQuantity.Value, MillidegreesTolerance);
             Assert.Equal(AngleUnit.Millidegree, millidegreeQuantity.Unit);
+
+            var millimeterpermeterQuantity = degree.ToUnit(AngleUnit.MillimeterPerMeter);
+            AssertEx.EqualTolerance(MillimeterPerMetersInOneDegree, (double)millimeterpermeterQuantity.Value, MillimeterPerMetersTolerance);
+            Assert.Equal(AngleUnit.MillimeterPerMeter, millimeterpermeterQuantity.Unit);
 
             var milliradianQuantity = degree.ToUnit(AngleUnit.Milliradian);
             AssertEx.EqualTolerance(MilliradiansInOneDegree, (double)milliradianQuantity.Value, MilliradiansTolerance);
@@ -309,9 +333,11 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(1, Angle.FromDeciradians(degree.Deciradians).Degrees, DeciradiansTolerance);
             AssertEx.EqualTolerance(1, Angle.FromDegrees(degree.Degrees).Degrees, DegreesTolerance);
             AssertEx.EqualTolerance(1, Angle.FromGradians(degree.Gradians).Degrees, GradiansTolerance);
+            AssertEx.EqualTolerance(1, Angle.FromMeterPerMillimeters(degree.MeterPerMillimeters).Degrees, MeterPerMillimetersTolerance);
             AssertEx.EqualTolerance(1, Angle.FromMicrodegrees(degree.Microdegrees).Degrees, MicrodegreesTolerance);
             AssertEx.EqualTolerance(1, Angle.FromMicroradians(degree.Microradians).Degrees, MicroradiansTolerance);
             AssertEx.EqualTolerance(1, Angle.FromMillidegrees(degree.Millidegrees).Degrees, MillidegreesTolerance);
+            AssertEx.EqualTolerance(1, Angle.FromMillimeterPerMeters(degree.MillimeterPerMeters).Degrees, MillimeterPerMetersTolerance);
             AssertEx.EqualTolerance(1, Angle.FromMilliradians(degree.Milliradians).Degrees, MilliradiansTolerance);
             AssertEx.EqualTolerance(1, Angle.FromNanodegrees(degree.Nanodegrees).Degrees, NanodegreesTolerance);
             AssertEx.EqualTolerance(1, Angle.FromNanoradians(degree.Nanoradians).Degrees, NanoradiansTolerance);
@@ -479,9 +505,11 @@ namespace UnitsNet.Tests
                 Assert.Equal("1 drad", new Angle(1, AngleUnit.Deciradian).ToString());
                 Assert.Equal("1 °", new Angle(1, AngleUnit.Degree).ToString());
                 Assert.Equal("1 g", new Angle(1, AngleUnit.Gradian).ToString());
+                Assert.Equal("1 m/mm", new Angle(1, AngleUnit.MeterPerMillimeter).ToString());
                 Assert.Equal("1 µ°", new Angle(1, AngleUnit.Microdegree).ToString());
                 Assert.Equal("1 µrad", new Angle(1, AngleUnit.Microradian).ToString());
                 Assert.Equal("1 m°", new Angle(1, AngleUnit.Millidegree).ToString());
+                Assert.Equal("1 mm/m", new Angle(1, AngleUnit.MillimeterPerMeter).ToString());
                 Assert.Equal("1 mrad", new Angle(1, AngleUnit.Milliradian).ToString());
                 Assert.Equal("1 n°", new Angle(1, AngleUnit.Nanodegree).ToString());
                 Assert.Equal("1 nrad", new Angle(1, AngleUnit.Nanoradian).ToString());
@@ -506,9 +534,11 @@ namespace UnitsNet.Tests
             Assert.Equal("1 drad", new Angle(1, AngleUnit.Deciradian).ToString(swedishCulture));
             Assert.Equal("1 °", new Angle(1, AngleUnit.Degree).ToString(swedishCulture));
             Assert.Equal("1 g", new Angle(1, AngleUnit.Gradian).ToString(swedishCulture));
+            Assert.Equal("1 m/mm", new Angle(1, AngleUnit.MeterPerMillimeter).ToString(swedishCulture));
             Assert.Equal("1 µ°", new Angle(1, AngleUnit.Microdegree).ToString(swedishCulture));
             Assert.Equal("1 µrad", new Angle(1, AngleUnit.Microradian).ToString(swedishCulture));
             Assert.Equal("1 m°", new Angle(1, AngleUnit.Millidegree).ToString(swedishCulture));
+            Assert.Equal("1 mm/m", new Angle(1, AngleUnit.MillimeterPerMeter).ToString(swedishCulture));
             Assert.Equal("1 mrad", new Angle(1, AngleUnit.Milliradian).ToString(swedishCulture));
             Assert.Equal("1 n°", new Angle(1, AngleUnit.Nanodegree).ToString(swedishCulture));
             Assert.Equal("1 nrad", new Angle(1, AngleUnit.Nanoradian).ToString(swedishCulture));

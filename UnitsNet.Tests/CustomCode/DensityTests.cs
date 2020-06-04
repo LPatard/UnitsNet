@@ -87,6 +87,8 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double KilogramsPerLiterInOneKilogramPerCubicMeter => 1e-3;
 
+        protected override double KilogramPerCubicDecimetersInOneKilogramPerCubicMeter => throw new System.NotImplementedException();
+
         [Fact]
         public static void DensityTimesVolumeEqualsMass()
         {

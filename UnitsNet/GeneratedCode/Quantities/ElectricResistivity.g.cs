@@ -63,6 +63,7 @@ namespace UnitsNet
                     new UnitInfo<ElectricResistivityUnit>(ElectricResistivityUnit.MicroohmMeter, BaseUnits.Undefined),
                     new UnitInfo<ElectricResistivityUnit>(ElectricResistivityUnit.MilliohmCentimeter, BaseUnits.Undefined),
                     new UnitInfo<ElectricResistivityUnit>(ElectricResistivityUnit.MilliohmMeter, BaseUnits.Undefined),
+                    new UnitInfo<ElectricResistivityUnit>(ElectricResistivityUnit.MilliohmPerMeter, BaseUnits.Undefined),
                     new UnitInfo<ElectricResistivityUnit>(ElectricResistivityUnit.NanoohmCentimeter, BaseUnits.Undefined),
                     new UnitInfo<ElectricResistivityUnit>(ElectricResistivityUnit.NanoohmMeter, BaseUnits.Undefined),
                     new UnitInfo<ElectricResistivityUnit>(ElectricResistivityUnit.OhmCentimeter, BaseUnits.Undefined),
@@ -222,6 +223,11 @@ namespace UnitsNet
         public double MilliohmMeters => As(ElectricResistivityUnit.MilliohmMeter);
 
         /// <summary>
+        ///     Get ElectricResistivity in MilliohmPerMeters.
+        /// </summary>
+        public double MilliohmPerMeters => As(ElectricResistivityUnit.MilliohmPerMeter);
+
+        /// <summary>
         ///     Get ElectricResistivity in NanoohmsCentimeter.
         /// </summary>
         public double NanoohmsCentimeter => As(ElectricResistivityUnit.NanoohmCentimeter);
@@ -351,6 +357,15 @@ namespace UnitsNet
         {
             double value = (double) milliohmmeters;
             return new ElectricResistivity(value, ElectricResistivityUnit.MilliohmMeter);
+        }
+        /// <summary>
+        ///     Get ElectricResistivity from MilliohmPerMeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static ElectricResistivity FromMilliohmPerMeters(QuantityValue milliohmpermeters)
+        {
+            double value = (double) milliohmpermeters;
+            return new ElectricResistivity(value, ElectricResistivityUnit.MilliohmPerMeter);
         }
         /// <summary>
         ///     Get ElectricResistivity from NanoohmsCentimeter.
@@ -843,6 +858,7 @@ namespace UnitsNet
                 case ElectricResistivityUnit.MicroohmMeter: return (_value) * 1e-6d;
                 case ElectricResistivityUnit.MilliohmCentimeter: return (_value/100) * 1e-3d;
                 case ElectricResistivityUnit.MilliohmMeter: return (_value) * 1e-3d;
+                case ElectricResistivityUnit.MilliohmPerMeter: return _value*0.001;
                 case ElectricResistivityUnit.NanoohmCentimeter: return (_value/100) * 1e-9d;
                 case ElectricResistivityUnit.NanoohmMeter: return (_value) * 1e-9d;
                 case ElectricResistivityUnit.OhmCentimeter: return _value/100;
@@ -882,6 +898,7 @@ namespace UnitsNet
                 case ElectricResistivityUnit.MicroohmMeter: return (baseUnitValue) / 1e-6d;
                 case ElectricResistivityUnit.MilliohmCentimeter: return (baseUnitValue*100) / 1e-3d;
                 case ElectricResistivityUnit.MilliohmMeter: return (baseUnitValue) / 1e-3d;
+                case ElectricResistivityUnit.MilliohmPerMeter: return baseUnitValue/0.001;
                 case ElectricResistivityUnit.NanoohmCentimeter: return (baseUnitValue*100) / 1e-9d;
                 case ElectricResistivityUnit.NanoohmMeter: return (baseUnitValue) / 1e-9d;
                 case ElectricResistivityUnit.OhmCentimeter: return baseUnitValue*100;

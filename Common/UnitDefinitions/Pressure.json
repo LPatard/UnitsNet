@@ -9,6 +9,96 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Pressure",
+      "SingularName": "WaterMillimeter",
+      "PluralName": "WaterMillimeters",
+      "FromBaseToUnitFunc": "x/9.8",
+      "FromUnitToBaseFunc": "x*9.8",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "mmCE"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Pressure",
+      "SingularName": "WaterMeter",
+      "PluralName": "WaterMeters",
+      "FromBaseToUnitFunc": "x/9800",
+      "FromUnitToBaseFunc": "x*9800",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "mCE"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Pressure",
+      "SingularName": "DecanewtonPerSquareCentimeter",
+      "PluralName": "DecanewtonPerSquareCentimeters",
+      "FromBaseToUnitFunc": "x/10000",
+      "FromUnitToBaseFunc": "x*10000",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "daN/cm²"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Pressure",
+      "SingularName": "DecanewtonPerSquareMeter",
+      "PluralName": "DecanewtonPerSquareMeters",
+      "FromBaseToUnitFunc": "x/10",
+      "FromUnitToBaseFunc": "x*10",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "daN/m²"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Pressure",
+      "SingularName": "FootOfWater",
+      "PluralName": "FootOfWaters",
+      "FromBaseToUnitFunc": "x/2988.98",
+      "FromUnitToBaseFunc": "x*2988.98",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "ftH2O"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Pressure",
+      "SingularName": "MeterOfWaterColumn",
+      "PluralName": "MeterOfWaterColumns",
+      "FromBaseToUnitFunc": "x/9806.65",
+      "FromUnitToBaseFunc": "x*9806.65",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "mH2O"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "Pascal",
       "PluralName": "Pascals",
       "BaseUnits": {

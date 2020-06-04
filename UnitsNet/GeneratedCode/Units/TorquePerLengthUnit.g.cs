@@ -26,6 +26,7 @@ namespace UnitsNet.Units
     public enum TorquePerLengthUnit
     {
         Undefined = 0,
+        DecanewtonMeterPerMeter,
         KilogramForceCentimeterPerMeter,
         KilogramForceMeterPerMeter,
         KilogramForceMillimeterPerMeter,

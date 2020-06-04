@@ -1,0 +1,21 @@
+{
+    "Name": "BaudRate",
+    "BaseUnit": "Baud",
+    "Units": [
+        {
+            "UnitsNet_Domain": "BaudRate",
+            "SingularName": "Baud",
+            "PluralName": "Bauds",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "Bd"
+                    ]
+                }
+            ]
+        }
+    ]
+}

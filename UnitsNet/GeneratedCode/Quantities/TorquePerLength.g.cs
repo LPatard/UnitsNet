@@ -52,6 +52,7 @@ namespace UnitsNet
 
             Info = new QuantityInfo<TorquePerLengthUnit>(QuantityType.TorquePerLength,
                 new UnitInfo<TorquePerLengthUnit>[] {
+                    new UnitInfo<TorquePerLengthUnit>(TorquePerLengthUnit.DecanewtonMeterPerMeter, BaseUnits.Undefined),
                     new UnitInfo<TorquePerLengthUnit>(TorquePerLengthUnit.KilogramForceCentimeterPerMeter, BaseUnits.Undefined),
                     new UnitInfo<TorquePerLengthUnit>(TorquePerLengthUnit.KilogramForceMeterPerMeter, BaseUnits.Undefined),
                     new UnitInfo<TorquePerLengthUnit>(TorquePerLengthUnit.KilogramForceMillimeterPerMeter, BaseUnits.Undefined),
@@ -184,6 +185,11 @@ namespace UnitsNet
         #endregion
 
         #region Conversion Properties
+
+        /// <summary>
+        ///     Get TorquePerLength in DecanewtonMeterPerMeters.
+        /// </summary>
+        public double DecanewtonMeterPerMeters => As(TorquePerLengthUnit.DecanewtonMeterPerMeter);
 
         /// <summary>
         ///     Get TorquePerLength in KilogramForceCentimetersPerMeter.
@@ -319,6 +325,15 @@ namespace UnitsNet
 
         #region Static Factory Methods
 
+        /// <summary>
+        ///     Get TorquePerLength from DecanewtonMeterPerMeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static TorquePerLength FromDecanewtonMeterPerMeters(QuantityValue decanewtonmeterpermeters)
+        {
+            double value = (double) decanewtonmeterpermeters;
+            return new TorquePerLength(value, TorquePerLengthUnit.DecanewtonMeterPerMeter);
+        }
         /// <summary>
         ///     Get TorquePerLength from KilogramForceCentimetersPerMeter.
         /// </summary>
@@ -937,6 +952,7 @@ namespace UnitsNet
         {
             switch(Unit)
             {
+                case TorquePerLengthUnit.DecanewtonMeterPerMeter: return _value*10;
                 case TorquePerLengthUnit.KilogramForceCentimeterPerMeter: return _value*0.0980665019960652;
                 case TorquePerLengthUnit.KilogramForceMeterPerMeter: return _value*9.80665019960652;
                 case TorquePerLengthUnit.KilogramForceMillimeterPerMeter: return _value*0.00980665019960652;
@@ -983,6 +999,7 @@ namespace UnitsNet
 
             switch(unit)
             {
+                case TorquePerLengthUnit.DecanewtonMeterPerMeter: return baseUnitValue/10;
                 case TorquePerLengthUnit.KilogramForceCentimeterPerMeter: return baseUnitValue*10.1971619222242;
                 case TorquePerLengthUnit.KilogramForceMeterPerMeter: return baseUnitValue*0.101971619222242;
                 case TorquePerLengthUnit.KilogramForceMillimeterPerMeter: return baseUnitValue*101.971619222242;

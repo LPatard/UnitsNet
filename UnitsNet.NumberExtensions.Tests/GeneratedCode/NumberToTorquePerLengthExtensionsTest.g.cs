@@ -25,6 +25,10 @@ namespace UnitsNet.Tests
     public class NumberToTorquePerLengthExtensionsTests
     {
         [Fact]
+        public void NumberToDecanewtonMeterPerMetersTest() =>
+            Assert.Equal(TorquePerLength.FromDecanewtonMeterPerMeters(2), 2.DecanewtonMeterPerMeters());
+
+        [Fact]
         public void NumberToKilogramForceCentimetersPerMeterTest() =>
             Assert.Equal(TorquePerLength.FromKilogramForceCentimetersPerMeter(2), 2.KilogramForceCentimetersPerMeter());
 

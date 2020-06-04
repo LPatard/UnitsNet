@@ -1,0 +1,21 @@
+{
+    "Name": "Activity",
+    "BaseUnit": "Becquerel",
+    "Units": [
+        {
+            "UnitsNet_Domain": "Activity",
+            "SingularName": "Becquerel",
+            "PluralName": "Becquerels",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "Bq"
+                    ]
+                }
+            ]
+        }
+    ]
+}

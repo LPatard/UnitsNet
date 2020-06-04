@@ -34,6 +34,7 @@ namespace UnitsNet.Units
         MicroohmMeter,
         MilliohmCentimeter,
         MilliohmMeter,
+        MilliohmPerMeter,
         NanoohmCentimeter,
         NanoohmMeter,
         OhmCentimeter,

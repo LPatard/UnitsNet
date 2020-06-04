@@ -1,0 +1,22 @@
+
+{
+    "Name": "ThermalConductance",
+    "BaseUnit": "WattPerKelvin",
+    "Units": [
+        {
+            "UnitsNet_Domain": "ThermalConductance",
+            "SingularName": "WattPerKelvin",
+            "PluralName": "WattPerKelvins",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "W/K"
+                    ]
+                }
+            ]
+        }
+    ]
+}

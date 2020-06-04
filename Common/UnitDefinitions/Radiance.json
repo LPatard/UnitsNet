@@ -1,0 +1,21 @@
+{
+    "Name": "Radiance",
+    "BaseUnit": "WattPerSquareMeterSteradian",
+    "Units": [
+        {
+            "UnitsNet_Domain": "Radiance",
+            "SingularName": "WattPerSquareMeterSteradian",
+            "PluralName": "WattPerSquareMeterSteradians",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "W/(m².sr)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

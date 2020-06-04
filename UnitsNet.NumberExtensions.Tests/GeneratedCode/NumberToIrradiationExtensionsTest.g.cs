@@ -45,6 +45,10 @@ namespace UnitsNet.Tests
             Assert.Equal(Irradiation.FromKilowattHoursPerSquareMeter(2), 2.KilowattHoursPerSquareMeter());
 
         [Fact]
+        public void NumberToMegajoulePerSquareMetersTest() =>
+            Assert.Equal(Irradiation.FromMegajoulePerSquareMeters(2), 2.MegajoulePerSquareMeters());
+
+        [Fact]
         public void NumberToMillijoulesPerSquareCentimeterTest() =>
             Assert.Equal(Irradiation.FromMillijoulesPerSquareCentimeter(2), 2.MillijoulesPerSquareCentimeter());
 

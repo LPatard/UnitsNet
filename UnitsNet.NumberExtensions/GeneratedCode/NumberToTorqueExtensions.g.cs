@@ -28,6 +28,10 @@ namespace UnitsNet.NumberExtensions.NumberToTorque
     /// </summary>
     public static class NumberToTorqueExtensions
     {
+        /// <inheritdoc cref="Torque.FromDecanewtonMeters(UnitsNet.QuantityValue)" />
+        public static Torque DecanewtonMeters<T>(this T value) =>
+            Torque.FromDecanewtonMeters(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Torque.FromKilogramForceCentimeters(UnitsNet.QuantityValue)" />
         public static Torque KilogramForceCentimeters<T>(this T value) =>
             Torque.FromKilogramForceCentimeters(Convert.ToDouble(value));
@@ -59,6 +63,10 @@ namespace UnitsNet.NumberExtensions.NumberToTorque
         /// <inheritdoc cref="Torque.FromKilopoundForceInches(UnitsNet.QuantityValue)" />
         public static Torque KilopoundForceInches<T>(this T value) =>
             Torque.FromKilopoundForceInches(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Torque.FromKipsPerInchs(UnitsNet.QuantityValue)" />
+        public static Torque KipsPerInchs<T>(this T value) =>
+            Torque.FromKipsPerInchs(Convert.ToDouble(value));
 
         /// <inheritdoc cref="Torque.FromMeganewtonCentimeters(UnitsNet.QuantityValue)" />
         public static Torque MeganewtonCentimeters<T>(this T value) =>
@@ -99,6 +107,10 @@ namespace UnitsNet.NumberExtensions.NumberToTorque
         /// <inheritdoc cref="Torque.FromPoundForceInches(UnitsNet.QuantityValue)" />
         public static Torque PoundForceInches<T>(this T value) =>
             Torque.FromPoundForceInches(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Torque.FromTonForcePerMeters(UnitsNet.QuantityValue)" />
+        public static Torque TonForcePerMeters<T>(this T value) =>
+            Torque.FromTonForcePerMeters(Convert.ToDouble(value));
 
         /// <inheritdoc cref="Torque.FromTonneForceCentimeters(UnitsNet.QuantityValue)" />
         public static Torque TonneForceCentimeters<T>(this T value) =>

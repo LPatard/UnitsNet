@@ -40,6 +40,14 @@ namespace UnitsNet.NumberExtensions.NumberToPressure
         public static Pressure Centibars<T>(this T value) =>
             Pressure.FromCentibars(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Pressure.FromDecanewtonPerSquareCentimeters(UnitsNet.QuantityValue)" />
+        public static Pressure DecanewtonPerSquareCentimeters<T>(this T value) =>
+            Pressure.FromDecanewtonPerSquareCentimeters(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Pressure.FromDecanewtonPerSquareMeters(UnitsNet.QuantityValue)" />
+        public static Pressure DecanewtonPerSquareMeters<T>(this T value) =>
+            Pressure.FromDecanewtonPerSquareMeters(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Pressure.FromDecapascals(UnitsNet.QuantityValue)" />
         public static Pressure Decapascals<T>(this T value) =>
             Pressure.FromDecapascals(Convert.ToDouble(value));
@@ -55,6 +63,10 @@ namespace UnitsNet.NumberExtensions.NumberToPressure
         /// <inheritdoc cref="Pressure.FromFeetOfHead(UnitsNet.QuantityValue)" />
         public static Pressure FeetOfHead<T>(this T value) =>
             Pressure.FromFeetOfHead(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Pressure.FromFootOfWaters(UnitsNet.QuantityValue)" />
+        public static Pressure FootOfWaters<T>(this T value) =>
+            Pressure.FromFootOfWaters(Convert.ToDouble(value));
 
         /// <inheritdoc cref="Pressure.FromGigapascals(UnitsNet.QuantityValue)" />
         public static Pressure Gigapascals<T>(this T value) =>
@@ -128,6 +140,10 @@ namespace UnitsNet.NumberExtensions.NumberToPressure
         public static Pressure MetersOfHead<T>(this T value) =>
             Pressure.FromMetersOfHead(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Pressure.FromMeterOfWaterColumns(UnitsNet.QuantityValue)" />
+        public static Pressure MeterOfWaterColumns<T>(this T value) =>
+            Pressure.FromMeterOfWaterColumns(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Pressure.FromMicrobars(UnitsNet.QuantityValue)" />
         public static Pressure Microbars<T>(this T value) =>
             Pressure.FromMicrobars(Convert.ToDouble(value));
@@ -195,6 +211,14 @@ namespace UnitsNet.NumberExtensions.NumberToPressure
         /// <inheritdoc cref="Pressure.FromTorrs(UnitsNet.QuantityValue)" />
         public static Pressure Torrs<T>(this T value) =>
             Pressure.FromTorrs(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Pressure.FromWaterMeters(UnitsNet.QuantityValue)" />
+        public static Pressure WaterMeters<T>(this T value) =>
+            Pressure.FromWaterMeters(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Pressure.FromWaterMillimeters(UnitsNet.QuantityValue)" />
+        public static Pressure WaterMillimeters<T>(this T value) =>
+            Pressure.FromWaterMillimeters(Convert.ToDouble(value));
 
     }
 }

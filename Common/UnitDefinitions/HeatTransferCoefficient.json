@@ -9,6 +9,36 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "HeatTransferCoefficient",
+      "SingularName": "WattPerSquareMetterPerKelvin",
+      "PluralName": "WattPerSquareMetterPerKelvins",
+      "FromBaseToUnitFunc": "x",
+      "FromUnitToBaseFunc": "x",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "W/m2/K"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "HeatTransferCoefficient",
+      "SingularName": "BtuPerHourSquarefeetFahrenheit",
+      "PluralName": "BtuPerHourSquarefeetFahrenheits",
+      "FromBaseToUnitFunc": "x/5.67826334111",
+      "FromUnitToBaseFunc": "x*5.67826334111",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "BTU/(h·ft²·°F)"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "WattPerSquareMeterKelvin",
       "PluralName": "WattsPerSquareMeterKelvin",
       "FromUnitToBaseFunc": "x",

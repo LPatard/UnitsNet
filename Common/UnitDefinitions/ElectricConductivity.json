@@ -11,6 +11,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "ElectricConductivity",
+      "SingularName": "MillisiemensPerCentimeter",
+      "PluralName": "MillisiemensPerCentimeters",
+      "FromBaseToUnitFunc": "x/0.1",
+      "FromUnitToBaseFunc": "x*0.1",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "mS/cm"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "SiemensPerMeter",
       "PluralName": "SiemensPerMeter",
       "BaseUnits": {

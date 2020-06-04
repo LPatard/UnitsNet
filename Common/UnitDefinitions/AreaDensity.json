@@ -8,6 +8,66 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "AreaDensity",
+      "SingularName": "GramPerSquareMeter",
+      "PluralName": "GramPerSquareMeters",
+      "FromBaseToUnitFunc": "x/0.001",
+      "FromUnitToBaseFunc": "x*0.001",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "g/m²"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "AreaDensity",
+      "SingularName": "KilogramPerSquareCentimeter",
+      "PluralName": "KilogramPerSquareCentimeters",
+      "FromBaseToUnitFunc": "x/10000",
+      "FromUnitToBaseFunc": "x*10000",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "kg/cm²"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "AreaDensity",
+      "SingularName": "KipsPerSquareFoot",
+      "PluralName": "KipsPerSquareFoots",
+      "FromBaseToUnitFunc": "x/4882.42763638",
+      "FromUnitToBaseFunc": "x*4882.42763638",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "kip/ft²"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "AreaDensity",
+      "SingularName": "KipsPerSquareInch",
+      "PluralName": "KipsPerSquareInchs",
+      "FromBaseToUnitFunc": "x/703069.579639",
+      "FromUnitToBaseFunc": "x*703069.579639",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "ksi"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "KilogramPerSquareMeter",
       "PluralName": "KilogramsPerSquareMeter",
       "BaseUnits": {

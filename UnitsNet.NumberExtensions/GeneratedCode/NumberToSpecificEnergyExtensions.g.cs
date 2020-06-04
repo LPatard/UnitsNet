@@ -52,6 +52,10 @@ namespace UnitsNet.NumberExtensions.NumberToSpecificEnergy
         public static SpecificEnergy GigawattHoursPerKilogram<T>(this T value) =>
             SpecificEnergy.FromGigawattHoursPerKilogram(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="SpecificEnergy.FromJoulePerGrams(UnitsNet.QuantityValue)" />
+        public static SpecificEnergy JoulePerGrams<T>(this T value) =>
+            SpecificEnergy.FromJoulePerGrams(Convert.ToDouble(value));
+
         /// <inheritdoc cref="SpecificEnergy.FromJoulesPerKilogram(UnitsNet.QuantityValue)" />
         public static SpecificEnergy JoulesPerKilogram<T>(this T value) =>
             SpecificEnergy.FromJoulesPerKilogram(Convert.ToDouble(value));

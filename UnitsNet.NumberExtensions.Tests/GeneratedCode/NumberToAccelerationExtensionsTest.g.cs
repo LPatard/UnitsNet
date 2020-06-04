@@ -65,6 +65,10 @@ namespace UnitsNet.Tests
             Assert.Equal(Acceleration.FromMicrometersPerSecondSquared(2), 2.MicrometersPerSecondSquared());
 
         [Fact]
+        public void NumberToMilesPerSquareSecondsTest() =>
+            Assert.Equal(Acceleration.FromMilesPerSquareSeconds(2), 2.MilesPerSquareSeconds());
+
+        [Fact]
         public void NumberToMillimetersPerSecondSquaredTest() =>
             Assert.Equal(Acceleration.FromMillimetersPerSecondSquared(2), 2.MillimetersPerSecondSquared());
 

@@ -55,6 +55,7 @@ namespace UnitsNet
                     new UnitInfo<AreaUnit>(AreaUnit.Acre, BaseUnits.Undefined),
                     new UnitInfo<AreaUnit>(AreaUnit.Hectare, BaseUnits.Undefined),
                     new UnitInfo<AreaUnit>(AreaUnit.SquareCentimeter, new BaseUnits(length: LengthUnit.Centimeter)),
+                    new UnitInfo<AreaUnit>(AreaUnit.SquareChain, BaseUnits.Undefined),
                     new UnitInfo<AreaUnit>(AreaUnit.SquareDecimeter, new BaseUnits(length: LengthUnit.Decimeter)),
                     new UnitInfo<AreaUnit>(AreaUnit.SquareFoot, new BaseUnits(length: LengthUnit.Foot)),
                     new UnitInfo<AreaUnit>(AreaUnit.SquareInch, new BaseUnits(length: LengthUnit.Inch)),
@@ -65,6 +66,7 @@ namespace UnitsNet
                     new UnitInfo<AreaUnit>(AreaUnit.SquareMillimeter, new BaseUnits(length: LengthUnit.Millimeter)),
                     new UnitInfo<AreaUnit>(AreaUnit.SquareNauticalMile, BaseUnits.Undefined),
                     new UnitInfo<AreaUnit>(AreaUnit.SquareYard, new BaseUnits(length: LengthUnit.Yard)),
+                    new UnitInfo<AreaUnit>(AreaUnit.ThousandCircularMil, BaseUnits.Undefined),
                     new UnitInfo<AreaUnit>(AreaUnit.UsSurveySquareFoot, new BaseUnits(length: LengthUnit.UsSurveyFoot)),
                 },
                 BaseUnit, Zero, BaseDimensions);
@@ -194,6 +196,11 @@ namespace UnitsNet
         public double SquareCentimeters => As(AreaUnit.SquareCentimeter);
 
         /// <summary>
+        ///     Get Area in SquareChains.
+        /// </summary>
+        public double SquareChains => As(AreaUnit.SquareChain);
+
+        /// <summary>
         ///     Get Area in SquareDecimeters.
         /// </summary>
         public double SquareDecimeters => As(AreaUnit.SquareDecimeter);
@@ -242,6 +249,11 @@ namespace UnitsNet
         ///     Get Area in SquareYards.
         /// </summary>
         public double SquareYards => As(AreaUnit.SquareYard);
+
+        /// <summary>
+        ///     Get Area in ThousandCircularMils.
+        /// </summary>
+        public double ThousandCircularMils => As(AreaUnit.ThousandCircularMil);
 
         /// <summary>
         ///     Get Area in UsSurveySquareFeet.
@@ -303,6 +315,15 @@ namespace UnitsNet
         {
             double value = (double) squarecentimeters;
             return new Area(value, AreaUnit.SquareCentimeter);
+        }
+        /// <summary>
+        ///     Get Area from SquareChains.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Area FromSquareChains(QuantityValue squarechains)
+        {
+            double value = (double) squarechains;
+            return new Area(value, AreaUnit.SquareChain);
         }
         /// <summary>
         ///     Get Area from SquareDecimeters.
@@ -393,6 +414,15 @@ namespace UnitsNet
         {
             double value = (double) squareyards;
             return new Area(value, AreaUnit.SquareYard);
+        }
+        /// <summary>
+        ///     Get Area from ThousandCircularMils.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Area FromThousandCircularMils(QuantityValue thousandcircularmils)
+        {
+            double value = (double) thousandcircularmils;
+            return new Area(value, AreaUnit.ThousandCircularMil);
         }
         /// <summary>
         ///     Get Area from UsSurveySquareFeet.
@@ -835,6 +865,7 @@ namespace UnitsNet
                 case AreaUnit.Acre: return _value*4046.85642;
                 case AreaUnit.Hectare: return _value*1e4;
                 case AreaUnit.SquareCentimeter: return _value*1e-4;
+                case AreaUnit.SquareChain: return _value*404.685642;
                 case AreaUnit.SquareDecimeter: return _value*1e-2;
                 case AreaUnit.SquareFoot: return _value*0.092903;
                 case AreaUnit.SquareInch: return _value*0.00064516;
@@ -845,6 +876,7 @@ namespace UnitsNet
                 case AreaUnit.SquareMillimeter: return _value*1e-6;
                 case AreaUnit.SquareNauticalMile: return _value*3429904;
                 case AreaUnit.SquareYard: return _value*0.836127;
+                case AreaUnit.ThousandCircularMil: return _value*5.06707479097e-7;
                 case AreaUnit.UsSurveySquareFoot: return _value*0.09290341161;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to base units.");
@@ -874,6 +906,7 @@ namespace UnitsNet
                 case AreaUnit.Acre: return baseUnitValue/4046.85642;
                 case AreaUnit.Hectare: return baseUnitValue/1e4;
                 case AreaUnit.SquareCentimeter: return baseUnitValue/1e-4;
+                case AreaUnit.SquareChain: return baseUnitValue/404.685642;
                 case AreaUnit.SquareDecimeter: return baseUnitValue/1e-2;
                 case AreaUnit.SquareFoot: return baseUnitValue/0.092903;
                 case AreaUnit.SquareInch: return baseUnitValue/0.00064516;
@@ -884,6 +917,7 @@ namespace UnitsNet
                 case AreaUnit.SquareMillimeter: return baseUnitValue/1e-6;
                 case AreaUnit.SquareNauticalMile: return baseUnitValue/3429904;
                 case AreaUnit.SquareYard: return baseUnitValue/0.836127;
+                case AreaUnit.ThousandCircularMil: return baseUnitValue/5.06707479097e-7;
                 case AreaUnit.UsSurveySquareFoot: return baseUnitValue/0.09290341161;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to {unit}.");

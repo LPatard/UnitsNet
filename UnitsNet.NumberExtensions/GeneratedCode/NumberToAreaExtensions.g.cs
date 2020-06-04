@@ -40,6 +40,10 @@ namespace UnitsNet.NumberExtensions.NumberToArea
         public static Area SquareCentimeters<T>(this T value) =>
             Area.FromSquareCentimeters(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Area.FromSquareChains(UnitsNet.QuantityValue)" />
+        public static Area SquareChains<T>(this T value) =>
+            Area.FromSquareChains(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Area.FromSquareDecimeters(UnitsNet.QuantityValue)" />
         public static Area SquareDecimeters<T>(this T value) =>
             Area.FromSquareDecimeters(Convert.ToDouble(value));
@@ -79,6 +83,10 @@ namespace UnitsNet.NumberExtensions.NumberToArea
         /// <inheritdoc cref="Area.FromSquareYards(UnitsNet.QuantityValue)" />
         public static Area SquareYards<T>(this T value) =>
             Area.FromSquareYards(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Area.FromThousandCircularMils(UnitsNet.QuantityValue)" />
+        public static Area ThousandCircularMils<T>(this T value) =>
+            Area.FromThousandCircularMils(Convert.ToDouble(value));
 
         /// <inheritdoc cref="Area.FromUsSurveySquareFeet(UnitsNet.QuantityValue)" />
         public static Area UsSurveySquareFeet<T>(this T value) =>

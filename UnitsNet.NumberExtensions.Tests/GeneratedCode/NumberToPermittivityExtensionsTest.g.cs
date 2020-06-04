@@ -28,5 +28,9 @@ namespace UnitsNet.Tests
         public void NumberToFaradsPerMeterTest() =>
             Assert.Equal(Permittivity.FromFaradsPerMeter(2), 2.FaradsPerMeter());
 
+        [Fact]
+        public void NumberToMicroFaradPerKilometersTest() =>
+            Assert.Equal(Permittivity.FromMicroFaradPerKilometers(2), 2.MicroFaradPerKilometers());
+
     }
 }

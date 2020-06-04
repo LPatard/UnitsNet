@@ -54,15 +54,19 @@ namespace UnitsNet
                 new UnitInfo<PowerUnit>[] {
                     new UnitInfo<PowerUnit>(PowerUnit.BoilerHorsepower, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.BritishThermalUnitPerHour, BaseUnits.Undefined),
+                    new UnitInfo<PowerUnit>(PowerUnit.BTUPerSecond, BaseUnits.Undefined),
+                    new UnitInfo<PowerUnit>(PowerUnit.CaloriePerSecond, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.Decawatt, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.Deciwatt, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.ElectricalHorsepower, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.Femtowatt, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.GigajoulePerHour, BaseUnits.Undefined),
+                    new UnitInfo<PowerUnit>(PowerUnit.GigajoulePerYear, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.Gigawatt, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.HydraulicHorsepower, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.JoulePerHour, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.KilobritishThermalUnitPerHour, BaseUnits.Undefined),
+                    new UnitInfo<PowerUnit>(PowerUnit.KilocaloriePerSecond, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.KilojoulePerHour, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.Kilowatt, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.MechanicalHorsepower, BaseUnits.Undefined),
@@ -76,6 +80,7 @@ namespace UnitsNet
                     new UnitInfo<PowerUnit>(PowerUnit.Petawatt, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.Picowatt, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.Terawatt, BaseUnits.Undefined),
+                    new UnitInfo<PowerUnit>(PowerUnit.TonOfRefrigeration, BaseUnits.Undefined),
                     new UnitInfo<PowerUnit>(PowerUnit.Watt, BaseUnits.Undefined),
                 },
                 BaseUnit, Zero, BaseDimensions);
@@ -202,6 +207,16 @@ namespace UnitsNet
         public double BritishThermalUnitsPerHour => As(PowerUnit.BritishThermalUnitPerHour);
 
         /// <summary>
+        ///     Get Power in BTUPerSeconds.
+        /// </summary>
+        public double BTUPerSeconds => As(PowerUnit.BTUPerSecond);
+
+        /// <summary>
+        ///     Get Power in CaloriePerSeconds.
+        /// </summary>
+        public double CaloriePerSeconds => As(PowerUnit.CaloriePerSecond);
+
+        /// <summary>
         ///     Get Power in Decawatts.
         /// </summary>
         public double Decawatts => As(PowerUnit.Decawatt);
@@ -227,6 +242,11 @@ namespace UnitsNet
         public double GigajoulesPerHour => As(PowerUnit.GigajoulePerHour);
 
         /// <summary>
+        ///     Get Power in GigajoulePerYears.
+        /// </summary>
+        public double GigajoulePerYears => As(PowerUnit.GigajoulePerYear);
+
+        /// <summary>
         ///     Get Power in Gigawatts.
         /// </summary>
         public double Gigawatts => As(PowerUnit.Gigawatt);
@@ -245,6 +265,11 @@ namespace UnitsNet
         ///     Get Power in KilobritishThermalUnitsPerHour.
         /// </summary>
         public double KilobritishThermalUnitsPerHour => As(PowerUnit.KilobritishThermalUnitPerHour);
+
+        /// <summary>
+        ///     Get Power in KilocaloriePerSeconds.
+        /// </summary>
+        public double KilocaloriePerSeconds => As(PowerUnit.KilocaloriePerSecond);
 
         /// <summary>
         ///     Get Power in KilojoulesPerHour.
@@ -312,6 +337,11 @@ namespace UnitsNet
         public double Terawatts => As(PowerUnit.Terawatt);
 
         /// <summary>
+        ///     Get Power in TonOfRefrigerations.
+        /// </summary>
+        public double TonOfRefrigerations => As(PowerUnit.TonOfRefrigeration);
+
+        /// <summary>
         ///     Get Power in Watts.
         /// </summary>
         public double Watts => As(PowerUnit.Watt);
@@ -364,6 +394,24 @@ namespace UnitsNet
             return new Power(value, PowerUnit.BritishThermalUnitPerHour);
         }
         /// <summary>
+        ///     Get Power from BTUPerSeconds.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Power FromBTUPerSeconds(QuantityValue btuperseconds)
+        {
+            decimal value = (decimal) btuperseconds;
+            return new Power(value, PowerUnit.BTUPerSecond);
+        }
+        /// <summary>
+        ///     Get Power from CaloriePerSeconds.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Power FromCaloriePerSeconds(QuantityValue calorieperseconds)
+        {
+            decimal value = (decimal) calorieperseconds;
+            return new Power(value, PowerUnit.CaloriePerSecond);
+        }
+        /// <summary>
         ///     Get Power from Decawatts.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -409,6 +457,15 @@ namespace UnitsNet
             return new Power(value, PowerUnit.GigajoulePerHour);
         }
         /// <summary>
+        ///     Get Power from GigajoulePerYears.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Power FromGigajoulePerYears(QuantityValue gigajouleperyears)
+        {
+            decimal value = (decimal) gigajouleperyears;
+            return new Power(value, PowerUnit.GigajoulePerYear);
+        }
+        /// <summary>
         ///     Get Power from Gigawatts.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -443,6 +500,15 @@ namespace UnitsNet
         {
             decimal value = (decimal) kilobritishthermalunitsperhour;
             return new Power(value, PowerUnit.KilobritishThermalUnitPerHour);
+        }
+        /// <summary>
+        ///     Get Power from KilocaloriePerSeconds.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Power FromKilocaloriePerSeconds(QuantityValue kilocalorieperseconds)
+        {
+            decimal value = (decimal) kilocalorieperseconds;
+            return new Power(value, PowerUnit.KilocaloriePerSecond);
         }
         /// <summary>
         ///     Get Power from KilojoulesPerHour.
@@ -560,6 +626,15 @@ namespace UnitsNet
         {
             decimal value = (decimal) terawatts;
             return new Power(value, PowerUnit.Terawatt);
+        }
+        /// <summary>
+        ///     Get Power from TonOfRefrigerations.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Power FromTonOfRefrigerations(QuantityValue tonofrefrigerations)
+        {
+            decimal value = (decimal) tonofrefrigerations;
+            return new Power(value, PowerUnit.TonOfRefrigeration);
         }
         /// <summary>
         ///     Get Power from Watts.
@@ -1001,15 +1076,19 @@ namespace UnitsNet
             {
                 case PowerUnit.BoilerHorsepower: return _value*9812.5m;
                 case PowerUnit.BritishThermalUnitPerHour: return _value*0.293071m;
+                case PowerUnit.BTUPerSecond: return _value*1055.05585262m;
+                case PowerUnit.CaloriePerSecond: return _value*4.1868m;
                 case PowerUnit.Decawatt: return (_value) * 1e1m;
                 case PowerUnit.Deciwatt: return (_value) * 1e-1m;
                 case PowerUnit.ElectricalHorsepower: return _value*746m;
                 case PowerUnit.Femtowatt: return (_value) * 1e-15m;
                 case PowerUnit.GigajoulePerHour: return (_value/3600m) * 1e9m;
+                case PowerUnit.GigajoulePerYear: return _value*317.09791983800005m;
                 case PowerUnit.Gigawatt: return (_value) * 1e9m;
                 case PowerUnit.HydraulicHorsepower: return _value*745.69988145m;
                 case PowerUnit.JoulePerHour: return _value/3600m;
                 case PowerUnit.KilobritishThermalUnitPerHour: return (_value*0.293071m) * 1e3m;
+                case PowerUnit.KilocaloriePerSecond: return _value*4186.8m;
                 case PowerUnit.KilojoulePerHour: return (_value/3600m) * 1e3m;
                 case PowerUnit.Kilowatt: return (_value) * 1e3m;
                 case PowerUnit.MechanicalHorsepower: return _value*745.69m;
@@ -1023,6 +1102,7 @@ namespace UnitsNet
                 case PowerUnit.Petawatt: return (_value) * 1e15m;
                 case PowerUnit.Picowatt: return (_value) * 1e-12m;
                 case PowerUnit.Terawatt: return (_value) * 1e12m;
+                case PowerUnit.TonOfRefrigeration: return _value*3516.8528m;
                 case PowerUnit.Watt: return _value;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to base units.");
@@ -1051,15 +1131,19 @@ namespace UnitsNet
             {
                 case PowerUnit.BoilerHorsepower: return baseUnitValue/9812.5m;
                 case PowerUnit.BritishThermalUnitPerHour: return baseUnitValue/0.293071m;
+                case PowerUnit.BTUPerSecond: return baseUnitValue/1055.05585262m;
+                case PowerUnit.CaloriePerSecond: return baseUnitValue/4.1868m;
                 case PowerUnit.Decawatt: return (baseUnitValue) / 1e1m;
                 case PowerUnit.Deciwatt: return (baseUnitValue) / 1e-1m;
                 case PowerUnit.ElectricalHorsepower: return baseUnitValue/746m;
                 case PowerUnit.Femtowatt: return (baseUnitValue) / 1e-15m;
                 case PowerUnit.GigajoulePerHour: return (baseUnitValue*3600m) / 1e9m;
+                case PowerUnit.GigajoulePerYear: return baseUnitValue/317.09791983800005m;
                 case PowerUnit.Gigawatt: return (baseUnitValue) / 1e9m;
                 case PowerUnit.HydraulicHorsepower: return baseUnitValue/745.69988145m;
                 case PowerUnit.JoulePerHour: return baseUnitValue*3600m;
                 case PowerUnit.KilobritishThermalUnitPerHour: return (baseUnitValue/0.293071m) / 1e3m;
+                case PowerUnit.KilocaloriePerSecond: return baseUnitValue/4186.8m;
                 case PowerUnit.KilojoulePerHour: return (baseUnitValue*3600m) / 1e3m;
                 case PowerUnit.Kilowatt: return (baseUnitValue) / 1e3m;
                 case PowerUnit.MechanicalHorsepower: return baseUnitValue/745.69m;
@@ -1073,6 +1157,7 @@ namespace UnitsNet
                 case PowerUnit.Petawatt: return (baseUnitValue) / 1e15m;
                 case PowerUnit.Picowatt: return (baseUnitValue) / 1e-12m;
                 case PowerUnit.Terawatt: return (baseUnitValue) / 1e12m;
+                case PowerUnit.TonOfRefrigeration: return baseUnitValue/3516.8528m;
                 case PowerUnit.Watt: return baseUnitValue;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to {unit}.");

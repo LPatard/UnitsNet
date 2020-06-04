@@ -37,6 +37,10 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double SquareNauticalMilesInOneSquareMeter => 0.00000029155335;
 
+        protected override double SquareChainsInOneSquareMeter => throw new System.NotImplementedException();
+
+        protected override double ThousandCircularMilsInOneSquareMeter => throw new System.NotImplementedException();
+
         [Fact]
         public void AreaDividedByLengthEqualsLength()
         {

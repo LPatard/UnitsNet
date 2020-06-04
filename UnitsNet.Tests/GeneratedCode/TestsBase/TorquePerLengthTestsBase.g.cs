@@ -36,6 +36,7 @@ namespace UnitsNet.Tests
 // ReSharper disable once PartialTypeWithSinglePart
     public abstract partial class TorquePerLengthTestsBase
     {
+        protected abstract double DecanewtonMeterPerMetersInOneNewtonMeterPerMeter { get; }
         protected abstract double KilogramForceCentimetersPerMeterInOneNewtonMeterPerMeter { get; }
         protected abstract double KilogramForceMetersPerMeterInOneNewtonMeterPerMeter { get; }
         protected abstract double KilogramForceMillimetersPerMeterInOneNewtonMeterPerMeter { get; }
@@ -59,6 +60,7 @@ namespace UnitsNet.Tests
         protected abstract double TonneForceMillimetersPerMeterInOneNewtonMeterPerMeter { get; }
 
 // ReSharper disable VirtualMemberNeverOverriden.Global
+        protected virtual double DecanewtonMeterPerMetersTolerance { get { return 1e-5; } }
         protected virtual double KilogramForceCentimetersPerMeterTolerance { get { return 1e-5; } }
         protected virtual double KilogramForceMetersPerMeterTolerance { get { return 1e-5; } }
         protected virtual double KilogramForceMillimetersPerMeterTolerance { get { return 1e-5; } }
@@ -141,6 +143,7 @@ namespace UnitsNet.Tests
         public void NewtonMeterPerMeterToTorquePerLengthUnits()
         {
             TorquePerLength newtonmeterpermeter = TorquePerLength.FromNewtonMetersPerMeter(1);
+            AssertEx.EqualTolerance(DecanewtonMeterPerMetersInOneNewtonMeterPerMeter, newtonmeterpermeter.DecanewtonMeterPerMeters, DecanewtonMeterPerMetersTolerance);
             AssertEx.EqualTolerance(KilogramForceCentimetersPerMeterInOneNewtonMeterPerMeter, newtonmeterpermeter.KilogramForceCentimetersPerMeter, KilogramForceCentimetersPerMeterTolerance);
             AssertEx.EqualTolerance(KilogramForceMetersPerMeterInOneNewtonMeterPerMeter, newtonmeterpermeter.KilogramForceMetersPerMeter, KilogramForceMetersPerMeterTolerance);
             AssertEx.EqualTolerance(KilogramForceMillimetersPerMeterInOneNewtonMeterPerMeter, newtonmeterpermeter.KilogramForceMillimetersPerMeter, KilogramForceMillimetersPerMeterTolerance);
@@ -167,89 +170,93 @@ namespace UnitsNet.Tests
         [Fact]
         public void From_ValueAndUnit_ReturnsQuantityWithSameValueAndUnit()
         {
-            var quantity00 = TorquePerLength.From(1, TorquePerLengthUnit.KilogramForceCentimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity00.KilogramForceCentimetersPerMeter, KilogramForceCentimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.KilogramForceCentimeterPerMeter, quantity00.Unit);
+            var quantity00 = TorquePerLength.From(1, TorquePerLengthUnit.DecanewtonMeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity00.DecanewtonMeterPerMeters, DecanewtonMeterPerMetersTolerance);
+            Assert.Equal(TorquePerLengthUnit.DecanewtonMeterPerMeter, quantity00.Unit);
 
-            var quantity01 = TorquePerLength.From(1, TorquePerLengthUnit.KilogramForceMeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity01.KilogramForceMetersPerMeter, KilogramForceMetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.KilogramForceMeterPerMeter, quantity01.Unit);
+            var quantity01 = TorquePerLength.From(1, TorquePerLengthUnit.KilogramForceCentimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity01.KilogramForceCentimetersPerMeter, KilogramForceCentimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.KilogramForceCentimeterPerMeter, quantity01.Unit);
 
-            var quantity02 = TorquePerLength.From(1, TorquePerLengthUnit.KilogramForceMillimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity02.KilogramForceMillimetersPerMeter, KilogramForceMillimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.KilogramForceMillimeterPerMeter, quantity02.Unit);
+            var quantity02 = TorquePerLength.From(1, TorquePerLengthUnit.KilogramForceMeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity02.KilogramForceMetersPerMeter, KilogramForceMetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.KilogramForceMeterPerMeter, quantity02.Unit);
 
-            var quantity03 = TorquePerLength.From(1, TorquePerLengthUnit.KilonewtonCentimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity03.KilonewtonCentimetersPerMeter, KilonewtonCentimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.KilonewtonCentimeterPerMeter, quantity03.Unit);
+            var quantity03 = TorquePerLength.From(1, TorquePerLengthUnit.KilogramForceMillimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity03.KilogramForceMillimetersPerMeter, KilogramForceMillimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.KilogramForceMillimeterPerMeter, quantity03.Unit);
 
-            var quantity04 = TorquePerLength.From(1, TorquePerLengthUnit.KilonewtonMeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity04.KilonewtonMetersPerMeter, KilonewtonMetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.KilonewtonMeterPerMeter, quantity04.Unit);
+            var quantity04 = TorquePerLength.From(1, TorquePerLengthUnit.KilonewtonCentimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity04.KilonewtonCentimetersPerMeter, KilonewtonCentimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.KilonewtonCentimeterPerMeter, quantity04.Unit);
 
-            var quantity05 = TorquePerLength.From(1, TorquePerLengthUnit.KilonewtonMillimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity05.KilonewtonMillimetersPerMeter, KilonewtonMillimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.KilonewtonMillimeterPerMeter, quantity05.Unit);
+            var quantity05 = TorquePerLength.From(1, TorquePerLengthUnit.KilonewtonMeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity05.KilonewtonMetersPerMeter, KilonewtonMetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.KilonewtonMeterPerMeter, quantity05.Unit);
 
-            var quantity06 = TorquePerLength.From(1, TorquePerLengthUnit.KilopoundForceFootPerFoot);
-            AssertEx.EqualTolerance(1, quantity06.KilopoundForceFeetPerFoot, KilopoundForceFeetPerFootTolerance);
-            Assert.Equal(TorquePerLengthUnit.KilopoundForceFootPerFoot, quantity06.Unit);
+            var quantity06 = TorquePerLength.From(1, TorquePerLengthUnit.KilonewtonMillimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity06.KilonewtonMillimetersPerMeter, KilonewtonMillimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.KilonewtonMillimeterPerMeter, quantity06.Unit);
 
-            var quantity07 = TorquePerLength.From(1, TorquePerLengthUnit.KilopoundForceInchPerFoot);
-            AssertEx.EqualTolerance(1, quantity07.KilopoundForceInchesPerFoot, KilopoundForceInchesPerFootTolerance);
-            Assert.Equal(TorquePerLengthUnit.KilopoundForceInchPerFoot, quantity07.Unit);
+            var quantity07 = TorquePerLength.From(1, TorquePerLengthUnit.KilopoundForceFootPerFoot);
+            AssertEx.EqualTolerance(1, quantity07.KilopoundForceFeetPerFoot, KilopoundForceFeetPerFootTolerance);
+            Assert.Equal(TorquePerLengthUnit.KilopoundForceFootPerFoot, quantity07.Unit);
 
-            var quantity08 = TorquePerLength.From(1, TorquePerLengthUnit.MeganewtonCentimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity08.MeganewtonCentimetersPerMeter, MeganewtonCentimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.MeganewtonCentimeterPerMeter, quantity08.Unit);
+            var quantity08 = TorquePerLength.From(1, TorquePerLengthUnit.KilopoundForceInchPerFoot);
+            AssertEx.EqualTolerance(1, quantity08.KilopoundForceInchesPerFoot, KilopoundForceInchesPerFootTolerance);
+            Assert.Equal(TorquePerLengthUnit.KilopoundForceInchPerFoot, quantity08.Unit);
 
-            var quantity09 = TorquePerLength.From(1, TorquePerLengthUnit.MeganewtonMeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity09.MeganewtonMetersPerMeter, MeganewtonMetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.MeganewtonMeterPerMeter, quantity09.Unit);
+            var quantity09 = TorquePerLength.From(1, TorquePerLengthUnit.MeganewtonCentimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity09.MeganewtonCentimetersPerMeter, MeganewtonCentimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.MeganewtonCentimeterPerMeter, quantity09.Unit);
 
-            var quantity10 = TorquePerLength.From(1, TorquePerLengthUnit.MeganewtonMillimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity10.MeganewtonMillimetersPerMeter, MeganewtonMillimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.MeganewtonMillimeterPerMeter, quantity10.Unit);
+            var quantity10 = TorquePerLength.From(1, TorquePerLengthUnit.MeganewtonMeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity10.MeganewtonMetersPerMeter, MeganewtonMetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.MeganewtonMeterPerMeter, quantity10.Unit);
 
-            var quantity11 = TorquePerLength.From(1, TorquePerLengthUnit.MegapoundForceFootPerFoot);
-            AssertEx.EqualTolerance(1, quantity11.MegapoundForceFeetPerFoot, MegapoundForceFeetPerFootTolerance);
-            Assert.Equal(TorquePerLengthUnit.MegapoundForceFootPerFoot, quantity11.Unit);
+            var quantity11 = TorquePerLength.From(1, TorquePerLengthUnit.MeganewtonMillimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity11.MeganewtonMillimetersPerMeter, MeganewtonMillimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.MeganewtonMillimeterPerMeter, quantity11.Unit);
 
-            var quantity12 = TorquePerLength.From(1, TorquePerLengthUnit.MegapoundForceInchPerFoot);
-            AssertEx.EqualTolerance(1, quantity12.MegapoundForceInchesPerFoot, MegapoundForceInchesPerFootTolerance);
-            Assert.Equal(TorquePerLengthUnit.MegapoundForceInchPerFoot, quantity12.Unit);
+            var quantity12 = TorquePerLength.From(1, TorquePerLengthUnit.MegapoundForceFootPerFoot);
+            AssertEx.EqualTolerance(1, quantity12.MegapoundForceFeetPerFoot, MegapoundForceFeetPerFootTolerance);
+            Assert.Equal(TorquePerLengthUnit.MegapoundForceFootPerFoot, quantity12.Unit);
 
-            var quantity13 = TorquePerLength.From(1, TorquePerLengthUnit.NewtonCentimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity13.NewtonCentimetersPerMeter, NewtonCentimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.NewtonCentimeterPerMeter, quantity13.Unit);
+            var quantity13 = TorquePerLength.From(1, TorquePerLengthUnit.MegapoundForceInchPerFoot);
+            AssertEx.EqualTolerance(1, quantity13.MegapoundForceInchesPerFoot, MegapoundForceInchesPerFootTolerance);
+            Assert.Equal(TorquePerLengthUnit.MegapoundForceInchPerFoot, quantity13.Unit);
 
-            var quantity14 = TorquePerLength.From(1, TorquePerLengthUnit.NewtonMeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity14.NewtonMetersPerMeter, NewtonMetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.NewtonMeterPerMeter, quantity14.Unit);
+            var quantity14 = TorquePerLength.From(1, TorquePerLengthUnit.NewtonCentimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity14.NewtonCentimetersPerMeter, NewtonCentimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.NewtonCentimeterPerMeter, quantity14.Unit);
 
-            var quantity15 = TorquePerLength.From(1, TorquePerLengthUnit.NewtonMillimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity15.NewtonMillimetersPerMeter, NewtonMillimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.NewtonMillimeterPerMeter, quantity15.Unit);
+            var quantity15 = TorquePerLength.From(1, TorquePerLengthUnit.NewtonMeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity15.NewtonMetersPerMeter, NewtonMetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.NewtonMeterPerMeter, quantity15.Unit);
 
-            var quantity16 = TorquePerLength.From(1, TorquePerLengthUnit.PoundForceFootPerFoot);
-            AssertEx.EqualTolerance(1, quantity16.PoundForceFeetPerFoot, PoundForceFeetPerFootTolerance);
-            Assert.Equal(TorquePerLengthUnit.PoundForceFootPerFoot, quantity16.Unit);
+            var quantity16 = TorquePerLength.From(1, TorquePerLengthUnit.NewtonMillimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity16.NewtonMillimetersPerMeter, NewtonMillimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.NewtonMillimeterPerMeter, quantity16.Unit);
 
-            var quantity17 = TorquePerLength.From(1, TorquePerLengthUnit.PoundForceInchPerFoot);
-            AssertEx.EqualTolerance(1, quantity17.PoundForceInchesPerFoot, PoundForceInchesPerFootTolerance);
-            Assert.Equal(TorquePerLengthUnit.PoundForceInchPerFoot, quantity17.Unit);
+            var quantity17 = TorquePerLength.From(1, TorquePerLengthUnit.PoundForceFootPerFoot);
+            AssertEx.EqualTolerance(1, quantity17.PoundForceFeetPerFoot, PoundForceFeetPerFootTolerance);
+            Assert.Equal(TorquePerLengthUnit.PoundForceFootPerFoot, quantity17.Unit);
 
-            var quantity18 = TorquePerLength.From(1, TorquePerLengthUnit.TonneForceCentimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity18.TonneForceCentimetersPerMeter, TonneForceCentimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.TonneForceCentimeterPerMeter, quantity18.Unit);
+            var quantity18 = TorquePerLength.From(1, TorquePerLengthUnit.PoundForceInchPerFoot);
+            AssertEx.EqualTolerance(1, quantity18.PoundForceInchesPerFoot, PoundForceInchesPerFootTolerance);
+            Assert.Equal(TorquePerLengthUnit.PoundForceInchPerFoot, quantity18.Unit);
 
-            var quantity19 = TorquePerLength.From(1, TorquePerLengthUnit.TonneForceMeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity19.TonneForceMetersPerMeter, TonneForceMetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.TonneForceMeterPerMeter, quantity19.Unit);
+            var quantity19 = TorquePerLength.From(1, TorquePerLengthUnit.TonneForceCentimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity19.TonneForceCentimetersPerMeter, TonneForceCentimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.TonneForceCentimeterPerMeter, quantity19.Unit);
 
-            var quantity20 = TorquePerLength.From(1, TorquePerLengthUnit.TonneForceMillimeterPerMeter);
-            AssertEx.EqualTolerance(1, quantity20.TonneForceMillimetersPerMeter, TonneForceMillimetersPerMeterTolerance);
-            Assert.Equal(TorquePerLengthUnit.TonneForceMillimeterPerMeter, quantity20.Unit);
+            var quantity20 = TorquePerLength.From(1, TorquePerLengthUnit.TonneForceMeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity20.TonneForceMetersPerMeter, TonneForceMetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.TonneForceMeterPerMeter, quantity20.Unit);
+
+            var quantity21 = TorquePerLength.From(1, TorquePerLengthUnit.TonneForceMillimeterPerMeter);
+            AssertEx.EqualTolerance(1, quantity21.TonneForceMillimetersPerMeter, TonneForceMillimetersPerMeterTolerance);
+            Assert.Equal(TorquePerLengthUnit.TonneForceMillimeterPerMeter, quantity21.Unit);
 
         }
 
@@ -270,6 +277,7 @@ namespace UnitsNet.Tests
         public void As()
         {
             var newtonmeterpermeter = TorquePerLength.FromNewtonMetersPerMeter(1);
+            AssertEx.EqualTolerance(DecanewtonMeterPerMetersInOneNewtonMeterPerMeter, newtonmeterpermeter.As(TorquePerLengthUnit.DecanewtonMeterPerMeter), DecanewtonMeterPerMetersTolerance);
             AssertEx.EqualTolerance(KilogramForceCentimetersPerMeterInOneNewtonMeterPerMeter, newtonmeterpermeter.As(TorquePerLengthUnit.KilogramForceCentimeterPerMeter), KilogramForceCentimetersPerMeterTolerance);
             AssertEx.EqualTolerance(KilogramForceMetersPerMeterInOneNewtonMeterPerMeter, newtonmeterpermeter.As(TorquePerLengthUnit.KilogramForceMeterPerMeter), KilogramForceMetersPerMeterTolerance);
             AssertEx.EqualTolerance(KilogramForceMillimetersPerMeterInOneNewtonMeterPerMeter, newtonmeterpermeter.As(TorquePerLengthUnit.KilogramForceMillimeterPerMeter), KilogramForceMillimetersPerMeterTolerance);
@@ -297,6 +305,10 @@ namespace UnitsNet.Tests
         public void ToUnit()
         {
             var newtonmeterpermeter = TorquePerLength.FromNewtonMetersPerMeter(1);
+
+            var decanewtonmeterpermeterQuantity = newtonmeterpermeter.ToUnit(TorquePerLengthUnit.DecanewtonMeterPerMeter);
+            AssertEx.EqualTolerance(DecanewtonMeterPerMetersInOneNewtonMeterPerMeter, (double)decanewtonmeterpermeterQuantity.Value, DecanewtonMeterPerMetersTolerance);
+            Assert.Equal(TorquePerLengthUnit.DecanewtonMeterPerMeter, decanewtonmeterpermeterQuantity.Unit);
 
             var kilogramforcecentimeterpermeterQuantity = newtonmeterpermeter.ToUnit(TorquePerLengthUnit.KilogramForceCentimeterPerMeter);
             AssertEx.EqualTolerance(KilogramForceCentimetersPerMeterInOneNewtonMeterPerMeter, (double)kilogramforcecentimeterpermeterQuantity.Value, KilogramForceCentimetersPerMeterTolerance);
@@ -387,6 +399,7 @@ namespace UnitsNet.Tests
         public void ConversionRoundTrip()
         {
             TorquePerLength newtonmeterpermeter = TorquePerLength.FromNewtonMetersPerMeter(1);
+            AssertEx.EqualTolerance(1, TorquePerLength.FromDecanewtonMeterPerMeters(newtonmeterpermeter.DecanewtonMeterPerMeters).NewtonMetersPerMeter, DecanewtonMeterPerMetersTolerance);
             AssertEx.EqualTolerance(1, TorquePerLength.FromKilogramForceCentimetersPerMeter(newtonmeterpermeter.KilogramForceCentimetersPerMeter).NewtonMetersPerMeter, KilogramForceCentimetersPerMeterTolerance);
             AssertEx.EqualTolerance(1, TorquePerLength.FromKilogramForceMetersPerMeter(newtonmeterpermeter.KilogramForceMetersPerMeter).NewtonMetersPerMeter, KilogramForceMetersPerMeterTolerance);
             AssertEx.EqualTolerance(1, TorquePerLength.FromKilogramForceMillimetersPerMeter(newtonmeterpermeter.KilogramForceMillimetersPerMeter).NewtonMetersPerMeter, KilogramForceMillimetersPerMeterTolerance);
@@ -564,6 +577,7 @@ namespace UnitsNet.Tests
             var prevCulture = Thread.CurrentThread.CurrentUICulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
             try {
+                Assert.Equal("1 daN-m/m", new TorquePerLength(1, TorquePerLengthUnit.DecanewtonMeterPerMeter).ToString());
                 Assert.Equal("1 kgf·cm/m", new TorquePerLength(1, TorquePerLengthUnit.KilogramForceCentimeterPerMeter).ToString());
                 Assert.Equal("1 kgf·m/m", new TorquePerLength(1, TorquePerLengthUnit.KilogramForceMeterPerMeter).ToString());
                 Assert.Equal("1 kgf·mm/m", new TorquePerLength(1, TorquePerLengthUnit.KilogramForceMillimeterPerMeter).ToString());
@@ -598,6 +612,7 @@ namespace UnitsNet.Tests
             // Chose this culture, because we don't currently have any abbreviations mapped for that culture and we expect the en-US to be used as fallback.
             var swedishCulture = CultureInfo.GetCultureInfo("sv-SE");
 
+            Assert.Equal("1 daN-m/m", new TorquePerLength(1, TorquePerLengthUnit.DecanewtonMeterPerMeter).ToString(swedishCulture));
             Assert.Equal("1 kgf·cm/m", new TorquePerLength(1, TorquePerLengthUnit.KilogramForceCentimeterPerMeter).ToString(swedishCulture));
             Assert.Equal("1 kgf·m/m", new TorquePerLength(1, TorquePerLengthUnit.KilogramForceMeterPerMeter).ToString(swedishCulture));
             Assert.Equal("1 kgf·mm/m", new TorquePerLength(1, TorquePerLengthUnit.KilogramForceMillimeterPerMeter).ToString(swedishCulture));

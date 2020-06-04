@@ -196,6 +196,11 @@ namespace UnitsNet
         public double Feet => As(LengthUnit.Foot);
 
         /// <summary>
+        ///     Get Length in Furlongs.
+        /// </summary>
+        public double Furlongs => As(LengthUnit.Furlong);
+
+        /// <summary>
         ///     Get Length in Hands.
         /// </summary>
         public double Hands => As(LengthUnit.Hand);
@@ -226,9 +231,19 @@ namespace UnitsNet
         public double Kiloparsecs => As(LengthUnit.Kiloparsec);
 
         /// <summary>
+        ///     Get Length in Leagues.
+        /// </summary>
+        public double Leagues => As(LengthUnit.League);
+
+        /// <summary>
         ///     Get Length in LightYears.
         /// </summary>
         public double LightYears => As(LengthUnit.LightYear);
+
+        /// <summary>
+        ///     Get Length in Links.
+        /// </summary>
+        public double Links => As(LengthUnit.Link);
 
         /// <summary>
         ///     Get Length in MegalightYears.
@@ -294,6 +309,11 @@ namespace UnitsNet
         ///     Get Length in PrinterPoints.
         /// </summary>
         public double PrinterPoints => As(LengthUnit.PrinterPoint);
+
+        /// <summary>
+        ///     Get Length in Rods.
+        /// </summary>
+        public double Rods => As(LengthUnit.Rod);
 
         /// <summary>
         ///     Get Length in Shackles.
@@ -431,6 +451,16 @@ namespace UnitsNet
             return new Length(value, LengthUnit.Foot);
         }
         /// <summary>
+        ///     Get Length from Furlongs.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Length FromFurlongs(double furlongs)
+        {
+            double value = (double) furlongs;
+            return new Length(value, LengthUnit.Furlong);
+        }
+        /// <summary>
         ///     Get Length from Hands.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -491,6 +521,16 @@ namespace UnitsNet
             return new Length(value, LengthUnit.Kiloparsec);
         }
         /// <summary>
+        ///     Get Length from Leagues.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Length FromLeagues(double leagues)
+        {
+            double value = (double) leagues;
+            return new Length(value, LengthUnit.League);
+        }
+        /// <summary>
         ///     Get Length from LightYears.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -499,6 +539,16 @@ namespace UnitsNet
         {
             double value = (double) lightyears;
             return new Length(value, LengthUnit.LightYear);
+        }
+        /// <summary>
+        ///     Get Length from Links.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Length FromLinks(double links)
+        {
+            double value = (double) links;
+            return new Length(value, LengthUnit.Link);
         }
         /// <summary>
         ///     Get Length from MegalightYears.
@@ -629,6 +679,16 @@ namespace UnitsNet
         {
             double value = (double) printerpoints;
             return new Length(value, LengthUnit.PrinterPoint);
+        }
+        /// <summary>
+        ///     Get Length from Rods.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Length FromRods(double rods)
+        {
+            double value = (double) rods;
+            return new Length(value, LengthUnit.Rod);
         }
         /// <summary>
         ///     Get Length from Shackles.
@@ -979,13 +1039,16 @@ namespace UnitsNet
                 case LengthUnit.DtpPoint: return (_value/72)*2.54e-2;
                 case LengthUnit.Fathom: return _value*1.8288;
                 case LengthUnit.Foot: return _value*0.3048;
+                case LengthUnit.Furlong: return _value*201.168;
                 case LengthUnit.Hand: return _value * 1.016e-1;
                 case LengthUnit.Hectometer: return (_value) * 1e2d;
                 case LengthUnit.Inch: return _value*2.54e-2;
                 case LengthUnit.KilolightYear: return (_value * 9.46073047258e15) * 1e3d;
                 case LengthUnit.Kilometer: return (_value) * 1e3d;
                 case LengthUnit.Kiloparsec: return (_value * 3.08567758128e16) * 1e3d;
+                case LengthUnit.League: return _value*4828.032;
                 case LengthUnit.LightYear: return _value * 9.46073047258e15;
+                case LengthUnit.Link: return _value*0.201;
                 case LengthUnit.MegalightYear: return (_value * 9.46073047258e15) * 1e6d;
                 case LengthUnit.Megaparsec: return (_value * 3.08567758128e16) * 1e6d;
                 case LengthUnit.Meter: return _value;
@@ -999,6 +1062,7 @@ namespace UnitsNet
                 case LengthUnit.Parsec: return _value * 3.08567758128e16;
                 case LengthUnit.PrinterPica: return _value/237.106301584;
                 case LengthUnit.PrinterPoint: return (_value/72.27)*2.54e-2;
+                case LengthUnit.Rod: return _value*5.0292;
                 case LengthUnit.Shackle: return _value*27.432;
                 case LengthUnit.SolarRadius: return _value * 6.95510000E+08;
                 case LengthUnit.Twip: return _value/56692.913385826;
@@ -1026,13 +1090,16 @@ namespace UnitsNet
                 case LengthUnit.DtpPoint: return (baseUnitValue/2.54e-2)*72;
                 case LengthUnit.Fathom: return baseUnitValue/1.8288;
                 case LengthUnit.Foot: return baseUnitValue/0.3048;
+                case LengthUnit.Furlong: return baseUnitValue/201.168;
                 case LengthUnit.Hand: return baseUnitValue / 1.016e-1;
                 case LengthUnit.Hectometer: return (baseUnitValue) / 1e2d;
                 case LengthUnit.Inch: return baseUnitValue/2.54e-2;
                 case LengthUnit.KilolightYear: return (baseUnitValue / 9.46073047258e15) / 1e3d;
                 case LengthUnit.Kilometer: return (baseUnitValue) / 1e3d;
                 case LengthUnit.Kiloparsec: return (baseUnitValue / 3.08567758128e16) / 1e3d;
+                case LengthUnit.League: return baseUnitValue/4828.032;
                 case LengthUnit.LightYear: return baseUnitValue / 9.46073047258e15;
+                case LengthUnit.Link: return baseUnitValue/0.201;
                 case LengthUnit.MegalightYear: return (baseUnitValue / 9.46073047258e15) / 1e6d;
                 case LengthUnit.Megaparsec: return (baseUnitValue / 3.08567758128e16) / 1e6d;
                 case LengthUnit.Meter: return baseUnitValue;
@@ -1046,6 +1113,7 @@ namespace UnitsNet
                 case LengthUnit.Parsec: return baseUnitValue / 3.08567758128e16;
                 case LengthUnit.PrinterPica: return baseUnitValue*237.106301584;
                 case LengthUnit.PrinterPoint: return (baseUnitValue/2.54e-2)*72.27;
+                case LengthUnit.Rod: return baseUnitValue/5.0292;
                 case LengthUnit.Shackle: return baseUnitValue/27.432;
                 case LengthUnit.SolarRadius: return baseUnitValue / 6.95510000E+08;
                 case LengthUnit.Twip: return baseUnitValue*56692.913385826;

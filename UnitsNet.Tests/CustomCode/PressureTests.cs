@@ -93,6 +93,18 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double MillipascalsInOnePascal => 1e3;
 
+        protected override double DecanewtonPerSquareCentimetersInOnePascal => throw new NotImplementedException();
+
+        protected override double DecanewtonPerSquareMetersInOnePascal => throw new NotImplementedException();
+
+        protected override double FootOfWatersInOnePascal => throw new NotImplementedException();
+
+        protected override double MeterOfWaterColumnsInOnePascal => throw new NotImplementedException();
+
+        protected override double WaterMetersInOnePascal => throw new NotImplementedException();
+
+        protected override double WaterMillimetersInOnePascal => throw new NotImplementedException();
+
         [Fact]
         public void Absolute_WithAbsolutePressureReference_IsEqual()
         {

@@ -1,0 +1,36 @@
+{
+    "Name": "Luminance",
+    "BaseUnit": "CandelaPerSquareMeter",
+    "Units": [
+        {
+            "UnitsNet_Domain": "Luminance",
+            "SingularName": "CandelaPerSquareMeter",
+            "PluralName": "CandelaPerSquareMeters",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "cd/m²"
+                    ]
+                }
+            ]
+        },
+        {
+            "UnitsNet_Domain": "Luminance ",
+            "SingularName": "FootLambert",
+            "PluralName": "FootLamberts",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "ftL"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -44,5 +44,9 @@ namespace UnitsNet.Tests
         public void NumberToSquareMeterKelvinsPerKilowattTest() =>
             Assert.Equal(ThermalResistance.FromSquareMeterKelvinsPerKilowatt(2), 2.SquareMeterKelvinsPerKilowatt());
 
+        [Fact]
+        public void NumberToSquareMeterKelvinPerWattsTest() =>
+            Assert.Equal(ThermalResistance.FromSquareMeterKelvinPerWatts(2), 2.SquareMeterKelvinPerWatts());
+
     }
 }

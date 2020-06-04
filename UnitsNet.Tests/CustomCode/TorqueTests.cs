@@ -49,6 +49,12 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double TonneForceMillimetersInOneNewtonMeter => 1.01972e-1;
 
+        protected override double DecanewtonMetersInOneNewtonMeter => throw new System.NotImplementedException();
+
+        protected override double KipsPerInchsInOneNewtonMeter => throw new System.NotImplementedException();
+
+        protected override double TonForcePerMetersInOneNewtonMeter => throw new System.NotImplementedException();
+
         [Fact]
         public void TorqueDividedByForceEqualsLength()
         {

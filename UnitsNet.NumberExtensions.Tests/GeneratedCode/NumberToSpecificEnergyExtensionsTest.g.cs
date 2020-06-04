@@ -49,6 +49,10 @@ namespace UnitsNet.Tests
             Assert.Equal(SpecificEnergy.FromGigawattHoursPerKilogram(2), 2.GigawattHoursPerKilogram());
 
         [Fact]
+        public void NumberToJoulePerGramsTest() =>
+            Assert.Equal(SpecificEnergy.FromJoulePerGrams(2), 2.JoulePerGrams());
+
+        [Fact]
         public void NumberToJoulesPerKilogramTest() =>
             Assert.Equal(SpecificEnergy.FromJoulesPerKilogram(2), 2.JoulesPerKilogram());
 

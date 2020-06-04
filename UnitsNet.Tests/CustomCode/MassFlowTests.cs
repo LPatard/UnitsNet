@@ -75,6 +75,7 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double GramsPerHourInOneGramPerSecond => 3600;
 
+        protected override double GramPerMinutesInOneGramPerSecond => throw new NotImplementedException();
 
         [Fact]
         public void DurationTimesMassFlowEqualsMass()

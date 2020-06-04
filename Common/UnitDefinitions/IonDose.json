@@ -1,0 +1,21 @@
+{
+    "Name": "IonDose",
+    "BaseUnit": "CoulombPerKilogramm",
+    "Units": [
+        {
+            "UnitsNet_Domain": "IonDose",
+            "SingularName": "CoulombPerKilogramm",
+            "PluralName": "CoulombPerKilogramms",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "C/kg"
+                    ]
+                }
+            ]
+        }
+    ]
+}

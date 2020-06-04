@@ -9,6 +9,21 @@
     "T": -2
   },
   "Units": [
+  //   {
+  //     "UnitsNet_Domain": "SpecificWeight",
+  //     "SingularName": "KilonewtonPerCubicMeter",
+  //     "PluralName": "KilonewtonPerCubicMeters",
+  //     "FromBaseToUnitFunc": "x/1000",
+  //     "FromUnitToBaseFunc": "x*1000",
+  //     "Localization": [
+  //         {
+  //             "Culture": "en-US",
+  //             "Abbreviations": [
+  //                 "kN/m³"
+  //             ]
+  //         }
+  //     ]
+  // },
     {
       "SingularName": "NewtonPerCubicMillimeter",
       "PluralName": "NewtonsPerCubicMillimeter",

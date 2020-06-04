@@ -25,6 +25,10 @@ namespace UnitsNet.Tests
     public class NumberToIlluminanceExtensionsTests
     {
         [Fact]
+        public void NumberToFootCandlesTest() =>
+            Assert.Equal(Illuminance.FromFootCandles(2), 2.FootCandles());
+
+        [Fact]
         public void NumberToKiloluxTest() =>
             Assert.Equal(Illuminance.FromKilolux(2), 2.Kilolux());
 

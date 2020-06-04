@@ -26,7 +26,11 @@ namespace UnitsNet.Units
     public enum AreaDensityUnit
     {
         Undefined = 0,
+        GramPerSquareMeter,
+        KilogramPerSquareCentimeter,
         KilogramPerSquareMeter,
+        KipsPerSquareFoot,
+        KipsPerSquareInch,
     }
 
     #pragma warning restore 1591

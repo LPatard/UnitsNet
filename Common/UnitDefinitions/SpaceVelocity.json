@@ -1,0 +1,21 @@
+{
+    "Name": "SpaceVelocity",
+    "BaseUnit": "LiterPerSecondCubicMeter",
+    "Units": [
+        {
+            "UnitsNet_Domain": "SpaceVelocity",
+            "SingularName": "LiterPerSecondCubicMeter",
+            "PluralName": "LiterPerSecondCubicMeters",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "L/(s·m³)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -46,6 +46,7 @@ namespace UnitsNet.Tests
         protected abstract double KnotsPerSecondInOneMeterPerSecondSquared { get; }
         protected abstract double MetersPerSecondSquaredInOneMeterPerSecondSquared { get; }
         protected abstract double MicrometersPerSecondSquaredInOneMeterPerSecondSquared { get; }
+        protected abstract double MilesPerSquareSecondsInOneMeterPerSecondSquared { get; }
         protected abstract double MillimetersPerSecondSquaredInOneMeterPerSecondSquared { get; }
         protected abstract double NanometersPerSecondSquaredInOneMeterPerSecondSquared { get; }
         protected abstract double StandardGravityInOneMeterPerSecondSquared { get; }
@@ -61,6 +62,7 @@ namespace UnitsNet.Tests
         protected virtual double KnotsPerSecondTolerance { get { return 1e-5; } }
         protected virtual double MetersPerSecondSquaredTolerance { get { return 1e-5; } }
         protected virtual double MicrometersPerSecondSquaredTolerance { get { return 1e-5; } }
+        protected virtual double MilesPerSquareSecondsTolerance { get { return 1e-5; } }
         protected virtual double MillimetersPerSecondSquaredTolerance { get { return 1e-5; } }
         protected virtual double NanometersPerSecondSquaredTolerance { get { return 1e-5; } }
         protected virtual double StandardGravityTolerance { get { return 1e-5; } }
@@ -135,6 +137,7 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(KnotsPerSecondInOneMeterPerSecondSquared, meterpersecondsquared.KnotsPerSecond, KnotsPerSecondTolerance);
             AssertEx.EqualTolerance(MetersPerSecondSquaredInOneMeterPerSecondSquared, meterpersecondsquared.MetersPerSecondSquared, MetersPerSecondSquaredTolerance);
             AssertEx.EqualTolerance(MicrometersPerSecondSquaredInOneMeterPerSecondSquared, meterpersecondsquared.MicrometersPerSecondSquared, MicrometersPerSecondSquaredTolerance);
+            AssertEx.EqualTolerance(MilesPerSquareSecondsInOneMeterPerSecondSquared, meterpersecondsquared.MilesPerSquareSeconds, MilesPerSquareSecondsTolerance);
             AssertEx.EqualTolerance(MillimetersPerSecondSquaredInOneMeterPerSecondSquared, meterpersecondsquared.MillimetersPerSecondSquared, MillimetersPerSecondSquaredTolerance);
             AssertEx.EqualTolerance(NanometersPerSecondSquaredInOneMeterPerSecondSquared, meterpersecondsquared.NanometersPerSecondSquared, NanometersPerSecondSquaredTolerance);
             AssertEx.EqualTolerance(StandardGravityInOneMeterPerSecondSquared, meterpersecondsquared.StandardGravity, StandardGravityTolerance);
@@ -183,17 +186,21 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(1, quantity09.MicrometersPerSecondSquared, MicrometersPerSecondSquaredTolerance);
             Assert.Equal(AccelerationUnit.MicrometerPerSecondSquared, quantity09.Unit);
 
-            var quantity10 = Acceleration.From(1, AccelerationUnit.MillimeterPerSecondSquared);
-            AssertEx.EqualTolerance(1, quantity10.MillimetersPerSecondSquared, MillimetersPerSecondSquaredTolerance);
-            Assert.Equal(AccelerationUnit.MillimeterPerSecondSquared, quantity10.Unit);
+            var quantity10 = Acceleration.From(1, AccelerationUnit.MilesPerSquareSecond);
+            AssertEx.EqualTolerance(1, quantity10.MilesPerSquareSeconds, MilesPerSquareSecondsTolerance);
+            Assert.Equal(AccelerationUnit.MilesPerSquareSecond, quantity10.Unit);
 
-            var quantity11 = Acceleration.From(1, AccelerationUnit.NanometerPerSecondSquared);
-            AssertEx.EqualTolerance(1, quantity11.NanometersPerSecondSquared, NanometersPerSecondSquaredTolerance);
-            Assert.Equal(AccelerationUnit.NanometerPerSecondSquared, quantity11.Unit);
+            var quantity11 = Acceleration.From(1, AccelerationUnit.MillimeterPerSecondSquared);
+            AssertEx.EqualTolerance(1, quantity11.MillimetersPerSecondSquared, MillimetersPerSecondSquaredTolerance);
+            Assert.Equal(AccelerationUnit.MillimeterPerSecondSquared, quantity11.Unit);
 
-            var quantity12 = Acceleration.From(1, AccelerationUnit.StandardGravity);
-            AssertEx.EqualTolerance(1, quantity12.StandardGravity, StandardGravityTolerance);
-            Assert.Equal(AccelerationUnit.StandardGravity, quantity12.Unit);
+            var quantity12 = Acceleration.From(1, AccelerationUnit.NanometerPerSecondSquared);
+            AssertEx.EqualTolerance(1, quantity12.NanometersPerSecondSquared, NanometersPerSecondSquaredTolerance);
+            Assert.Equal(AccelerationUnit.NanometerPerSecondSquared, quantity12.Unit);
+
+            var quantity13 = Acceleration.From(1, AccelerationUnit.StandardGravity);
+            AssertEx.EqualTolerance(1, quantity13.StandardGravity, StandardGravityTolerance);
+            Assert.Equal(AccelerationUnit.StandardGravity, quantity13.Unit);
 
         }
 
@@ -224,6 +231,7 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(KnotsPerSecondInOneMeterPerSecondSquared, meterpersecondsquared.As(AccelerationUnit.KnotPerSecond), KnotsPerSecondTolerance);
             AssertEx.EqualTolerance(MetersPerSecondSquaredInOneMeterPerSecondSquared, meterpersecondsquared.As(AccelerationUnit.MeterPerSecondSquared), MetersPerSecondSquaredTolerance);
             AssertEx.EqualTolerance(MicrometersPerSecondSquaredInOneMeterPerSecondSquared, meterpersecondsquared.As(AccelerationUnit.MicrometerPerSecondSquared), MicrometersPerSecondSquaredTolerance);
+            AssertEx.EqualTolerance(MilesPerSquareSecondsInOneMeterPerSecondSquared, meterpersecondsquared.As(AccelerationUnit.MilesPerSquareSecond), MilesPerSquareSecondsTolerance);
             AssertEx.EqualTolerance(MillimetersPerSecondSquaredInOneMeterPerSecondSquared, meterpersecondsquared.As(AccelerationUnit.MillimeterPerSecondSquared), MillimetersPerSecondSquaredTolerance);
             AssertEx.EqualTolerance(NanometersPerSecondSquaredInOneMeterPerSecondSquared, meterpersecondsquared.As(AccelerationUnit.NanometerPerSecondSquared), NanometersPerSecondSquaredTolerance);
             AssertEx.EqualTolerance(StandardGravityInOneMeterPerSecondSquared, meterpersecondsquared.As(AccelerationUnit.StandardGravity), StandardGravityTolerance);
@@ -274,6 +282,10 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(MicrometersPerSecondSquaredInOneMeterPerSecondSquared, (double)micrometerpersecondsquaredQuantity.Value, MicrometersPerSecondSquaredTolerance);
             Assert.Equal(AccelerationUnit.MicrometerPerSecondSquared, micrometerpersecondsquaredQuantity.Unit);
 
+            var milespersquaresecondQuantity = meterpersecondsquared.ToUnit(AccelerationUnit.MilesPerSquareSecond);
+            AssertEx.EqualTolerance(MilesPerSquareSecondsInOneMeterPerSecondSquared, (double)milespersquaresecondQuantity.Value, MilesPerSquareSecondsTolerance);
+            Assert.Equal(AccelerationUnit.MilesPerSquareSecond, milespersquaresecondQuantity.Unit);
+
             var millimeterpersecondsquaredQuantity = meterpersecondsquared.ToUnit(AccelerationUnit.MillimeterPerSecondSquared);
             AssertEx.EqualTolerance(MillimetersPerSecondSquaredInOneMeterPerSecondSquared, (double)millimeterpersecondsquaredQuantity.Value, MillimetersPerSecondSquaredTolerance);
             Assert.Equal(AccelerationUnit.MillimeterPerSecondSquared, millimeterpersecondsquaredQuantity.Unit);
@@ -301,6 +313,7 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(1, Acceleration.FromKnotsPerSecond(meterpersecondsquared.KnotsPerSecond).MetersPerSecondSquared, KnotsPerSecondTolerance);
             AssertEx.EqualTolerance(1, Acceleration.FromMetersPerSecondSquared(meterpersecondsquared.MetersPerSecondSquared).MetersPerSecondSquared, MetersPerSecondSquaredTolerance);
             AssertEx.EqualTolerance(1, Acceleration.FromMicrometersPerSecondSquared(meterpersecondsquared.MicrometersPerSecondSquared).MetersPerSecondSquared, MicrometersPerSecondSquaredTolerance);
+            AssertEx.EqualTolerance(1, Acceleration.FromMilesPerSquareSeconds(meterpersecondsquared.MilesPerSquareSeconds).MetersPerSecondSquared, MilesPerSquareSecondsTolerance);
             AssertEx.EqualTolerance(1, Acceleration.FromMillimetersPerSecondSquared(meterpersecondsquared.MillimetersPerSecondSquared).MetersPerSecondSquared, MillimetersPerSecondSquaredTolerance);
             AssertEx.EqualTolerance(1, Acceleration.FromNanometersPerSecondSquared(meterpersecondsquared.NanometersPerSecondSquared).MetersPerSecondSquared, NanometersPerSecondSquaredTolerance);
             AssertEx.EqualTolerance(1, Acceleration.FromStandardGravity(meterpersecondsquared.StandardGravity).MetersPerSecondSquared, StandardGravityTolerance);
@@ -470,6 +483,7 @@ namespace UnitsNet.Tests
                 Assert.Equal("1 kn/s", new Acceleration(1, AccelerationUnit.KnotPerSecond).ToString());
                 Assert.Equal("1 m/s²", new Acceleration(1, AccelerationUnit.MeterPerSecondSquared).ToString());
                 Assert.Equal("1 µm/s²", new Acceleration(1, AccelerationUnit.MicrometerPerSecondSquared).ToString());
+                Assert.Equal("1 mi/s²", new Acceleration(1, AccelerationUnit.MilesPerSquareSecond).ToString());
                 Assert.Equal("1 mm/s²", new Acceleration(1, AccelerationUnit.MillimeterPerSecondSquared).ToString());
                 Assert.Equal("1 nm/s²", new Acceleration(1, AccelerationUnit.NanometerPerSecondSquared).ToString());
                 Assert.Equal("1 g", new Acceleration(1, AccelerationUnit.StandardGravity).ToString());
@@ -496,6 +510,7 @@ namespace UnitsNet.Tests
             Assert.Equal("1 kn/s", new Acceleration(1, AccelerationUnit.KnotPerSecond).ToString(swedishCulture));
             Assert.Equal("1 m/s²", new Acceleration(1, AccelerationUnit.MeterPerSecondSquared).ToString(swedishCulture));
             Assert.Equal("1 µm/s²", new Acceleration(1, AccelerationUnit.MicrometerPerSecondSquared).ToString(swedishCulture));
+            Assert.Equal("1 mi/s²", new Acceleration(1, AccelerationUnit.MilesPerSquareSecond).ToString(swedishCulture));
             Assert.Equal("1 mm/s²", new Acceleration(1, AccelerationUnit.MillimeterPerSecondSquared).ToString(swedishCulture));
             Assert.Equal("1 nm/s²", new Acceleration(1, AccelerationUnit.NanometerPerSecondSquared).ToString(swedishCulture));
             Assert.Equal("1 g", new Acceleration(1, AccelerationUnit.StandardGravity).ToString(swedishCulture));

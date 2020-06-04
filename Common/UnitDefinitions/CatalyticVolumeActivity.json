@@ -1,0 +1,21 @@
+{
+    "Name": "CatalyticVolumeActivity",
+    "BaseUnit": "KatalPerCubicMeter",
+    "Units": [
+        {
+            "UnitsNet_Domain": "CatalyticVolumeActivity",
+            "SingularName": "KatalPerCubicMeter",
+            "PluralName": "KatalPerCubicMeters",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "kat/m³"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -58,6 +58,16 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double MetricHorsepowerInOneWatt => 0.00135962161730390432342679032425;
 
+        protected override double BTUPerSecondsInOneWatt => throw new NotImplementedException();
+
+        protected override double CaloriePerSecondsInOneWatt => throw new NotImplementedException();
+
+        protected override double GigajoulePerYearsInOneWatt => throw new NotImplementedException();
+
+        protected override double KilocaloriePerSecondsInOneWatt => throw new NotImplementedException();
+
+        protected override double TonOfRefrigerationsInOneWatt => throw new NotImplementedException();
+
         [Fact]
         public void DurationTimesPowerEqualsEnergy()
         {

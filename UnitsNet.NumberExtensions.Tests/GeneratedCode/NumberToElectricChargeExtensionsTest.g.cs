@@ -37,6 +37,10 @@ namespace UnitsNet.Tests
             Assert.Equal(ElectricCharge.FromKiloampereHours(2), 2.KiloampereHours());
 
         [Fact]
+        public void NumberToKiloCoulombsTest() =>
+            Assert.Equal(ElectricCharge.FromKiloCoulombs(2), 2.KiloCoulombs());
+
+        [Fact]
         public void NumberToMegaampereHoursTest() =>
             Assert.Equal(ElectricCharge.FromMegaampereHours(2), 2.MegaampereHours());
 

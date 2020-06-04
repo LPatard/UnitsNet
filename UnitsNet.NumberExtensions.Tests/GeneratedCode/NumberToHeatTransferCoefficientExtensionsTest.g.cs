@@ -25,6 +25,10 @@ namespace UnitsNet.Tests
     public class NumberToHeatTransferCoefficientExtensionsTests
     {
         [Fact]
+        public void NumberToBtuPerHourSquarefeetFahrenheitsTest() =>
+            Assert.Equal(HeatTransferCoefficient.FromBtuPerHourSquarefeetFahrenheits(2), 2.BtuPerHourSquarefeetFahrenheits());
+
+        [Fact]
         public void NumberToBtusPerSquareFootDegreeFahrenheitTest() =>
             Assert.Equal(HeatTransferCoefficient.FromBtusPerSquareFootDegreeFahrenheit(2), 2.BtusPerSquareFootDegreeFahrenheit());
 
@@ -35,6 +39,10 @@ namespace UnitsNet.Tests
         [Fact]
         public void NumberToWattsPerSquareMeterKelvinTest() =>
             Assert.Equal(HeatTransferCoefficient.FromWattsPerSquareMeterKelvin(2), 2.WattsPerSquareMeterKelvin());
+
+        [Fact]
+        public void NumberToWattPerSquareMetterPerKelvinsTest() =>
+            Assert.Equal(HeatTransferCoefficient.FromWattPerSquareMetterPerKelvins(2), 2.WattPerSquareMetterPerKelvins());
 
     }
 }

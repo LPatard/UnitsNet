@@ -39,6 +39,7 @@ namespace UnitsNet.Tests
         protected abstract double AmpereHoursInOneCoulomb { get; }
         protected abstract double CoulombsInOneCoulomb { get; }
         protected abstract double KiloampereHoursInOneCoulomb { get; }
+        protected abstract double KiloCoulombsInOneCoulomb { get; }
         protected abstract double MegaampereHoursInOneCoulomb { get; }
         protected abstract double MilliampereHoursInOneCoulomb { get; }
 
@@ -46,6 +47,7 @@ namespace UnitsNet.Tests
         protected virtual double AmpereHoursTolerance { get { return 1e-5; } }
         protected virtual double CoulombsTolerance { get { return 1e-5; } }
         protected virtual double KiloampereHoursTolerance { get { return 1e-5; } }
+        protected virtual double KiloCoulombsTolerance { get { return 1e-5; } }
         protected virtual double MegaampereHoursTolerance { get { return 1e-5; } }
         protected virtual double MilliampereHoursTolerance { get { return 1e-5; } }
 // ReSharper restore VirtualMemberNeverOverriden.Global
@@ -112,6 +114,7 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(AmpereHoursInOneCoulomb, coulomb.AmpereHours, AmpereHoursTolerance);
             AssertEx.EqualTolerance(CoulombsInOneCoulomb, coulomb.Coulombs, CoulombsTolerance);
             AssertEx.EqualTolerance(KiloampereHoursInOneCoulomb, coulomb.KiloampereHours, KiloampereHoursTolerance);
+            AssertEx.EqualTolerance(KiloCoulombsInOneCoulomb, coulomb.KiloCoulombs, KiloCoulombsTolerance);
             AssertEx.EqualTolerance(MegaampereHoursInOneCoulomb, coulomb.MegaampereHours, MegaampereHoursTolerance);
             AssertEx.EqualTolerance(MilliampereHoursInOneCoulomb, coulomb.MilliampereHours, MilliampereHoursTolerance);
         }
@@ -131,13 +134,17 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(1, quantity02.KiloampereHours, KiloampereHoursTolerance);
             Assert.Equal(ElectricChargeUnit.KiloampereHour, quantity02.Unit);
 
-            var quantity03 = ElectricCharge.From(1, ElectricChargeUnit.MegaampereHour);
-            AssertEx.EqualTolerance(1, quantity03.MegaampereHours, MegaampereHoursTolerance);
-            Assert.Equal(ElectricChargeUnit.MegaampereHour, quantity03.Unit);
+            var quantity03 = ElectricCharge.From(1, ElectricChargeUnit.KiloCoulomb);
+            AssertEx.EqualTolerance(1, quantity03.KiloCoulombs, KiloCoulombsTolerance);
+            Assert.Equal(ElectricChargeUnit.KiloCoulomb, quantity03.Unit);
 
-            var quantity04 = ElectricCharge.From(1, ElectricChargeUnit.MilliampereHour);
-            AssertEx.EqualTolerance(1, quantity04.MilliampereHours, MilliampereHoursTolerance);
-            Assert.Equal(ElectricChargeUnit.MilliampereHour, quantity04.Unit);
+            var quantity04 = ElectricCharge.From(1, ElectricChargeUnit.MegaampereHour);
+            AssertEx.EqualTolerance(1, quantity04.MegaampereHours, MegaampereHoursTolerance);
+            Assert.Equal(ElectricChargeUnit.MegaampereHour, quantity04.Unit);
+
+            var quantity05 = ElectricCharge.From(1, ElectricChargeUnit.MilliampereHour);
+            AssertEx.EqualTolerance(1, quantity05.MilliampereHours, MilliampereHoursTolerance);
+            Assert.Equal(ElectricChargeUnit.MilliampereHour, quantity05.Unit);
 
         }
 
@@ -161,6 +168,7 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(AmpereHoursInOneCoulomb, coulomb.As(ElectricChargeUnit.AmpereHour), AmpereHoursTolerance);
             AssertEx.EqualTolerance(CoulombsInOneCoulomb, coulomb.As(ElectricChargeUnit.Coulomb), CoulombsTolerance);
             AssertEx.EqualTolerance(KiloampereHoursInOneCoulomb, coulomb.As(ElectricChargeUnit.KiloampereHour), KiloampereHoursTolerance);
+            AssertEx.EqualTolerance(KiloCoulombsInOneCoulomb, coulomb.As(ElectricChargeUnit.KiloCoulomb), KiloCoulombsTolerance);
             AssertEx.EqualTolerance(MegaampereHoursInOneCoulomb, coulomb.As(ElectricChargeUnit.MegaampereHour), MegaampereHoursTolerance);
             AssertEx.EqualTolerance(MilliampereHoursInOneCoulomb, coulomb.As(ElectricChargeUnit.MilliampereHour), MilliampereHoursTolerance);
         }
@@ -182,6 +190,10 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(KiloampereHoursInOneCoulomb, (double)kiloamperehourQuantity.Value, KiloampereHoursTolerance);
             Assert.Equal(ElectricChargeUnit.KiloampereHour, kiloamperehourQuantity.Unit);
 
+            var kilocoulombQuantity = coulomb.ToUnit(ElectricChargeUnit.KiloCoulomb);
+            AssertEx.EqualTolerance(KiloCoulombsInOneCoulomb, (double)kilocoulombQuantity.Value, KiloCoulombsTolerance);
+            Assert.Equal(ElectricChargeUnit.KiloCoulomb, kilocoulombQuantity.Unit);
+
             var megaamperehourQuantity = coulomb.ToUnit(ElectricChargeUnit.MegaampereHour);
             AssertEx.EqualTolerance(MegaampereHoursInOneCoulomb, (double)megaamperehourQuantity.Value, MegaampereHoursTolerance);
             Assert.Equal(ElectricChargeUnit.MegaampereHour, megaamperehourQuantity.Unit);
@@ -198,6 +210,7 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(1, ElectricCharge.FromAmpereHours(coulomb.AmpereHours).Coulombs, AmpereHoursTolerance);
             AssertEx.EqualTolerance(1, ElectricCharge.FromCoulombs(coulomb.Coulombs).Coulombs, CoulombsTolerance);
             AssertEx.EqualTolerance(1, ElectricCharge.FromKiloampereHours(coulomb.KiloampereHours).Coulombs, KiloampereHoursTolerance);
+            AssertEx.EqualTolerance(1, ElectricCharge.FromKiloCoulombs(coulomb.KiloCoulombs).Coulombs, KiloCoulombsTolerance);
             AssertEx.EqualTolerance(1, ElectricCharge.FromMegaampereHours(coulomb.MegaampereHours).Coulombs, MegaampereHoursTolerance);
             AssertEx.EqualTolerance(1, ElectricCharge.FromMilliampereHours(coulomb.MilliampereHours).Coulombs, MilliampereHoursTolerance);
         }
@@ -359,6 +372,7 @@ namespace UnitsNet.Tests
                 Assert.Equal("1 A-h", new ElectricCharge(1, ElectricChargeUnit.AmpereHour).ToString());
                 Assert.Equal("1 C", new ElectricCharge(1, ElectricChargeUnit.Coulomb).ToString());
                 Assert.Equal("1 kA-h", new ElectricCharge(1, ElectricChargeUnit.KiloampereHour).ToString());
+                Assert.Equal("1 KC", new ElectricCharge(1, ElectricChargeUnit.KiloCoulomb).ToString());
                 Assert.Equal("1 MA-h", new ElectricCharge(1, ElectricChargeUnit.MegaampereHour).ToString());
                 Assert.Equal("1 mA-h", new ElectricCharge(1, ElectricChargeUnit.MilliampereHour).ToString());
             }
@@ -377,6 +391,7 @@ namespace UnitsNet.Tests
             Assert.Equal("1 A-h", new ElectricCharge(1, ElectricChargeUnit.AmpereHour).ToString(swedishCulture));
             Assert.Equal("1 C", new ElectricCharge(1, ElectricChargeUnit.Coulomb).ToString(swedishCulture));
             Assert.Equal("1 kA-h", new ElectricCharge(1, ElectricChargeUnit.KiloampereHour).ToString(swedishCulture));
+            Assert.Equal("1 KC", new ElectricCharge(1, ElectricChargeUnit.KiloCoulomb).ToString(swedishCulture));
             Assert.Equal("1 MA-h", new ElectricCharge(1, ElectricChargeUnit.MegaampereHour).ToString(swedishCulture));
             Assert.Equal("1 mA-h", new ElectricCharge(1, ElectricChargeUnit.MilliampereHour).ToString(swedishCulture));
         }

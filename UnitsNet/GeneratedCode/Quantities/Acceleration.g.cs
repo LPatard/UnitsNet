@@ -62,6 +62,7 @@ namespace UnitsNet
                     new UnitInfo<AccelerationUnit>(AccelerationUnit.KnotPerSecond, new BaseUnits(length: LengthUnit.NauticalMile, time: DurationUnit.Second)),
                     new UnitInfo<AccelerationUnit>(AccelerationUnit.MeterPerSecondSquared, new BaseUnits(length: LengthUnit.Meter, time: DurationUnit.Second)),
                     new UnitInfo<AccelerationUnit>(AccelerationUnit.MicrometerPerSecondSquared, BaseUnits.Undefined),
+                    new UnitInfo<AccelerationUnit>(AccelerationUnit.MilesPerSquareSecond, BaseUnits.Undefined),
                     new UnitInfo<AccelerationUnit>(AccelerationUnit.MillimeterPerSecondSquared, BaseUnits.Undefined),
                     new UnitInfo<AccelerationUnit>(AccelerationUnit.NanometerPerSecondSquared, BaseUnits.Undefined),
                     new UnitInfo<AccelerationUnit>(AccelerationUnit.StandardGravity, new BaseUnits(length: LengthUnit.Meter, time: DurationUnit.Second)),
@@ -228,6 +229,11 @@ namespace UnitsNet
         public double MicrometersPerSecondSquared => As(AccelerationUnit.MicrometerPerSecondSquared);
 
         /// <summary>
+        ///     Get Acceleration in MilesPerSquareSeconds.
+        /// </summary>
+        public double MilesPerSquareSeconds => As(AccelerationUnit.MilesPerSquareSecond);
+
+        /// <summary>
         ///     Get Acceleration in MillimetersPerSecondSquared.
         /// </summary>
         public double MillimetersPerSecondSquared => As(AccelerationUnit.MillimeterPerSecondSquared);
@@ -360,6 +366,15 @@ namespace UnitsNet
         {
             double value = (double) micrometerspersecondsquared;
             return new Acceleration(value, AccelerationUnit.MicrometerPerSecondSquared);
+        }
+        /// <summary>
+        ///     Get Acceleration from MilesPerSquareSeconds.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Acceleration FromMilesPerSquareSeconds(QuantityValue milespersquareseconds)
+        {
+            double value = (double) milespersquareseconds;
+            return new Acceleration(value, AccelerationUnit.MilesPerSquareSecond);
         }
         /// <summary>
         ///     Get Acceleration from MillimetersPerSecondSquared.
@@ -827,6 +842,7 @@ namespace UnitsNet
                 case AccelerationUnit.KnotPerSecond: return _value*0.5144444444444;
                 case AccelerationUnit.MeterPerSecondSquared: return _value;
                 case AccelerationUnit.MicrometerPerSecondSquared: return (_value) * 1e-6d;
+                case AccelerationUnit.MilesPerSquareSecond: return _value*1609.344;
                 case AccelerationUnit.MillimeterPerSecondSquared: return (_value) * 1e-3d;
                 case AccelerationUnit.NanometerPerSecondSquared: return (_value) * 1e-9d;
                 case AccelerationUnit.StandardGravity: return _value*9.80665;
@@ -865,6 +881,7 @@ namespace UnitsNet
                 case AccelerationUnit.KnotPerSecond: return baseUnitValue/0.5144444444444;
                 case AccelerationUnit.MeterPerSecondSquared: return baseUnitValue;
                 case AccelerationUnit.MicrometerPerSecondSquared: return (baseUnitValue) / 1e-6d;
+                case AccelerationUnit.MilesPerSquareSecond: return baseUnitValue/1609.344;
                 case AccelerationUnit.MillimeterPerSecondSquared: return (baseUnitValue) / 1e-3d;
                 case AccelerationUnit.NanometerPerSecondSquared: return (baseUnitValue) / 1e-9d;
                 case AccelerationUnit.StandardGravity: return baseUnitValue/9.80665;

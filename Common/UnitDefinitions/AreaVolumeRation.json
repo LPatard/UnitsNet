@@ -1,0 +1,21 @@
+{
+    "Name": "AreaVolumeRation",
+    "BaseUnit": "SquareMeterPerLiter",
+    "Units": [
+        {
+            "UnitsNet_Domain": "AreaVolumeRation",
+            "SingularName": "SquareMeterPerLiter",
+            "PluralName": "SquareMeterPerLiters",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "m²/l"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -57,6 +57,7 @@ namespace UnitsNet
                     new UnitInfo<ThermalResistanceUnit>(ThermalResistanceUnit.SquareCentimeterKelvinPerWatt, BaseUnits.Undefined),
                     new UnitInfo<ThermalResistanceUnit>(ThermalResistanceUnit.SquareMeterDegreeCelsiusPerWatt, BaseUnits.Undefined),
                     new UnitInfo<ThermalResistanceUnit>(ThermalResistanceUnit.SquareMeterKelvinPerKilowatt, BaseUnits.Undefined),
+                    new UnitInfo<ThermalResistanceUnit>(ThermalResistanceUnit.SquareMeterKelvinPerWatt, BaseUnits.Undefined),
                 },
                 BaseUnit, Zero, BaseDimensions);
         }
@@ -194,6 +195,11 @@ namespace UnitsNet
         /// </summary>
         public double SquareMeterKelvinsPerKilowatt => As(ThermalResistanceUnit.SquareMeterKelvinPerKilowatt);
 
+        /// <summary>
+        ///     Get ThermalResistance in SquareMeterKelvinPerWatts.
+        /// </summary>
+        public double SquareMeterKelvinPerWatts => As(ThermalResistanceUnit.SquareMeterKelvinPerWatt);
+
         #endregion
 
         #region Static Methods
@@ -267,6 +273,15 @@ namespace UnitsNet
         {
             double value = (double) squaremeterkelvinsperkilowatt;
             return new ThermalResistance(value, ThermalResistanceUnit.SquareMeterKelvinPerKilowatt);
+        }
+        /// <summary>
+        ///     Get ThermalResistance from SquareMeterKelvinPerWatts.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static ThermalResistance FromSquareMeterKelvinPerWatts(QuantityValue squaremeterkelvinperwatts)
+        {
+            double value = (double) squaremeterkelvinperwatts;
+            return new ThermalResistance(value, ThermalResistanceUnit.SquareMeterKelvinPerWatt);
         }
 
         /// <summary>
@@ -702,6 +717,7 @@ namespace UnitsNet
                 case ThermalResistanceUnit.SquareCentimeterKelvinPerWatt: return _value*0.0999964777570357;
                 case ThermalResistanceUnit.SquareMeterDegreeCelsiusPerWatt: return _value*1000.088056074108;
                 case ThermalResistanceUnit.SquareMeterKelvinPerKilowatt: return _value;
+                case ThermalResistanceUnit.SquareMeterKelvinPerWatt: return _value/0.001;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to base units.");
             }
@@ -732,6 +748,7 @@ namespace UnitsNet
                 case ThermalResistanceUnit.SquareCentimeterKelvinPerWatt: return baseUnitValue/0.0999964777570357;
                 case ThermalResistanceUnit.SquareMeterDegreeCelsiusPerWatt: return baseUnitValue/1000.088056074108;
                 case ThermalResistanceUnit.SquareMeterKelvinPerKilowatt: return baseUnitValue;
+                case ThermalResistanceUnit.SquareMeterKelvinPerWatt: return baseUnitValue*0.001;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to {unit}.");
             }

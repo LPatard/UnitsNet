@@ -68,6 +68,10 @@ namespace UnitsNet.NumberExtensions.NumberToAcceleration
         public static Acceleration MicrometersPerSecondSquared<T>(this T value) =>
             Acceleration.FromMicrometersPerSecondSquared(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Acceleration.FromMilesPerSquareSeconds(UnitsNet.QuantityValue)" />
+        public static Acceleration MilesPerSquareSeconds<T>(this T value) =>
+            Acceleration.FromMilesPerSquareSeconds(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Acceleration.FromMillimetersPerSecondSquared(UnitsNet.QuantityValue)" />
         public static Acceleration MillimetersPerSecondSquared<T>(this T value) =>
             Acceleration.FromMillimetersPerSecondSquared(Convert.ToDouble(value));

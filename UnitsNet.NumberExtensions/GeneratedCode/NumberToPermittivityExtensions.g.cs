@@ -32,5 +32,9 @@ namespace UnitsNet.NumberExtensions.NumberToPermittivity
         public static Permittivity FaradsPerMeter<T>(this T value) =>
             Permittivity.FromFaradsPerMeter(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Permittivity.FromMicroFaradPerKilometers(UnitsNet.QuantityValue)" />
+        public static Permittivity MicroFaradPerKilometers<T>(this T value) =>
+            Permittivity.FromMicroFaradPerKilometers(Convert.ToDouble(value));
+
     }
 }

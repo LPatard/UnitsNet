@@ -52,7 +52,11 @@ namespace UnitsNet
 
             Info = new QuantityInfo<AreaDensityUnit>(QuantityType.AreaDensity,
                 new UnitInfo<AreaDensityUnit>[] {
+                    new UnitInfo<AreaDensityUnit>(AreaDensityUnit.GramPerSquareMeter, BaseUnits.Undefined),
+                    new UnitInfo<AreaDensityUnit>(AreaDensityUnit.KilogramPerSquareCentimeter, BaseUnits.Undefined),
                     new UnitInfo<AreaDensityUnit>(AreaDensityUnit.KilogramPerSquareMeter, new BaseUnits(length: LengthUnit.Meter, mass: MassUnit.Kilogram)),
+                    new UnitInfo<AreaDensityUnit>(AreaDensityUnit.KipsPerSquareFoot, BaseUnits.Undefined),
+                    new UnitInfo<AreaDensityUnit>(AreaDensityUnit.KipsPerSquareInch, BaseUnits.Undefined),
                 },
                 BaseUnit, Zero, BaseDimensions);
         }
@@ -166,9 +170,29 @@ namespace UnitsNet
         #region Conversion Properties
 
         /// <summary>
+        ///     Get AreaDensity in GramPerSquareMeters.
+        /// </summary>
+        public double GramPerSquareMeters => As(AreaDensityUnit.GramPerSquareMeter);
+
+        /// <summary>
+        ///     Get AreaDensity in KilogramPerSquareCentimeters.
+        /// </summary>
+        public double KilogramPerSquareCentimeters => As(AreaDensityUnit.KilogramPerSquareCentimeter);
+
+        /// <summary>
         ///     Get AreaDensity in KilogramsPerSquareMeter.
         /// </summary>
         public double KilogramsPerSquareMeter => As(AreaDensityUnit.KilogramPerSquareMeter);
+
+        /// <summary>
+        ///     Get AreaDensity in KipsPerSquareFoots.
+        /// </summary>
+        public double KipsPerSquareFoots => As(AreaDensityUnit.KipsPerSquareFoot);
+
+        /// <summary>
+        ///     Get AreaDensity in KipsPerSquareInchs.
+        /// </summary>
+        public double KipsPerSquareInchs => As(AreaDensityUnit.KipsPerSquareInch);
 
         #endregion
 
@@ -200,6 +224,24 @@ namespace UnitsNet
         #region Static Factory Methods
 
         /// <summary>
+        ///     Get AreaDensity from GramPerSquareMeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static AreaDensity FromGramPerSquareMeters(QuantityValue grampersquaremeters)
+        {
+            double value = (double) grampersquaremeters;
+            return new AreaDensity(value, AreaDensityUnit.GramPerSquareMeter);
+        }
+        /// <summary>
+        ///     Get AreaDensity from KilogramPerSquareCentimeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static AreaDensity FromKilogramPerSquareCentimeters(QuantityValue kilogrampersquarecentimeters)
+        {
+            double value = (double) kilogrampersquarecentimeters;
+            return new AreaDensity(value, AreaDensityUnit.KilogramPerSquareCentimeter);
+        }
+        /// <summary>
         ///     Get AreaDensity from KilogramsPerSquareMeter.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -207,6 +249,24 @@ namespace UnitsNet
         {
             double value = (double) kilogramspersquaremeter;
             return new AreaDensity(value, AreaDensityUnit.KilogramPerSquareMeter);
+        }
+        /// <summary>
+        ///     Get AreaDensity from KipsPerSquareFoots.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static AreaDensity FromKipsPerSquareFoots(QuantityValue kipspersquarefoots)
+        {
+            double value = (double) kipspersquarefoots;
+            return new AreaDensity(value, AreaDensityUnit.KipsPerSquareFoot);
+        }
+        /// <summary>
+        ///     Get AreaDensity from KipsPerSquareInchs.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static AreaDensity FromKipsPerSquareInchs(QuantityValue kipspersquareinchs)
+        {
+            double value = (double) kipspersquareinchs;
+            return new AreaDensity(value, AreaDensityUnit.KipsPerSquareInch);
         }
 
         /// <summary>
@@ -637,7 +697,11 @@ namespace UnitsNet
         {
             switch(Unit)
             {
+                case AreaDensityUnit.GramPerSquareMeter: return _value*0.001;
+                case AreaDensityUnit.KilogramPerSquareCentimeter: return _value*10000;
                 case AreaDensityUnit.KilogramPerSquareMeter: return _value;
+                case AreaDensityUnit.KipsPerSquareFoot: return _value*4882.42763638;
+                case AreaDensityUnit.KipsPerSquareInch: return _value*703069.579639;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to base units.");
             }
@@ -663,7 +727,11 @@ namespace UnitsNet
 
             switch(unit)
             {
+                case AreaDensityUnit.GramPerSquareMeter: return baseUnitValue/0.001;
+                case AreaDensityUnit.KilogramPerSquareCentimeter: return baseUnitValue/10000;
                 case AreaDensityUnit.KilogramPerSquareMeter: return baseUnitValue;
+                case AreaDensityUnit.KipsPerSquareFoot: return baseUnitValue/4882.42763638;
+                case AreaDensityUnit.KipsPerSquareInch: return baseUnitValue/703069.579639;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to {unit}.");
             }

@@ -1,0 +1,21 @@
+{
+    "Name": "ThermalLengthExpansion",
+    "BaseUnit": "MillimeterPerMeterKelvinDegree",
+    "Units": [
+        {
+            "UnitsNet_Domain": "ThermalLengthExpansion",
+            "SingularName": "MillimeterPerMeterKelvinDegree",
+            "PluralName": "MillimeterPerMeterKelvinDegrees",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "mm/(m.K)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

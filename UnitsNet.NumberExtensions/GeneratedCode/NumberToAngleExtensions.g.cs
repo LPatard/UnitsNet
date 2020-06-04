@@ -52,6 +52,10 @@ namespace UnitsNet.NumberExtensions.NumberToAngle
         public static Angle Gradians<T>(this T value) =>
             Angle.FromGradians(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Angle.FromMeterPerMillimeters(UnitsNet.QuantityValue)" />
+        public static Angle MeterPerMillimeters<T>(this T value) =>
+            Angle.FromMeterPerMillimeters(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Angle.FromMicrodegrees(UnitsNet.QuantityValue)" />
         public static Angle Microdegrees<T>(this T value) =>
             Angle.FromMicrodegrees(Convert.ToDouble(value));
@@ -63,6 +67,10 @@ namespace UnitsNet.NumberExtensions.NumberToAngle
         /// <inheritdoc cref="Angle.FromMillidegrees(UnitsNet.QuantityValue)" />
         public static Angle Millidegrees<T>(this T value) =>
             Angle.FromMillidegrees(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Angle.FromMillimeterPerMeters(UnitsNet.QuantityValue)" />
+        public static Angle MillimeterPerMeters<T>(this T value) =>
+            Angle.FromMillimeterPerMeters(Convert.ToDouble(value));
 
         /// <inheritdoc cref="Angle.FromMilliradians(UnitsNet.QuantityValue)" />
         public static Angle Milliradians<T>(this T value) =>

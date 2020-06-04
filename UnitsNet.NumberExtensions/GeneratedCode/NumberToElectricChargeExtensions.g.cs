@@ -40,6 +40,10 @@ namespace UnitsNet.NumberExtensions.NumberToElectricCharge
         public static ElectricCharge KiloampereHours<T>(this T value) =>
             ElectricCharge.FromKiloampereHours(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="ElectricCharge.FromKiloCoulombs(UnitsNet.QuantityValue)" />
+        public static ElectricCharge KiloCoulombs<T>(this T value) =>
+            ElectricCharge.FromKiloCoulombs(Convert.ToDouble(value));
+
         /// <inheritdoc cref="ElectricCharge.FromMegaampereHours(UnitsNet.QuantityValue)" />
         public static ElectricCharge MegaampereHours<T>(this T value) =>
             ElectricCharge.FromMegaampereHours(Convert.ToDouble(value));

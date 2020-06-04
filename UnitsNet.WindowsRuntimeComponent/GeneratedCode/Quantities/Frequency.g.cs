@@ -171,6 +171,11 @@ namespace UnitsNet
         public double CyclesPerMinute => As(FrequencyUnit.CyclePerMinute);
 
         /// <summary>
+        ///     Get Frequency in CyclePerSeconds.
+        /// </summary>
+        public double CyclePerSeconds => As(FrequencyUnit.CyclePerSecond);
+
+        /// <summary>
         ///     Get Frequency in Gigahertz.
         /// </summary>
         public double Gigahertz => As(FrequencyUnit.Gigahertz);
@@ -264,6 +269,16 @@ namespace UnitsNet
         {
             double value = (double) cyclesperminute;
             return new Frequency(value, FrequencyUnit.CyclePerMinute);
+        }
+        /// <summary>
+        ///     Get Frequency from CyclePerSeconds.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Frequency FromCyclePerSeconds(double cycleperseconds)
+        {
+            double value = (double) cycleperseconds;
+            return new Frequency(value, FrequencyUnit.CyclePerSecond);
         }
         /// <summary>
         ///     Get Frequency from Gigahertz.
@@ -629,6 +644,7 @@ namespace UnitsNet
                 case FrequencyUnit.BeatPerMinute: return _value/60;
                 case FrequencyUnit.CyclePerHour: return _value/3600;
                 case FrequencyUnit.CyclePerMinute: return _value/60;
+                case FrequencyUnit.CyclePerSecond: return _value;
                 case FrequencyUnit.Gigahertz: return (_value) * 1e9d;
                 case FrequencyUnit.Hertz: return _value;
                 case FrequencyUnit.Kilohertz: return (_value) * 1e3d;
@@ -653,6 +669,7 @@ namespace UnitsNet
                 case FrequencyUnit.BeatPerMinute: return baseUnitValue*60;
                 case FrequencyUnit.CyclePerHour: return baseUnitValue*3600;
                 case FrequencyUnit.CyclePerMinute: return baseUnitValue*60;
+                case FrequencyUnit.CyclePerSecond: return baseUnitValue;
                 case FrequencyUnit.Gigahertz: return (baseUnitValue) / 1e9d;
                 case FrequencyUnit.Hertz: return baseUnitValue;
                 case FrequencyUnit.Kilohertz: return (baseUnitValue) / 1e3d;

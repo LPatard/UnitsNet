@@ -9,6 +9,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "ThermalResistance",
+      "SingularName": "SquareMeterKelvinPerWatt",
+      "PluralName": "SquareMeterKelvinPerWatts",
+      "FromBaseToUnitFunc": "x*0.001",
+      "FromUnitToBaseFunc": "x/0.001",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "m²·K/W"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "SquareMeterKelvinPerKilowatt",
       "PluralName": "SquareMeterKelvinsPerKilowatt",
       "FromUnitToBaseFunc": "x",

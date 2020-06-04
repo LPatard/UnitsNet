@@ -41,8 +41,14 @@ namespace UnitsNet
         {
             switch (unit)
             {
+                case AbsorbedDoseUnit absorbedDoseUnit:
+                    quantity = AbsorbedDose.From(value, absorbedDoseUnit);
+                    return true;
                 case AccelerationUnit accelerationUnit:
                     quantity = Acceleration.From(value, accelerationUnit);
+                    return true;
+                case ActivityUnit activityUnit:
+                    quantity = Activity.From(value, activityUnit);
                     return true;
                 case AmountOfSubstanceUnit amountOfSubstanceUnit:
                     quantity = AmountOfSubstance.From(value, amountOfSubstanceUnit);
@@ -68,6 +74,12 @@ namespace UnitsNet
                 case AreaMomentOfInertiaUnit areaMomentOfInertiaUnit:
                     quantity = AreaMomentOfInertia.From(value, areaMomentOfInertiaUnit);
                     return true;
+                case AreaVolumeRationUnit areaVolumeRationUnit:
+                    quantity = AreaVolumeRation.From(value, areaVolumeRationUnit);
+                    return true;
+                case BaudRateUnit baudRateUnit:
+                    quantity = BaudRate.From(value, baudRateUnit);
+                    return true;
                 case BitRateUnit bitRateUnit:
                     quantity = BitRate.From(value, bitRateUnit);
                     return true;
@@ -77,11 +89,23 @@ namespace UnitsNet
                 case CapacitanceUnit capacitanceUnit:
                     quantity = Capacitance.From(value, capacitanceUnit);
                     return true;
+                case CatalyticActivityUnit catalyticActivityUnit:
+                    quantity = CatalyticActivity.From(value, catalyticActivityUnit);
+                    return true;
+                case CatalyticVolumeActivityUnit catalyticVolumeActivityUnit:
+                    quantity = CatalyticVolumeActivity.From(value, catalyticVolumeActivityUnit);
+                    return true;
                 case CoefficientOfThermalExpansionUnit coefficientOfThermalExpansionUnit:
                     quantity = CoefficientOfThermalExpansion.From(value, coefficientOfThermalExpansionUnit);
                     return true;
                 case DensityUnit densityUnit:
                     quantity = Density.From(value, densityUnit);
+                    return true;
+                case DiffusivityUnit diffusivityUnit:
+                    quantity = Diffusivity.From(value, diffusivityUnit);
+                    return true;
+                case DoseRateUnit doseRateUnit:
+                    quantity = DoseRate.From(value, doseRateUnit);
                     return true;
                 case DurationUnit durationUnit:
                     quantity = Duration.From(value, durationUnit);
@@ -143,6 +167,9 @@ namespace UnitsNet
                 case EnergyUnit energyUnit:
                     quantity = Energy.From(value, energyUnit);
                     return true;
+                case EnergyDensityUnit energyDensityUnit:
+                    quantity = EnergyDensity.From(value, energyDensityUnit);
+                    return true;
                 case EntropyUnit entropyUnit:
                     quantity = Entropy.From(value, entropyUnit);
                     return true;
@@ -161,6 +188,9 @@ namespace UnitsNet
                 case FuelEfficiencyUnit fuelEfficiencyUnit:
                     quantity = FuelEfficiency.From(value, fuelEfficiencyUnit);
                     return true;
+                case HeatCapacityUnit heatCapacityUnit:
+                    quantity = HeatCapacity.From(value, heatCapacityUnit);
+                    return true;
                 case HeatFluxUnit heatFluxUnit:
                     quantity = HeatFlux.From(value, heatFluxUnit);
                     return true;
@@ -172,6 +202,9 @@ namespace UnitsNet
                     return true;
                 case InformationUnit informationUnit:
                     quantity = Information.From(value, informationUnit);
+                    return true;
+                case IonDoseUnit ionDoseUnit:
+                    quantity = IonDose.From(value, ionDoseUnit);
                     return true;
                 case IrradianceUnit irradianceUnit:
                     quantity = Irradiance.From(value, irradianceUnit);
@@ -197,8 +230,14 @@ namespace UnitsNet
                 case LinearPowerDensityUnit linearPowerDensityUnit:
                     quantity = LinearPowerDensity.From(value, linearPowerDensityUnit);
                     return true;
+                case LuminanceUnit luminanceUnit:
+                    quantity = Luminance.From(value, luminanceUnit);
+                    return true;
                 case LuminosityUnit luminosityUnit:
                     quantity = Luminosity.From(value, luminosityUnit);
+                    return true;
+                case LuminousEfficacyUnit luminousEfficacyUnit:
+                    quantity = LuminousEfficacy.From(value, luminousEfficacyUnit);
                     return true;
                 case LuminousFluxUnit luminousFluxUnit:
                     quantity = LuminousFlux.From(value, luminousFluxUnit);
@@ -248,6 +287,9 @@ namespace UnitsNet
                 case PermeabilityUnit permeabilityUnit:
                     quantity = Permeability.From(value, permeabilityUnit);
                     return true;
+                case PermeanceUnit permeanceUnit:
+                    quantity = Permeance.From(value, permeanceUnit);
+                    return true;
                 case PermittivityUnit permittivityUnit:
                     quantity = Permittivity.From(value, permittivityUnit);
                     return true;
@@ -265,6 +307,15 @@ namespace UnitsNet
                     return true;
                 case PressureChangeRateUnit pressureChangeRateUnit:
                     quantity = PressureChangeRate.From(value, pressureChangeRateUnit);
+                    return true;
+                case PressureGradientUnit pressureGradientUnit:
+                    quantity = PressureGradient.From(value, pressureGradientUnit);
+                    return true;
+                case RadianceUnit radianceUnit:
+                    quantity = Radiance.From(value, radianceUnit);
+                    return true;
+                case RadiantIntensityUnit radiantIntensityUnit:
+                    quantity = RadiantIntensity.From(value, radiantIntensityUnit);
                     return true;
                 case RatioUnit ratioUnit:
                     quantity = Ratio.From(value, ratioUnit);
@@ -293,11 +344,26 @@ namespace UnitsNet
                 case SolidAngleUnit solidAngleUnit:
                     quantity = SolidAngle.From(value, solidAngleUnit);
                     return true;
+                case SpaceVelocityUnit spaceVelocityUnit:
+                    quantity = SpaceVelocity.From(value, spaceVelocityUnit);
+                    return true;
+                case SpecificAreaUnit specificAreaUnit:
+                    quantity = SpecificArea.From(value, specificAreaUnit);
+                    return true;
+                case SpecificDischargeUnit specificDischargeUnit:
+                    quantity = SpecificDischarge.From(value, specificDischargeUnit);
+                    return true;
                 case SpecificEnergyUnit specificEnergyUnit:
                     quantity = SpecificEnergy.From(value, specificEnergyUnit);
                     return true;
                 case SpecificEntropyUnit specificEntropyUnit:
                     quantity = SpecificEntropy.From(value, specificEntropyUnit);
+                    return true;
+                case SpecificHeatEnergyUnit specificHeatEnergyUnit:
+                    quantity = SpecificHeatEnergy.From(value, specificHeatEnergyUnit);
+                    return true;
+                case SpecificLengthUnit specificLengthUnit:
+                    quantity = SpecificLength.From(value, specificLengthUnit);
                     return true;
                 case SpecificVolumeUnit specificVolumeUnit:
                     quantity = SpecificVolume.From(value, specificVolumeUnit);
@@ -314,11 +380,23 @@ namespace UnitsNet
                 case TemperatureChangeRateUnit temperatureChangeRateUnit:
                     quantity = TemperatureChangeRate.From(value, temperatureChangeRateUnit);
                     return true;
+                case TemperatureCoefficientUnit temperatureCoefficientUnit:
+                    quantity = TemperatureCoefficient.From(value, temperatureCoefficientUnit);
+                    return true;
                 case TemperatureDeltaUnit temperatureDeltaUnit:
                     quantity = TemperatureDelta.From(value, temperatureDeltaUnit);
                     return true;
+                case ThermalLengthExpansionUnit thermalLengthExpansionUnit:
+                    quantity = ThermalLengthExpansion.From(value, thermalLengthExpansionUnit);
+                    return true;
+                case ThermalConductanceUnit thermalConductanceUnit:
+                    quantity = ThermalConductance.From(value, thermalConductanceUnit);
+                    return true;
                 case ThermalConductivityUnit thermalConductivityUnit:
                     quantity = ThermalConductivity.From(value, thermalConductivityUnit);
+                    return true;
+                case ThermalInsulanceUnit thermalInsulanceUnit:
+                    quantity = ThermalInsulance.From(value, thermalInsulanceUnit);
                     return true;
                 case ThermalResistanceUnit thermalResistanceUnit:
                     quantity = ThermalResistance.From(value, thermalResistanceUnit);
@@ -394,8 +472,14 @@ namespace UnitsNet
 
             var parser = QuantityParser.Default;
 
+            if (quantityType == typeof(AbsorbedDose))
+                return parser.TryParse<AbsorbedDose, AbsorbedDoseUnit>(quantityString, formatProvider, AbsorbedDose.From, out quantity);
+
             if (quantityType == typeof(Acceleration))
                 return parser.TryParse<Acceleration, AccelerationUnit>(quantityString, formatProvider, Acceleration.From, out quantity);
+
+            if (quantityType == typeof(Activity))
+                return parser.TryParse<Activity, ActivityUnit>(quantityString, formatProvider, Activity.From, out quantity);
 
             if (quantityType == typeof(AmountOfSubstance))
                 return parser.TryParse<AmountOfSubstance, AmountOfSubstanceUnit>(quantityString, formatProvider, AmountOfSubstance.From, out quantity);
@@ -421,6 +505,12 @@ namespace UnitsNet
             if (quantityType == typeof(AreaMomentOfInertia))
                 return parser.TryParse<AreaMomentOfInertia, AreaMomentOfInertiaUnit>(quantityString, formatProvider, AreaMomentOfInertia.From, out quantity);
 
+            if (quantityType == typeof(AreaVolumeRation))
+                return parser.TryParse<AreaVolumeRation, AreaVolumeRationUnit>(quantityString, formatProvider, AreaVolumeRation.From, out quantity);
+
+            if (quantityType == typeof(BaudRate))
+                return parser.TryParse<BaudRate, BaudRateUnit>(quantityString, formatProvider, BaudRate.From, out quantity);
+
             if (quantityType == typeof(BitRate))
                 return parser.TryParse<BitRate, BitRateUnit>(quantityString, formatProvider, BitRate.From, out quantity);
 
@@ -430,11 +520,23 @@ namespace UnitsNet
             if (quantityType == typeof(Capacitance))
                 return parser.TryParse<Capacitance, CapacitanceUnit>(quantityString, formatProvider, Capacitance.From, out quantity);
 
+            if (quantityType == typeof(CatalyticActivity))
+                return parser.TryParse<CatalyticActivity, CatalyticActivityUnit>(quantityString, formatProvider, CatalyticActivity.From, out quantity);
+
+            if (quantityType == typeof(CatalyticVolumeActivity))
+                return parser.TryParse<CatalyticVolumeActivity, CatalyticVolumeActivityUnit>(quantityString, formatProvider, CatalyticVolumeActivity.From, out quantity);
+
             if (quantityType == typeof(CoefficientOfThermalExpansion))
                 return parser.TryParse<CoefficientOfThermalExpansion, CoefficientOfThermalExpansionUnit>(quantityString, formatProvider, CoefficientOfThermalExpansion.From, out quantity);
 
             if (quantityType == typeof(Density))
                 return parser.TryParse<Density, DensityUnit>(quantityString, formatProvider, Density.From, out quantity);
+
+            if (quantityType == typeof(Diffusivity))
+                return parser.TryParse<Diffusivity, DiffusivityUnit>(quantityString, formatProvider, Diffusivity.From, out quantity);
+
+            if (quantityType == typeof(DoseRate))
+                return parser.TryParse<DoseRate, DoseRateUnit>(quantityString, formatProvider, DoseRate.From, out quantity);
 
             if (quantityType == typeof(Duration))
                 return parser.TryParse<Duration, DurationUnit>(quantityString, formatProvider, Duration.From, out quantity);
@@ -496,6 +598,9 @@ namespace UnitsNet
             if (quantityType == typeof(Energy))
                 return parser.TryParse<Energy, EnergyUnit>(quantityString, formatProvider, Energy.From, out quantity);
 
+            if (quantityType == typeof(EnergyDensity))
+                return parser.TryParse<EnergyDensity, EnergyDensityUnit>(quantityString, formatProvider, EnergyDensity.From, out quantity);
+
             if (quantityType == typeof(Entropy))
                 return parser.TryParse<Entropy, EntropyUnit>(quantityString, formatProvider, Entropy.From, out quantity);
 
@@ -514,6 +619,9 @@ namespace UnitsNet
             if (quantityType == typeof(FuelEfficiency))
                 return parser.TryParse<FuelEfficiency, FuelEfficiencyUnit>(quantityString, formatProvider, FuelEfficiency.From, out quantity);
 
+            if (quantityType == typeof(HeatCapacity))
+                return parser.TryParse<HeatCapacity, HeatCapacityUnit>(quantityString, formatProvider, HeatCapacity.From, out quantity);
+
             if (quantityType == typeof(HeatFlux))
                 return parser.TryParse<HeatFlux, HeatFluxUnit>(quantityString, formatProvider, HeatFlux.From, out quantity);
 
@@ -525,6 +633,9 @@ namespace UnitsNet
 
             if (quantityType == typeof(Information))
                 return parser.TryParse<Information, InformationUnit>(quantityString, formatProvider, Information.From, out quantity);
+
+            if (quantityType == typeof(IonDose))
+                return parser.TryParse<IonDose, IonDoseUnit>(quantityString, formatProvider, IonDose.From, out quantity);
 
             if (quantityType == typeof(Irradiance))
                 return parser.TryParse<Irradiance, IrradianceUnit>(quantityString, formatProvider, Irradiance.From, out quantity);
@@ -550,8 +661,14 @@ namespace UnitsNet
             if (quantityType == typeof(LinearPowerDensity))
                 return parser.TryParse<LinearPowerDensity, LinearPowerDensityUnit>(quantityString, formatProvider, LinearPowerDensity.From, out quantity);
 
+            if (quantityType == typeof(Luminance))
+                return parser.TryParse<Luminance, LuminanceUnit>(quantityString, formatProvider, Luminance.From, out quantity);
+
             if (quantityType == typeof(Luminosity))
                 return parser.TryParse<Luminosity, LuminosityUnit>(quantityString, formatProvider, Luminosity.From, out quantity);
+
+            if (quantityType == typeof(LuminousEfficacy))
+                return parser.TryParse<LuminousEfficacy, LuminousEfficacyUnit>(quantityString, formatProvider, LuminousEfficacy.From, out quantity);
 
             if (quantityType == typeof(LuminousFlux))
                 return parser.TryParse<LuminousFlux, LuminousFluxUnit>(quantityString, formatProvider, LuminousFlux.From, out quantity);
@@ -601,6 +718,9 @@ namespace UnitsNet
             if (quantityType == typeof(Permeability))
                 return parser.TryParse<Permeability, PermeabilityUnit>(quantityString, formatProvider, Permeability.From, out quantity);
 
+            if (quantityType == typeof(Permeance))
+                return parser.TryParse<Permeance, PermeanceUnit>(quantityString, formatProvider, Permeance.From, out quantity);
+
             if (quantityType == typeof(Permittivity))
                 return parser.TryParse<Permittivity, PermittivityUnit>(quantityString, formatProvider, Permittivity.From, out quantity);
 
@@ -618,6 +738,15 @@ namespace UnitsNet
 
             if (quantityType == typeof(PressureChangeRate))
                 return parser.TryParse<PressureChangeRate, PressureChangeRateUnit>(quantityString, formatProvider, PressureChangeRate.From, out quantity);
+
+            if (quantityType == typeof(PressureGradient))
+                return parser.TryParse<PressureGradient, PressureGradientUnit>(quantityString, formatProvider, PressureGradient.From, out quantity);
+
+            if (quantityType == typeof(Radiance))
+                return parser.TryParse<Radiance, RadianceUnit>(quantityString, formatProvider, Radiance.From, out quantity);
+
+            if (quantityType == typeof(RadiantIntensity))
+                return parser.TryParse<RadiantIntensity, RadiantIntensityUnit>(quantityString, formatProvider, RadiantIntensity.From, out quantity);
 
             if (quantityType == typeof(Ratio))
                 return parser.TryParse<Ratio, RatioUnit>(quantityString, formatProvider, Ratio.From, out quantity);
@@ -646,11 +775,26 @@ namespace UnitsNet
             if (quantityType == typeof(SolidAngle))
                 return parser.TryParse<SolidAngle, SolidAngleUnit>(quantityString, formatProvider, SolidAngle.From, out quantity);
 
+            if (quantityType == typeof(SpaceVelocity))
+                return parser.TryParse<SpaceVelocity, SpaceVelocityUnit>(quantityString, formatProvider, SpaceVelocity.From, out quantity);
+
+            if (quantityType == typeof(SpecificArea))
+                return parser.TryParse<SpecificArea, SpecificAreaUnit>(quantityString, formatProvider, SpecificArea.From, out quantity);
+
+            if (quantityType == typeof(SpecificDischarge))
+                return parser.TryParse<SpecificDischarge, SpecificDischargeUnit>(quantityString, formatProvider, SpecificDischarge.From, out quantity);
+
             if (quantityType == typeof(SpecificEnergy))
                 return parser.TryParse<SpecificEnergy, SpecificEnergyUnit>(quantityString, formatProvider, SpecificEnergy.From, out quantity);
 
             if (quantityType == typeof(SpecificEntropy))
                 return parser.TryParse<SpecificEntropy, SpecificEntropyUnit>(quantityString, formatProvider, SpecificEntropy.From, out quantity);
+
+            if (quantityType == typeof(SpecificHeatEnergy))
+                return parser.TryParse<SpecificHeatEnergy, SpecificHeatEnergyUnit>(quantityString, formatProvider, SpecificHeatEnergy.From, out quantity);
+
+            if (quantityType == typeof(SpecificLength))
+                return parser.TryParse<SpecificLength, SpecificLengthUnit>(quantityString, formatProvider, SpecificLength.From, out quantity);
 
             if (quantityType == typeof(SpecificVolume))
                 return parser.TryParse<SpecificVolume, SpecificVolumeUnit>(quantityString, formatProvider, SpecificVolume.From, out quantity);
@@ -667,11 +811,23 @@ namespace UnitsNet
             if (quantityType == typeof(TemperatureChangeRate))
                 return parser.TryParse<TemperatureChangeRate, TemperatureChangeRateUnit>(quantityString, formatProvider, TemperatureChangeRate.From, out quantity);
 
+            if (quantityType == typeof(TemperatureCoefficient))
+                return parser.TryParse<TemperatureCoefficient, TemperatureCoefficientUnit>(quantityString, formatProvider, TemperatureCoefficient.From, out quantity);
+
             if (quantityType == typeof(TemperatureDelta))
                 return parser.TryParse<TemperatureDelta, TemperatureDeltaUnit>(quantityString, formatProvider, TemperatureDelta.From, out quantity);
 
+            if (quantityType == typeof(ThermalLengthExpansion))
+                return parser.TryParse<ThermalLengthExpansion, ThermalLengthExpansionUnit>(quantityString, formatProvider, ThermalLengthExpansion.From, out quantity);
+
+            if (quantityType == typeof(ThermalConductance))
+                return parser.TryParse<ThermalConductance, ThermalConductanceUnit>(quantityString, formatProvider, ThermalConductance.From, out quantity);
+
             if (quantityType == typeof(ThermalConductivity))
                 return parser.TryParse<ThermalConductivity, ThermalConductivityUnit>(quantityString, formatProvider, ThermalConductivity.From, out quantity);
+
+            if (quantityType == typeof(ThermalInsulance))
+                return parser.TryParse<ThermalInsulance, ThermalInsulanceUnit>(quantityString, formatProvider, ThermalInsulance.From, out quantity);
 
             if (quantityType == typeof(ThermalResistance))
                 return parser.TryParse<ThermalResistance, ThermalResistanceUnit>(quantityString, formatProvider, ThermalResistance.From, out quantity);

@@ -7,6 +7,66 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Length",
+      "SingularName": "Link",
+      "PluralName": "Links",
+      "FromBaseToUnitFunc": "x/0.201",
+      "FromUnitToBaseFunc": "x*0.201",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "li"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Length",
+      "SingularName": "Rod",
+      "PluralName": "Rods",
+      "FromBaseToUnitFunc": "x/5.0292",
+      "FromUnitToBaseFunc": "x*5.0292",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "rd"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Length",
+      "SingularName": "Furlong",
+      "PluralName": "Furlongs",
+      "FromBaseToUnitFunc": "x/201.168",
+      "FromUnitToBaseFunc": "x*201.168",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "fur"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Length",
+      "SingularName": "League",
+      "PluralName": "Leagues",
+      "FromBaseToUnitFunc": "x/4828.032",
+      "FromUnitToBaseFunc": "x*4828.032",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "Lea"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "Meter",
       "PluralName": "Meters",
       "BaseUnits": {

@@ -57,6 +57,14 @@ namespace UnitsNet.Tests
             Assert.Equal(DynamicViscosity.FromPoundsForceSecondPerSquareInch(2), 2.PoundsForceSecondPerSquareInch());
 
         [Fact]
+        public void NumberToPoundPerFootHoursTest() =>
+            Assert.Equal(DynamicViscosity.FromPoundPerFootHours(2), 2.PoundPerFootHours());
+
+        [Fact]
+        public void NumberToPoundPerFootSecondsTest() =>
+            Assert.Equal(DynamicViscosity.FromPoundPerFootSeconds(2), 2.PoundPerFootSeconds());
+
+        [Fact]
         public void NumberToReynsTest() =>
             Assert.Equal(DynamicViscosity.FromReyns(2), 2.Reyns());
 

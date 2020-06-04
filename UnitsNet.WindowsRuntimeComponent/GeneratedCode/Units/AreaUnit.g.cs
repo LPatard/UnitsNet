@@ -29,6 +29,7 @@ namespace UnitsNet.Units
         Acre,
         Hectare,
         SquareCentimeter,
+        SquareChain,
         SquareDecimeter,
         SquareFoot,
         SquareInch,
@@ -39,6 +40,7 @@ namespace UnitsNet.Units
         SquareMillimeter,
         SquareNauticalMile,
         SquareYard,
+        ThousandCircularMil,
         UsSurveySquareFoot,
     }
 

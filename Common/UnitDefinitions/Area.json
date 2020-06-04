@@ -7,6 +7,36 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Area",
+      "SingularName": "SquareChain",
+      "PluralName": "SquareChains",
+      "FromBaseToUnitFunc": "x/404.685642",
+      "FromUnitToBaseFunc": "x*404.685642",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "ch²"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Area",
+      "SingularName": "ThousandCircularMil",
+      "PluralName": "ThousandCircularMils",
+      "FromBaseToUnitFunc": "x/5.06707479097e-7",
+      "FromUnitToBaseFunc": "x*5.06707479097e-7",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "kcmil"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "SquareKilometer",
       "PluralName": "SquareKilometers",
       "BaseUnits": {

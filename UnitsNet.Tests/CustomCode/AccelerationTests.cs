@@ -33,6 +33,8 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double KnotsPerSecondInOneMeterPerSecondSquared => 1.94384449244060;
 
+        protected override double MilesPerSquareSecondsInOneMeterPerSecondSquared => throw new System.NotImplementedException();
+
         [Fact]
         public void AccelerationTimesDensityEqualsSpecificWeight()
         {

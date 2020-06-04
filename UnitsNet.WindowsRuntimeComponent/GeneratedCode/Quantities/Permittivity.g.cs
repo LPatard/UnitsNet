@@ -163,6 +163,11 @@ namespace UnitsNet
         /// </summary>
         public double FaradsPerMeter => As(PermittivityUnit.FaradPerMeter);
 
+        /// <summary>
+        ///     Get Permittivity in MicroFaradPerKilometers.
+        /// </summary>
+        public double MicroFaradPerKilometers => As(PermittivityUnit.MicroFaradPerKilometer);
+
         #endregion
 
         #region Static Methods
@@ -202,6 +207,16 @@ namespace UnitsNet
         {
             double value = (double) faradspermeter;
             return new Permittivity(value, PermittivityUnit.FaradPerMeter);
+        }
+        /// <summary>
+        ///     Get Permittivity from MicroFaradPerKilometers.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Permittivity FromMicroFaradPerKilometers(double microfaradperkilometers)
+        {
+            double value = (double) microfaradperkilometers;
+            return new Permittivity(value, PermittivityUnit.MicroFaradPerKilometer);
         }
 
         /// <summary>
@@ -495,6 +510,7 @@ namespace UnitsNet
             switch(Unit)
             {
                 case PermittivityUnit.FaradPerMeter: return _value;
+                case PermittivityUnit.MicroFaradPerKilometer: return _value*0.000000001;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to base units.");
             }
@@ -510,6 +526,7 @@ namespace UnitsNet
             switch(unit)
             {
                 case PermittivityUnit.FaradPerMeter: return baseUnitValue;
+                case PermittivityUnit.MicroFaradPerKilometer: return baseUnitValue/0.000000001;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to {unit}.");
             }

@@ -1,0 +1,21 @@
+{
+    "Name": "TemperatureCoefficient",
+    "BaseUnit": "PercentageByKelvin",
+    "Units": [
+        {
+            "UnitsNet_Domain": "TemperatureCoefficient",
+            "SingularName": "PercentageByKelvin",
+            "PluralName": "PercentageByKelvins",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "%/K"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -40,5 +40,7 @@ namespace UnitsNet.Tests.CustomCode
         protected override double WattHoursPerSquareMeterInOneJoulePerSquareMeter => 2.777777777777778e-4;
 
         protected override double KilowattHoursPerSquareMeterInOneJoulePerSquareMeter => 2.777777777777778e-7;
+
+        protected override double MegajoulePerSquareMetersInOneJoulePerSquareMeter => throw new NotImplementedException();
     }
 }

@@ -1,0 +1,36 @@
+{
+    "Name": "Permeance",
+    "BaseUnit": "Perm",
+    "Units": [
+        {
+            "UnitsNet_Domain": "Permeance",
+            "SingularName": "Perm",
+            "PluralName": "Perms",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "ng/(Pa·s·m²)"
+                    ]
+                }
+            ]
+        },
+        {
+            "UnitsNet_Domain": "Permeance",
+            "SingularName": "GrainsPerHourSquareFootInchOfMercury",
+            "PluralName": "GrainsPerHourSquareFootInchOfMercurys",
+            "FromBaseToUnitFunc": "x/57.2135",
+            "FromUnitToBaseFunc": "x*57.2135",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "gr/(h·ft²·inHg)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

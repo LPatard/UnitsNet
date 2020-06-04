@@ -32,5 +32,7 @@ namespace UnitsNet.Tests.CustomCode
         protected override double AmpereHoursInOneCoulomb => 2.77777777777e-4;
         protected override double KiloampereHoursInOneCoulomb => 2.77777777777e-7;
         protected override double MegaampereHoursInOneCoulomb => 2.77777777777e-10;
+
+        protected override double KiloCoulombsInOneCoulomb => throw new NotImplementedException();
     }
 }

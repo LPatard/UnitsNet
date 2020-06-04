@@ -159,6 +159,11 @@ namespace UnitsNet
         #region Conversion Properties
 
         /// <summary>
+        ///     Get Illuminance in FootCandles.
+        /// </summary>
+        public double FootCandles => As(IlluminanceUnit.FootCandle);
+
+        /// <summary>
         ///     Get Illuminance in Kilolux.
         /// </summary>
         public double Kilolux => As(IlluminanceUnit.Kilolux);
@@ -208,6 +213,16 @@ namespace UnitsNet
 
         #region Static Factory Methods
 
+        /// <summary>
+        ///     Get Illuminance from FootCandles.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Illuminance FromFootCandles(double footcandles)
+        {
+            double value = (double) footcandles;
+            return new Illuminance(value, IlluminanceUnit.FootCandle);
+        }
         /// <summary>
         ///     Get Illuminance from Kilolux.
         /// </summary>
@@ -539,6 +554,7 @@ namespace UnitsNet
         {
             switch(Unit)
             {
+                case IlluminanceUnit.FootCandle: return _value*10.7639104167;
                 case IlluminanceUnit.Kilolux: return (_value) * 1e3d;
                 case IlluminanceUnit.Lux: return _value;
                 case IlluminanceUnit.Megalux: return (_value) * 1e6d;
@@ -557,6 +573,7 @@ namespace UnitsNet
 
             switch(unit)
             {
+                case IlluminanceUnit.FootCandle: return baseUnitValue/10.7639104167;
                 case IlluminanceUnit.Kilolux: return (baseUnitValue) / 1e3d;
                 case IlluminanceUnit.Lux: return baseUnitValue;
                 case IlluminanceUnit.Megalux: return (baseUnitValue) / 1e6d;

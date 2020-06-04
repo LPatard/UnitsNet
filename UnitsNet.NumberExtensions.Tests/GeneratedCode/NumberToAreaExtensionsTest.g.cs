@@ -37,6 +37,10 @@ namespace UnitsNet.Tests
             Assert.Equal(Area.FromSquareCentimeters(2), 2.SquareCentimeters());
 
         [Fact]
+        public void NumberToSquareChainsTest() =>
+            Assert.Equal(Area.FromSquareChains(2), 2.SquareChains());
+
+        [Fact]
         public void NumberToSquareDecimetersTest() =>
             Assert.Equal(Area.FromSquareDecimeters(2), 2.SquareDecimeters());
 
@@ -75,6 +79,10 @@ namespace UnitsNet.Tests
         [Fact]
         public void NumberToSquareYardsTest() =>
             Assert.Equal(Area.FromSquareYards(2), 2.SquareYards());
+
+        [Fact]
+        public void NumberToThousandCircularMilsTest() =>
+            Assert.Equal(Area.FromThousandCircularMils(2), 2.ThousandCircularMils());
 
         [Fact]
         public void NumberToUsSurveySquareFeetTest() =>

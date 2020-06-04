@@ -1,0 +1,21 @@
+{
+    "Name": "SpecificHeatEnergy",
+    "BaseUnit": "JoulePerGramCelciusDegree",
+    "Units": [
+        {
+            "UnitsNet_Domain": "SpecificHeatEnergy",
+            "SingularName": "JoulePerGramCelciusDegree",
+            "PluralName": "JoulePerGramCelciusDegrees",
+            "FromBaseToUnitFunc": "x/1000",
+            "FromUnitToBaseFunc": "x*1000",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "J/(g·°C)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

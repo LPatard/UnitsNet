@@ -1,0 +1,36 @@
+{
+    "Name": "EnergyDensity",
+    "BaseUnit": "JoulePerCubicMeter",
+    "Units": [
+      {
+        "UnitsNet_Domain": "EnergyDensity",
+        "SingularName": "WattSecondCubicMeter",
+        "PluralName": "WattSecondCubicMeters",
+        "FromBaseToUnitFunc": "x",
+        "FromUnitToBaseFunc": "x",
+        "Localization": [
+            {
+                "Culture": "en-US",
+                "Abbreviations": [
+                    "Ws/m³"
+                ]
+            }
+        ]
+      },
+      {
+        "UnitsNet_Domain": "EnergyDensity",
+        "SingularName": "JoulePerCubicMeter",
+        "PluralName": "JoulePerCubicMeters",
+        "FromBaseToUnitFunc": "x",
+        "FromUnitToBaseFunc": "x",
+        "Localization": [
+            {
+                "Culture": "en-US",
+                "Abbreviations": [
+                    "J/m³"
+                ]
+            }
+        ]
+      }
+    ]
+}

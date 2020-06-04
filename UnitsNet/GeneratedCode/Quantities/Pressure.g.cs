@@ -55,10 +55,13 @@ namespace UnitsNet
                     new UnitInfo<PressureUnit>(PressureUnit.Atmosphere, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Bar, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Centibar, BaseUnits.Undefined),
+                    new UnitInfo<PressureUnit>(PressureUnit.DecanewtonPerSquareCentimeter, BaseUnits.Undefined),
+                    new UnitInfo<PressureUnit>(PressureUnit.DecanewtonPerSquareMeter, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Decapascal, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Decibar, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.DynePerSquareCentimeter, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.FootOfHead, BaseUnits.Undefined),
+                    new UnitInfo<PressureUnit>(PressureUnit.FootOfWater, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Gigapascal, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Hectopascal, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.InchOfMercury, BaseUnits.Undefined),
@@ -77,6 +80,7 @@ namespace UnitsNet
                     new UnitInfo<PressureUnit>(PressureUnit.MeganewtonPerSquareMeter, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Megapascal, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.MeterOfHead, BaseUnits.Undefined),
+                    new UnitInfo<PressureUnit>(PressureUnit.MeterOfWaterColumn, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Microbar, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Micropascal, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Millibar, BaseUnits.Undefined),
@@ -94,6 +98,8 @@ namespace UnitsNet
                     new UnitInfo<PressureUnit>(PressureUnit.TonneForcePerSquareMeter, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.TonneForcePerSquareMillimeter, BaseUnits.Undefined),
                     new UnitInfo<PressureUnit>(PressureUnit.Torr, BaseUnits.Undefined),
+                    new UnitInfo<PressureUnit>(PressureUnit.WaterMeter, BaseUnits.Undefined),
+                    new UnitInfo<PressureUnit>(PressureUnit.WaterMillimeter, BaseUnits.Undefined),
                 },
                 BaseUnit, Zero, BaseDimensions);
         }
@@ -222,6 +228,16 @@ namespace UnitsNet
         public double Centibars => As(PressureUnit.Centibar);
 
         /// <summary>
+        ///     Get Pressure in DecanewtonPerSquareCentimeters.
+        /// </summary>
+        public double DecanewtonPerSquareCentimeters => As(PressureUnit.DecanewtonPerSquareCentimeter);
+
+        /// <summary>
+        ///     Get Pressure in DecanewtonPerSquareMeters.
+        /// </summary>
+        public double DecanewtonPerSquareMeters => As(PressureUnit.DecanewtonPerSquareMeter);
+
+        /// <summary>
         ///     Get Pressure in Decapascals.
         /// </summary>
         public double Decapascals => As(PressureUnit.Decapascal);
@@ -240,6 +256,11 @@ namespace UnitsNet
         ///     Get Pressure in FeetOfHead.
         /// </summary>
         public double FeetOfHead => As(PressureUnit.FootOfHead);
+
+        /// <summary>
+        ///     Get Pressure in FootOfWaters.
+        /// </summary>
+        public double FootOfWaters => As(PressureUnit.FootOfWater);
 
         /// <summary>
         ///     Get Pressure in Gigapascals.
@@ -332,6 +353,11 @@ namespace UnitsNet
         public double MetersOfHead => As(PressureUnit.MeterOfHead);
 
         /// <summary>
+        ///     Get Pressure in MeterOfWaterColumns.
+        /// </summary>
+        public double MeterOfWaterColumns => As(PressureUnit.MeterOfWaterColumn);
+
+        /// <summary>
         ///     Get Pressure in Microbars.
         /// </summary>
         public double Microbars => As(PressureUnit.Microbar);
@@ -416,6 +442,16 @@ namespace UnitsNet
         /// </summary>
         public double Torrs => As(PressureUnit.Torr);
 
+        /// <summary>
+        ///     Get Pressure in WaterMeters.
+        /// </summary>
+        public double WaterMeters => As(PressureUnit.WaterMeter);
+
+        /// <summary>
+        ///     Get Pressure in WaterMillimeters.
+        /// </summary>
+        public double WaterMillimeters => As(PressureUnit.WaterMillimeter);
+
         #endregion
 
         #region Static Methods
@@ -473,6 +509,24 @@ namespace UnitsNet
             return new Pressure(value, PressureUnit.Centibar);
         }
         /// <summary>
+        ///     Get Pressure from DecanewtonPerSquareCentimeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Pressure FromDecanewtonPerSquareCentimeters(QuantityValue decanewtonpersquarecentimeters)
+        {
+            double value = (double) decanewtonpersquarecentimeters;
+            return new Pressure(value, PressureUnit.DecanewtonPerSquareCentimeter);
+        }
+        /// <summary>
+        ///     Get Pressure from DecanewtonPerSquareMeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Pressure FromDecanewtonPerSquareMeters(QuantityValue decanewtonpersquaremeters)
+        {
+            double value = (double) decanewtonpersquaremeters;
+            return new Pressure(value, PressureUnit.DecanewtonPerSquareMeter);
+        }
+        /// <summary>
         ///     Get Pressure from Decapascals.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -507,6 +561,15 @@ namespace UnitsNet
         {
             double value = (double) feetofhead;
             return new Pressure(value, PressureUnit.FootOfHead);
+        }
+        /// <summary>
+        ///     Get Pressure from FootOfWaters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Pressure FromFootOfWaters(QuantityValue footofwaters)
+        {
+            double value = (double) footofwaters;
+            return new Pressure(value, PressureUnit.FootOfWater);
         }
         /// <summary>
         ///     Get Pressure from Gigapascals.
@@ -671,6 +734,15 @@ namespace UnitsNet
             return new Pressure(value, PressureUnit.MeterOfHead);
         }
         /// <summary>
+        ///     Get Pressure from MeterOfWaterColumns.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Pressure FromMeterOfWaterColumns(QuantityValue meterofwatercolumns)
+        {
+            double value = (double) meterofwatercolumns;
+            return new Pressure(value, PressureUnit.MeterOfWaterColumn);
+        }
+        /// <summary>
         ///     Get Pressure from Microbars.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -822,6 +894,24 @@ namespace UnitsNet
         {
             double value = (double) torrs;
             return new Pressure(value, PressureUnit.Torr);
+        }
+        /// <summary>
+        ///     Get Pressure from WaterMeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Pressure FromWaterMeters(QuantityValue watermeters)
+        {
+            double value = (double) watermeters;
+            return new Pressure(value, PressureUnit.WaterMeter);
+        }
+        /// <summary>
+        ///     Get Pressure from WaterMillimeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Pressure FromWaterMillimeters(QuantityValue watermillimeters)
+        {
+            double value = (double) watermillimeters;
+            return new Pressure(value, PressureUnit.WaterMillimeter);
         }
 
         /// <summary>
@@ -1255,10 +1345,13 @@ namespace UnitsNet
                 case PressureUnit.Atmosphere: return _value*1.01325*1e5;
                 case PressureUnit.Bar: return _value*1e5;
                 case PressureUnit.Centibar: return (_value*1e5) * 1e-2d;
+                case PressureUnit.DecanewtonPerSquareCentimeter: return _value*10000;
+                case PressureUnit.DecanewtonPerSquareMeter: return _value*10;
                 case PressureUnit.Decapascal: return (_value) * 1e1d;
                 case PressureUnit.Decibar: return (_value*1e5) * 1e-1d;
                 case PressureUnit.DynePerSquareCentimeter: return _value*1.0e-1;
                 case PressureUnit.FootOfHead: return _value*2989.0669;
+                case PressureUnit.FootOfWater: return _value*2988.98;
                 case PressureUnit.Gigapascal: return (_value) * 1e9d;
                 case PressureUnit.Hectopascal: return (_value) * 1e2d;
                 case PressureUnit.InchOfMercury: return _value/2.95299830714159e-4;
@@ -1277,6 +1370,7 @@ namespace UnitsNet
                 case PressureUnit.MeganewtonPerSquareMeter: return (_value) * 1e6d;
                 case PressureUnit.Megapascal: return (_value) * 1e6d;
                 case PressureUnit.MeterOfHead: return _value*9804.139432;
+                case PressureUnit.MeterOfWaterColumn: return _value*9806.65;
                 case PressureUnit.Microbar: return (_value*1e5) * 1e-6d;
                 case PressureUnit.Micropascal: return (_value) * 1e-6d;
                 case PressureUnit.Millibar: return (_value*1e5) * 1e-3d;
@@ -1294,6 +1388,8 @@ namespace UnitsNet
                 case PressureUnit.TonneForcePerSquareMeter: return _value*9.80665e3;
                 case PressureUnit.TonneForcePerSquareMillimeter: return _value*9.80665e9;
                 case PressureUnit.Torr: return _value*1.3332266752*1e2;
+                case PressureUnit.WaterMeter: return _value*9800;
+                case PressureUnit.WaterMillimeter: return _value*9.8;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to base units.");
             }
@@ -1322,10 +1418,13 @@ namespace UnitsNet
                 case PressureUnit.Atmosphere: return baseUnitValue/(1.01325*1e5);
                 case PressureUnit.Bar: return baseUnitValue/1e5;
                 case PressureUnit.Centibar: return (baseUnitValue/1e5) / 1e-2d;
+                case PressureUnit.DecanewtonPerSquareCentimeter: return baseUnitValue/10000;
+                case PressureUnit.DecanewtonPerSquareMeter: return baseUnitValue/10;
                 case PressureUnit.Decapascal: return (baseUnitValue) / 1e1d;
                 case PressureUnit.Decibar: return (baseUnitValue/1e5) / 1e-1d;
                 case PressureUnit.DynePerSquareCentimeter: return baseUnitValue/1.0e-1;
                 case PressureUnit.FootOfHead: return baseUnitValue*0.000334552565551;
+                case PressureUnit.FootOfWater: return baseUnitValue/2988.98;
                 case PressureUnit.Gigapascal: return (baseUnitValue) / 1e9d;
                 case PressureUnit.Hectopascal: return (baseUnitValue) / 1e2d;
                 case PressureUnit.InchOfMercury: return baseUnitValue*2.95299830714159e-4;
@@ -1344,6 +1443,7 @@ namespace UnitsNet
                 case PressureUnit.MeganewtonPerSquareMeter: return (baseUnitValue) / 1e6d;
                 case PressureUnit.Megapascal: return (baseUnitValue) / 1e6d;
                 case PressureUnit.MeterOfHead: return baseUnitValue*0.0001019977334;
+                case PressureUnit.MeterOfWaterColumn: return baseUnitValue/9806.65;
                 case PressureUnit.Microbar: return (baseUnitValue/1e5) / 1e-6d;
                 case PressureUnit.Micropascal: return (baseUnitValue) / 1e-6d;
                 case PressureUnit.Millibar: return (baseUnitValue/1e5) / 1e-3d;
@@ -1361,6 +1461,8 @@ namespace UnitsNet
                 case PressureUnit.TonneForcePerSquareMeter: return baseUnitValue/9.80665e3;
                 case PressureUnit.TonneForcePerSquareMillimeter: return baseUnitValue/9.80665e9;
                 case PressureUnit.Torr: return baseUnitValue/(1.3332266752*1e2);
+                case PressureUnit.WaterMeter: return baseUnitValue/9800;
+                case PressureUnit.WaterMillimeter: return baseUnitValue/9.8;
                 default:
                     throw new NotImplementedException($"Can not convert {Unit} to {unit}.");
             }

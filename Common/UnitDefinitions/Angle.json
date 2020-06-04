@@ -4,6 +4,36 @@
   "XmlDoc": "In geometry, an angle is the figure formed by two rays, called the sides of the angle, sharing a common endpoint, called the vertex of the angle.",
   "Units": [
     {
+      "UnitsNet_Domain": "Angle",
+      "SingularName": "MeterPerMillimeter",
+      "PluralName": "MeterPerMillimeters",
+      "FromBaseToUnitFunc": "x/57295.77951322445",
+      "FromUnitToBaseFunc": "x*57295.77951322445",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "m/mm"
+              ]
+          }
+      ]
+  },
+  {
+      "UnitsNet_Domain": "Angle",
+      "SingularName": "MillimeterPerMeter",
+      "PluralName": "MillimeterPerMeters",
+      "FromBaseToUnitFunc": "x/0.057295779513224454",
+      "FromUnitToBaseFunc": "x*0.057295779513224454",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "mm/m"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "Radian",
       "PluralName": "Radians",
       "FromUnitToBaseFunc": "x*180/Math.PI",

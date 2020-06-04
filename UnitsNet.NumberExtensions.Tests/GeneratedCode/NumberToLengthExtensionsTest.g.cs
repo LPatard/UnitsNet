@@ -57,6 +57,10 @@ namespace UnitsNet.Tests
             Assert.Equal(Length.FromFeet(2), 2.Feet());
 
         [Fact]
+        public void NumberToFurlongsTest() =>
+            Assert.Equal(Length.FromFurlongs(2), 2.Furlongs());
+
+        [Fact]
         public void NumberToHandsTest() =>
             Assert.Equal(Length.FromHands(2), 2.Hands());
 
@@ -81,8 +85,16 @@ namespace UnitsNet.Tests
             Assert.Equal(Length.FromKiloparsecs(2), 2.Kiloparsecs());
 
         [Fact]
+        public void NumberToLeaguesTest() =>
+            Assert.Equal(Length.FromLeagues(2), 2.Leagues());
+
+        [Fact]
         public void NumberToLightYearsTest() =>
             Assert.Equal(Length.FromLightYears(2), 2.LightYears());
+
+        [Fact]
+        public void NumberToLinksTest() =>
+            Assert.Equal(Length.FromLinks(2), 2.Links());
 
         [Fact]
         public void NumberToMegalightYearsTest() =>
@@ -135,6 +147,10 @@ namespace UnitsNet.Tests
         [Fact]
         public void NumberToPrinterPointsTest() =>
             Assert.Equal(Length.FromPrinterPoints(2), 2.PrinterPoints());
+
+        [Fact]
+        public void NumberToRodsTest() =>
+            Assert.Equal(Length.FromRods(2), 2.Rods());
 
         [Fact]
         public void NumberToShacklesTest() =>

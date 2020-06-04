@@ -9,6 +9,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "SpecificEnergy",
+      "SingularName": "JoulePerGram",
+      "PluralName": "JoulePerGrams",
+      "FromBaseToUnitFunc": "x/1000",
+      "FromUnitToBaseFunc": "x*1000",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "J/g"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "JoulePerKilogram",
       "PluralName": "JoulesPerKilogram",
       "FromUnitToBaseFunc": "x",

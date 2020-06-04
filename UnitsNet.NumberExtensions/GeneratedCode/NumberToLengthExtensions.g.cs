@@ -60,6 +60,10 @@ namespace UnitsNet.NumberExtensions.NumberToLength
         public static Length Feet<T>(this T value) =>
             Length.FromFeet(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Length.FromFurlongs(UnitsNet.QuantityValue)" />
+        public static Length Furlongs<T>(this T value) =>
+            Length.FromFurlongs(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Length.FromHands(UnitsNet.QuantityValue)" />
         public static Length Hands<T>(this T value) =>
             Length.FromHands(Convert.ToDouble(value));
@@ -84,9 +88,17 @@ namespace UnitsNet.NumberExtensions.NumberToLength
         public static Length Kiloparsecs<T>(this T value) =>
             Length.FromKiloparsecs(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Length.FromLeagues(UnitsNet.QuantityValue)" />
+        public static Length Leagues<T>(this T value) =>
+            Length.FromLeagues(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Length.FromLightYears(UnitsNet.QuantityValue)" />
         public static Length LightYears<T>(this T value) =>
             Length.FromLightYears(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Length.FromLinks(UnitsNet.QuantityValue)" />
+        public static Length Links<T>(this T value) =>
+            Length.FromLinks(Convert.ToDouble(value));
 
         /// <inheritdoc cref="Length.FromMegalightYears(UnitsNet.QuantityValue)" />
         public static Length MegalightYears<T>(this T value) =>
@@ -139,6 +151,10 @@ namespace UnitsNet.NumberExtensions.NumberToLength
         /// <inheritdoc cref="Length.FromPrinterPoints(UnitsNet.QuantityValue)" />
         public static Length PrinterPoints<T>(this T value) =>
             Length.FromPrinterPoints(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="Length.FromRods(UnitsNet.QuantityValue)" />
+        public static Length Rods<T>(this T value) =>
+            Length.FromRods(Convert.ToDouble(value));
 
         /// <inheritdoc cref="Length.FromShackles(UnitsNet.QuantityValue)" />
         public static Length Shackles<T>(this T value) =>

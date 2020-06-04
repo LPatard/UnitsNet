@@ -28,6 +28,10 @@ namespace UnitsNet.NumberExtensions.NumberToIlluminance
     /// </summary>
     public static class NumberToIlluminanceExtensions
     {
+        /// <inheritdoc cref="Illuminance.FromFootCandles(UnitsNet.QuantityValue)" />
+        public static Illuminance FootCandles<T>(this T value) =>
+            Illuminance.FromFootCandles(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Illuminance.FromKilolux(UnitsNet.QuantityValue)" />
         public static Illuminance Kilolux<T>(this T value) =>
             Illuminance.FromKilolux(Convert.ToDouble(value));

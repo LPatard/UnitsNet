@@ -159,6 +159,11 @@ namespace UnitsNet
         #region Conversion Properties
 
         /// <summary>
+        ///     Get ElectricConductivity in MillisiemensPerCentimeters.
+        /// </summary>
+        public double MillisiemensPerCentimeters => As(ElectricConductivityUnit.MillisiemensPerCentimeter);
+
+        /// <summary>
         ///     Get ElectricConductivity in SiemensPerFoot.
         /// </summary>
         public double SiemensPerFoot => As(ElectricConductivityUnit.SiemensPerFoot);
@@ -203,6 +208,16 @@ namespace UnitsNet
 
         #region Static Factory Methods
 
+        /// <summary>
+        ///     Get ElectricConductivity from MillisiemensPerCentimeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static ElectricConductivity FromMillisiemensPerCentimeters(double millisiemenspercentimeters)
+        {
+            double value = (double) millisiemenspercentimeters;
+            return new ElectricConductivity(value, ElectricConductivityUnit.MillisiemensPerCentimeter);
+        }
         /// <summary>
         ///     Get ElectricConductivity from SiemensPerFoot.
         /// </summary>
@@ -524,6 +539,7 @@ namespace UnitsNet
         {
             switch(Unit)
             {
+                case ElectricConductivityUnit.MillisiemensPerCentimeter: return _value*0.1;
                 case ElectricConductivityUnit.SiemensPerFoot: return _value * 3.2808398950131234;
                 case ElectricConductivityUnit.SiemensPerInch: return _value * 3.937007874015748e1;
                 case ElectricConductivityUnit.SiemensPerMeter: return _value;
@@ -541,6 +557,7 @@ namespace UnitsNet
 
             switch(unit)
             {
+                case ElectricConductivityUnit.MillisiemensPerCentimeter: return baseUnitValue/0.1;
                 case ElectricConductivityUnit.SiemensPerFoot: return baseUnitValue / 3.2808398950131234;
                 case ElectricConductivityUnit.SiemensPerInch: return baseUnitValue / 3.937007874015748e1;
                 case ElectricConductivityUnit.SiemensPerMeter: return baseUnitValue;

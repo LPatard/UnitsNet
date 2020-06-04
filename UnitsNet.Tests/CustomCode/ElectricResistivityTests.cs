@@ -55,5 +55,7 @@ namespace UnitsNet.Tests.CustomCode
         protected override double PicoohmsCentimeterInOneOhmMeter => 1e14;
 
         protected override double PicoohmMetersInOneOhmMeter => 1e+12;
+
+        protected override double MilliohmPerMetersInOneOhmMeter => throw new NotImplementedException();
     }
 }

@@ -28,6 +28,10 @@ namespace UnitsNet.NumberExtensions.NumberToTorquePerLength
     /// </summary>
     public static class NumberToTorquePerLengthExtensions
     {
+        /// <inheritdoc cref="TorquePerLength.FromDecanewtonMeterPerMeters(UnitsNet.QuantityValue)" />
+        public static TorquePerLength DecanewtonMeterPerMeters<T>(this T value) =>
+            TorquePerLength.FromDecanewtonMeterPerMeters(Convert.ToDouble(value));
+
         /// <inheritdoc cref="TorquePerLength.FromKilogramForceCentimetersPerMeter(UnitsNet.QuantityValue)" />
         public static TorquePerLength KilogramForceCentimetersPerMeter<T>(this T value) =>
             TorquePerLength.FromKilogramForceCentimetersPerMeter(Convert.ToDouble(value));

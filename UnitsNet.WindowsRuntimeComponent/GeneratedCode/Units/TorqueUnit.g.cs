@@ -26,6 +26,7 @@ namespace UnitsNet.Units
     public enum TorqueUnit
     {
         Undefined = 0,
+        DecanewtonMeter,
         KilogramForceCentimeter,
         KilogramForceMeter,
         KilogramForceMillimeter,
@@ -34,6 +35,7 @@ namespace UnitsNet.Units
         KilonewtonMillimeter,
         KilopoundForceFoot,
         KilopoundForceInch,
+        KipsPerInch,
         MeganewtonCentimeter,
         MeganewtonMeter,
         MeganewtonMillimeter,
@@ -44,6 +46,7 @@ namespace UnitsNet.Units
         NewtonMillimeter,
         PoundForceFoot,
         PoundForceInch,
+        TonForcePerMeter,
         TonneForceCentimeter,
         TonneForceMeter,
         TonneForceMillimeter,

@@ -40,6 +40,10 @@ namespace UnitsNet.NumberExtensions.NumberToFrequency
         public static Frequency CyclesPerMinute<T>(this T value) =>
             Frequency.FromCyclesPerMinute(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Frequency.FromCyclePerSeconds(UnitsNet.QuantityValue)" />
+        public static Frequency CyclePerSeconds<T>(this T value) =>
+            Frequency.FromCyclePerSeconds(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Frequency.FromGigahertz(UnitsNet.QuantityValue)" />
         public static Frequency Gigahertz<T>(this T value) =>
             Frequency.FromGigahertz(Convert.ToDouble(value));

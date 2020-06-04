@@ -28,5 +28,13 @@ namespace UnitsNet.Tests.CustomCode
     public class AreaDensityTests : AreaDensityTestsBase
     {
         protected override double KilogramsPerSquareMeterInOneKilogramPerSquareMeter => 1;
+
+        protected override double GramPerSquareMetersInOneKilogramPerSquareMeter => throw new NotImplementedException();
+
+        protected override double KilogramPerSquareCentimetersInOneKilogramPerSquareMeter => throw new NotImplementedException();
+
+        protected override double KipsPerSquareFootsInOneKilogramPerSquareMeter => throw new NotImplementedException();
+
+        protected override double KipsPerSquareInchsInOneKilogramPerSquareMeter => throw new NotImplementedException();
     }
 }

@@ -7,6 +7,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "Frequency",
+      "SingularName": "CyclePerSecond",
+      "PluralName": "CyclePerSeconds",
+      "FromBaseToUnitFunc": "x",
+      "FromUnitToBaseFunc": "x",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "cps"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "Hertz",
       "PluralName": "Hertz",
       "FromUnitToBaseFunc": "x",

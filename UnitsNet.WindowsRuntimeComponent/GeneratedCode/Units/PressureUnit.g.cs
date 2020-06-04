@@ -29,10 +29,13 @@ namespace UnitsNet.Units
         Atmosphere,
         Bar,
         Centibar,
+        DecanewtonPerSquareCentimeter,
+        DecanewtonPerSquareMeter,
         Decapascal,
         Decibar,
         DynePerSquareCentimeter,
         FootOfHead,
+        FootOfWater,
         Gigapascal,
         Hectopascal,
         InchOfMercury,
@@ -51,6 +54,7 @@ namespace UnitsNet.Units
         MeganewtonPerSquareMeter,
         Megapascal,
         MeterOfHead,
+        MeterOfWaterColumn,
         Microbar,
         Micropascal,
         Millibar,
@@ -68,6 +72,8 @@ namespace UnitsNet.Units
         TonneForcePerSquareMeter,
         TonneForcePerSquareMillimeter,
         Torr,
+        WaterMeter,
+        WaterMillimeter,
     }
 
     #pragma warning restore 1591

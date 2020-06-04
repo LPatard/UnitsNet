@@ -27,6 +27,7 @@ namespace UnitsNet.Units
     {
         Undefined = 0,
         FaradPerMeter,
+        MicroFaradPerKilometer,
     }
 
     #pragma warning restore 1591

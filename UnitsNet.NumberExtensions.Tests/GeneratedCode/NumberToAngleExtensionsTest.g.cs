@@ -49,6 +49,10 @@ namespace UnitsNet.Tests
             Assert.Equal(Angle.FromGradians(2), 2.Gradians());
 
         [Fact]
+        public void NumberToMeterPerMillimetersTest() =>
+            Assert.Equal(Angle.FromMeterPerMillimeters(2), 2.MeterPerMillimeters());
+
+        [Fact]
         public void NumberToMicrodegreesTest() =>
             Assert.Equal(Angle.FromMicrodegrees(2), 2.Microdegrees());
 
@@ -59,6 +63,10 @@ namespace UnitsNet.Tests
         [Fact]
         public void NumberToMillidegreesTest() =>
             Assert.Equal(Angle.FromMillidegrees(2), 2.Millidegrees());
+
+        [Fact]
+        public void NumberToMillimeterPerMetersTest() =>
+            Assert.Equal(Angle.FromMillimeterPerMeters(2), 2.MillimeterPerMeters());
 
         [Fact]
         public void NumberToMilliradiansTest() =>

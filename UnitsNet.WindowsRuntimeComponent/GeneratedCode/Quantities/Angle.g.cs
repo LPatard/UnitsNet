@@ -186,6 +186,11 @@ namespace UnitsNet
         public double Gradians => As(AngleUnit.Gradian);
 
         /// <summary>
+        ///     Get Angle in MeterPerMillimeters.
+        /// </summary>
+        public double MeterPerMillimeters => As(AngleUnit.MeterPerMillimeter);
+
+        /// <summary>
         ///     Get Angle in Microdegrees.
         /// </summary>
         public double Microdegrees => As(AngleUnit.Microdegree);
@@ -199,6 +204,11 @@ namespace UnitsNet
         ///     Get Angle in Millidegrees.
         /// </summary>
         public double Millidegrees => As(AngleUnit.Millidegree);
+
+        /// <summary>
+        ///     Get Angle in MillimeterPerMeters.
+        /// </summary>
+        public double MillimeterPerMeters => As(AngleUnit.MillimeterPerMeter);
 
         /// <summary>
         ///     Get Angle in Milliradians.
@@ -316,6 +326,16 @@ namespace UnitsNet
             return new Angle(value, AngleUnit.Gradian);
         }
         /// <summary>
+        ///     Get Angle from MeterPerMillimeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Angle FromMeterPerMillimeters(double meterpermillimeters)
+        {
+            double value = (double) meterpermillimeters;
+            return new Angle(value, AngleUnit.MeterPerMillimeter);
+        }
+        /// <summary>
         ///     Get Angle from Microdegrees.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -344,6 +364,16 @@ namespace UnitsNet
         {
             double value = (double) millidegrees;
             return new Angle(value, AngleUnit.Millidegree);
+        }
+        /// <summary>
+        ///     Get Angle from MillimeterPerMeters.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Angle FromMillimeterPerMeters(double millimeterpermeters)
+        {
+            double value = (double) millimeterpermeters;
+            return new Angle(value, AngleUnit.MillimeterPerMeter);
         }
         /// <summary>
         ///     Get Angle from Milliradians.
@@ -692,9 +722,11 @@ namespace UnitsNet
                 case AngleUnit.Deciradian: return (_value*180/Math.PI) * 1e-1d;
                 case AngleUnit.Degree: return _value;
                 case AngleUnit.Gradian: return _value*0.9;
+                case AngleUnit.MeterPerMillimeter: return _value*57295.77951322445;
                 case AngleUnit.Microdegree: return (_value) * 1e-6d;
                 case AngleUnit.Microradian: return (_value*180/Math.PI) * 1e-6d;
                 case AngleUnit.Millidegree: return (_value) * 1e-3d;
+                case AngleUnit.MillimeterPerMeter: return _value*0.057295779513224454;
                 case AngleUnit.Milliradian: return (_value*180/Math.PI) * 1e-3d;
                 case AngleUnit.Nanodegree: return (_value) * 1e-9d;
                 case AngleUnit.Nanoradian: return (_value*180/Math.PI) * 1e-9d;
@@ -720,9 +752,11 @@ namespace UnitsNet
                 case AngleUnit.Deciradian: return (baseUnitValue/180*Math.PI) / 1e-1d;
                 case AngleUnit.Degree: return baseUnitValue;
                 case AngleUnit.Gradian: return baseUnitValue/0.9;
+                case AngleUnit.MeterPerMillimeter: return baseUnitValue/57295.77951322445;
                 case AngleUnit.Microdegree: return (baseUnitValue) / 1e-6d;
                 case AngleUnit.Microradian: return (baseUnitValue/180*Math.PI) / 1e-6d;
                 case AngleUnit.Millidegree: return (baseUnitValue) / 1e-3d;
+                case AngleUnit.MillimeterPerMeter: return baseUnitValue/0.057295779513224454;
                 case AngleUnit.Milliradian: return (baseUnitValue/180*Math.PI) / 1e-3d;
                 case AngleUnit.Nanodegree: return (baseUnitValue) / 1e-9d;
                 case AngleUnit.Nanoradian: return (baseUnitValue/180*Math.PI) / 1e-9d;

@@ -28,9 +28,25 @@ namespace UnitsNet.NumberExtensions.NumberToAreaDensity
     /// </summary>
     public static class NumberToAreaDensityExtensions
     {
+        /// <inheritdoc cref="AreaDensity.FromGramPerSquareMeters(UnitsNet.QuantityValue)" />
+        public static AreaDensity GramPerSquareMeters<T>(this T value) =>
+            AreaDensity.FromGramPerSquareMeters(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="AreaDensity.FromKilogramPerSquareCentimeters(UnitsNet.QuantityValue)" />
+        public static AreaDensity KilogramPerSquareCentimeters<T>(this T value) =>
+            AreaDensity.FromKilogramPerSquareCentimeters(Convert.ToDouble(value));
+
         /// <inheritdoc cref="AreaDensity.FromKilogramsPerSquareMeter(UnitsNet.QuantityValue)" />
         public static AreaDensity KilogramsPerSquareMeter<T>(this T value) =>
             AreaDensity.FromKilogramsPerSquareMeter(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="AreaDensity.FromKipsPerSquareFoots(UnitsNet.QuantityValue)" />
+        public static AreaDensity KipsPerSquareFoots<T>(this T value) =>
+            AreaDensity.FromKipsPerSquareFoots(Convert.ToDouble(value));
+
+        /// <inheritdoc cref="AreaDensity.FromKipsPerSquareInchs(UnitsNet.QuantityValue)" />
+        public static AreaDensity KipsPerSquareInchs<T>(this T value) =>
+            AreaDensity.FromKipsPerSquareInchs(Convert.ToDouble(value));
 
     }
 }

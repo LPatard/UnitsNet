@@ -1,0 +1,51 @@
+{
+    "Name": "SpecificDischarge",
+    "BaseUnit": "LiterSecondPerSquareMeter",
+    "Units": [
+        {
+            "UnitsNet_Domain": "SpecificDischarge",
+            "SingularName": "LiterSecondPerSquareMeter",
+            "PluralName": "LiterSecondPerSquareMeters",
+            "FromBaseToUnitFunc": "x",
+            "FromUnitToBaseFunc": "x",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "L/(s.m²)"
+                    ]
+                }
+            ]
+        },
+        {
+            "UnitsNet_Domain": "SpecificDischarge",
+            "SingularName": "CubicFootMinutePerSquareFoot",
+            "PluralName": "CubicFootMinutePerSquareFoots",
+            "FromBaseToUnitFunc": "x/0.000054683751",
+            "FromUnitToBaseFunc": "x*0.000054683751",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "ft³/(min.ft²)"
+                    ]
+                }
+            ]
+        },
+        {
+            "UnitsNet_Domain": "SpecificDischarge",
+            "SingularName": "CubicMeterPerHourSquareMeter",
+            "PluralName": "CubicMeterPerHourSquareMeters",
+            "FromBaseToUnitFunc": "x/0.277777777778",
+            "FromUnitToBaseFunc": "x*0.277777777778",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "m3/(h.m2)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

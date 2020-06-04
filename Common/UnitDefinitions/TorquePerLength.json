@@ -9,6 +9,21 @@
   },
   "Units": [
     {
+      "UnitsNet_Domain": "TorquePerLength",
+      "SingularName": "DecanewtonMeterPerMeter",
+      "PluralName": "DecanewtonMeterPerMeters",
+      "FromBaseToUnitFunc": "x/10",
+      "FromUnitToBaseFunc": "x*10",
+      "Localization": [
+          {
+              "Culture": "en-US",
+              "Abbreviations": [
+                  "daN-m/m"
+              ]
+          }
+      ]
+  },
+    {
       "SingularName": "NewtonMillimeterPerMeter",
       "PluralName": "NewtonMillimetersPerMeter",
       "FromUnitToBaseFunc": "x*0.001",
