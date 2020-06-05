@@ -16,7 +16,7 @@ Build:
   stage: build
   script:
     - nuget restore "./UnitsNet.sln"
-    - '& "$msbuild" "./UnitsNet.sln" /t:build /p:Configuration=Debug'
+    - '& "$msbuild" "./UnitsNet.sln" /t:build /p:Configuration=Release'
 
 Publish on nuget:
   <<: *runner-tags
