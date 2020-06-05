@@ -45,7 +45,6 @@
   <!-- NuGet references that work for both signed and unsigned -->
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
 
@@ -61,7 +60,7 @@
 
   <!-- Files to include in nuget package -->
   <ItemGroup>
-    <None Include="../Docs/Images/logo-32.png" Pack="true" PackagePath="/"/>
+    <None Include="../Docs/Images/logo-32.png" Pack="true" PackagePath="/" />
   </ItemGroup>
 
 </Project>
