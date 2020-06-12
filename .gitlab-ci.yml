@@ -3,7 +3,7 @@ stages:
   - deploy
 
 variables:
-  msbuild: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\MSBuild.exe'
+  msbuild: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\15.0\Bin\MSBuild.exe'
 
 .runner-tags: &runner-tags
   tags:
@@ -14,7 +14,7 @@ Build:
   stage: build
   script:
     - nuget restore "./UnitsNet.sln"
-    - '& "$msbuild" "./UnitsNet.sln" /t:build /p:Configuration=Release'
+    - '& dotnet msbuild "./UnitsNet.sln" /t:build /p:Configuration=Release'
 
 Publish on nuget:
   <<: *runner-tags
@@ -23,7 +23,7 @@ Publish on nuget:
     - tags
   script:
     - nuget restore "./UnitsNet.sln"
-    - '& dotnet msbuild "./UnitsNet.sln" /t:pack /p:"Configuration=Debug;PackageOutputPath=nugets;Version=$CI_COMMIT_TAG"'
+    - '& dotnet msbuild "./UnitsNet.sln" /t:pack /p:"Configuration=Release;PackageOutputPath=nugets;Version=$CI_COMMIT_TAG"'
     - nuget push (Resolve-Path -Relative "./nugets/*.nupkg") -Source $BAGET_URL -ApiKey $BAGET_API_KEY
   artifacts:
     expire_in: 7 day
