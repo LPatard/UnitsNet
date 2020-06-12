@@ -23,7 +23,7 @@ Publish on nuget:
   script:
     - nuget restore "./UnitsNet.sln"
     - dotnet msbuild "./UnitsNet.sln" /t:pack /p:"Configuration=Release;PackageOutputPath=nugets;Version=$CI_COMMIT_TAG"
-    - nuget push (Resolve-Path -Relative "./nugets/*.nupkg") -Source $BAGET_URL -ApiKey $BAGET_API_KEY
+    - nuget push (Resolve-Path -Relative "./UnitsNet/nugets/*.nupkg") -Source $BAGET_URL -ApiKey $BAGET_API_KEY
   artifacts:
     expire_in: 7 day
     paths:
