@@ -532,7 +532,7 @@ namespace UnitsNet
         {
             unitValue = null;
             var eNames = Enum.GetNames(unitType);
-            unitName = eNames.FirstOrDefault(x => x.Equals(unitName, StringComparison.OrdinalIgnoreCase));
+            unitName = eNames.FirstOrDefault(x => x.Equals(unitName.Trim(), StringComparison.OrdinalIgnoreCase));
             if (unitName == null)
                 return false;
 

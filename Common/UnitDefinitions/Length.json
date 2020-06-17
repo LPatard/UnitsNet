@@ -37,7 +37,6 @@
       ]
   },
   {
-      "UnitsNet_Domain": "Length",
       "SingularName": "Furlong",
       "PluralName": "Furlongs",
       "FromBaseToUnitFunc": "x/201.168",
